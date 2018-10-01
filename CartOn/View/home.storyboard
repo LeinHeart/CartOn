@@ -46,10 +46,10 @@
             </objects>
             <point key="canvasLocation" x="1077.5999999999999" y="144.08866995073893"/>
         </scene>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="NUP-rX-kOU">
             <objects>
-                <viewController id="HE1-uN-Zgq" sceneMemberID="viewController">
+                <viewController id="HE1-uN-Zgq" customClass="SearchViewController" customModule="CartOn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uxc-rS-3lB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -59,7 +59,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TI8-jS-JMd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1940" y="144"/>
+            <point key="canvasLocation" x="1940" y="143.3497536945813"/>
         </scene>
         <!--Home-->
         <scene sceneID="Z8k-Ht-pm1">
