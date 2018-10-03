@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="bQr-h7-qMa">
             <objects>
-                <viewController id="Q31-QF-8wB" sceneMemberID="viewController">
+                <viewController id="Q31-QF-8wB" customClass="HomeViewController" customModule="CartOn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mOJ-WV-dru">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,6 +41,9 @@
                         </button>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="segmentedOutlet" destination="Czy-z3-ZFd" id="cMg-aV-02o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vwf-RL-u39" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
