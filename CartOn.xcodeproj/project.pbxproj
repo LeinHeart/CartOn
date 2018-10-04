@@ -19,6 +19,7 @@
 		5AE1B4FA216208470069ED79 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE1B4F9216208470069ED79 /* SearchViewController.swift */; };
 		5AE1B4FC216217C80069ED79 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE1B4FB216217C80069ED79 /* HomeViewController.swift */; };
 		5C5E57DFC548CC2989DC4DB8 /* Pods_CartOn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE0B9EC7ABA9893E284B1D3 /* Pods_CartOn.framework */; };
+		E049A6C62164C7D900ECCC2A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E049A6C52164C7D900ECCC2A /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		5AE1B4FB216217C80069ED79 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		830DB9B1A08A895848CF40D6 /* Pods-CartOn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CartOn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CartOn/Pods-CartOn.debug.xcconfig"; sourceTree = "<group>"; };
 		CAE0B9EC7ABA9893E284B1D3 /* Pods_CartOn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CartOn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E049A6C52164C7D900ECCC2A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F7F06CF8879337D46BCE8E39 /* Pods-CartOn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CartOn.release.xcconfig"; path = "Pods/Target Support Files/Pods-CartOn/Pods-CartOn.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,6 +131,7 @@
 				5A601C5A215A1CD500DFD17A /* ViewController.swift */,
 				5AE1B4FB216217C80069ED79 /* HomeViewController.swift */,
 				5AE1B4F9216208470069ED79 /* SearchViewController.swift */,
+				E049A6C52164C7D900ECCC2A /* ProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 			files = (
 				5AE1B4FA216208470069ED79 /* SearchViewController.swift in Sources */,
 				5A601C5B215A1CD500DFD17A /* ViewController.swift in Sources */,
+				E049A6C62164C7D900ECCC2A /* ProfileViewController.swift in Sources */,
 				5A601C59215A1CD500DFD17A /* AppDelegate.swift in Sources */,
 				5AE1B4FC216217C80069ED79 /* HomeViewController.swift in Sources */,
 			);
