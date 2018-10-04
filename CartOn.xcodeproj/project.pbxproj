@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A2FA5AD2164EBF000F50ECA /* MyTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2FA5AC2164EBF000F50ECA /* MyTabBarViewController.swift */; };
+		5A2FA5B02166287400F50ECA /* TopUploadViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2FA5AF2166287400F50ECA /* TopUploadViewCell.swift */; };
+		5A2FA5B22166289500F50ECA /* UploadViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2FA5B12166289500F50ECA /* UploadViewCell.swift */; };
+		5A2FA5B4216628CF00F50ECA /* ExtentionUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2FA5B3216628CF00F50ECA /* ExtentionUIView.swift */; };
 		5A601C59215A1CD500DFD17A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A601C58215A1CD500DFD17A /* AppDelegate.swift */; };
 		5A601C5B215A1CD500DFD17A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A601C5A215A1CD500DFD17A /* ViewController.swift */; };
 		5A601C5E215A1CD500DFD17A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A601C5C215A1CD500DFD17A /* Main.storyboard */; };
@@ -22,6 +26,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A2FA5AC2164EBF000F50ECA /* MyTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarViewController.swift; sourceTree = "<group>"; };
+		5A2FA5AF2166287400F50ECA /* TopUploadViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopUploadViewCell.swift; sourceTree = "<group>"; };
+		5A2FA5B12166289500F50ECA /* UploadViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewCell.swift; sourceTree = "<group>"; };
+		5A2FA5B3216628CF00F50ECA /* ExtentionUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionUIView.swift; sourceTree = "<group>"; };
 		5A601C55215A1CD500DFD17A /* CartOn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CartOn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A601C58215A1CD500DFD17A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A601C5A215A1CD500DFD17A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +71,17 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5A2FA5AE2166285900F50ECA /* Home Page */ = {
+			isa = PBXGroup;
+			children = (
+				5AE1B4FB216217C80069ED79 /* HomeViewController.swift */,
+				5A2FA5AF2166287400F50ECA /* TopUploadViewCell.swift */,
+				5A2FA5B12166289500F50ECA /* UploadViewCell.swift */,
+				5AE1B4F9216208470069ED79 /* SearchViewController.swift */,
+			);
+			path = "Home Page";
+			sourceTree = "<group>";
+		};
 		5A601C4C215A1CD500DFD17A = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +103,7 @@
 		5A601C57215A1CD500DFD17A /* CartOn */ = {
 			isa = PBXGroup;
 			children = (
+				5A2FA5B3216628CF00F50ECA /* ExtentionUIView.swift */,
 				5A601C78215A2A9B00DFD17A /* Controller */,
 				5A601C77215A2A9000DFD17A /* View */,
 				5A601C76215A2A7600DFD17A /* Model */,
@@ -115,10 +135,10 @@
 		5A601C77215A2A9000DFD17A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5A601C6A215A1D3000DFD17A /* home.storyboard */,
 				5A601C5C215A1CD500DFD17A /* Main.storyboard */,
 				5A601C6C215A1D8F00DFD17A /* profile.storyboard */,
 				5A601C6E215A1E5500DFD17A /* uploadImage.storyboard */,
-				5A601C6A215A1D3000DFD17A /* home.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -126,9 +146,9 @@
 		5A601C78215A2A9B00DFD17A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5A2FA5AE2166285900F50ECA /* Home Page */,
 				5A601C5A215A1CD500DFD17A /* ViewController.swift */,
-				5AE1B4FB216217C80069ED79 /* HomeViewController.swift */,
-				5AE1B4F9216208470069ED79 /* SearchViewController.swift */,
+				5A2FA5AC2164EBF000F50ECA /* MyTabBarViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -238,9 +258,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AE1B4FA216208470069ED79 /* SearchViewController.swift in Sources */,
+				5A2FA5B02166287400F50ECA /* TopUploadViewCell.swift in Sources */,
 				5A601C5B215A1CD500DFD17A /* ViewController.swift in Sources */,
+				5A2FA5B22166289500F50ECA /* UploadViewCell.swift in Sources */,
 				5A601C59215A1CD500DFD17A /* AppDelegate.swift in Sources */,
+				5A2FA5AD2164EBF000F50ECA /* MyTabBarViewController.swift in Sources */,
 				5AE1B4FC216217C80069ED79 /* HomeViewController.swift in Sources */,
+				5A2FA5B4216628CF00F50ECA /* ExtentionUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

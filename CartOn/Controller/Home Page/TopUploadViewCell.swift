@@ -87,6 +87,7 @@ class TopUploadViewCell: UICollectionViewCell,UICollectionViewDelegate, UICollec
             return iv
         }()
         
+        let uploaderLabel = UILabel.init()
         let titleLabel = UILabel.init()
         
         override init(frame: CGRect) {
@@ -96,14 +97,21 @@ class TopUploadViewCell: UICollectionViewCell,UICollectionViewDelegate, UICollec
         
         func setup(){
             setCellShadow()
-            titleLabel.text = "Title gambar"
+            backgroundColor = .blue
+            
+            uploaderLabel.text = "Nama Upload"
+            uploaderLabel.frame = CGRect(x: 0, y: 15, width: 100, height: 20)
+            addSubview(uploaderLabel)
+            uploaderLabel.setAnchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 10, paddingLeft: 0, paddingBottom: 0, paddingRight: 0 )
+            
+            addSubview(imageView)
+            imageView.setAnchor(top: uploaderLabel.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 10, paddingLeft: 0, paddingBottom: -30, paddingRight: 0)
+            
+            
+            titleLabel.text = "Title Gambar"
             titleLabel.frame = CGRect(x: 0, y: 15, width: 100, height: 20)
             addSubview(titleLabel)
-            addSubview(imageView)
-            
-            
-            imageView.setAnchor(top: titleLabel.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 10, paddingLeft: 0, paddingBottom: -30, paddingRight: 0)
-            backgroundColor = .blue
+            titleLabel.setAnchor(top: imageView.bottomAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
             
         }
         
