@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="H9S-IX-DWc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EmI-jS-TMu">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,40 +9,43 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Profile-->
+        <!--My Profile-->
         <scene sceneID="niB-RO-fsv">
             <objects>
-                <viewController id="H9S-IX-DWc" sceneMemberID="viewController">
+                <viewController id="H9S-IX-DWc" customClass="ProfileViewController" customModule="CartOn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gxc-uy-ZHg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ini Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1L-Am-x9v">
-                                <rect key="frame" x="0.0" y="44" width="375" height="685"/>
-                                <color key="backgroundColor" red="1" green="0.97457436539999998" blue="0.08049837202" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="gBg-NN-ZXN"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="N1L-Am-x9v" firstAttribute="top" secondItem="FT8-Q0-hq5" secondAttribute="top" id="7LD-hb-gmN"/>
-                            <constraint firstItem="FT8-Q0-hq5" firstAttribute="trailing" secondItem="N1L-Am-x9v" secondAttribute="trailing" id="gtf-aa-Erm"/>
-                            <constraint firstItem="N1L-Am-x9v" firstAttribute="leading" secondItem="FT8-Q0-hq5" secondAttribute="leading" id="sVH-jB-Ira"/>
-                            <constraint firstItem="FT8-Q0-hq5" firstAttribute="bottom" secondItem="N1L-Am-x9v" secondAttribute="bottom" id="uNR-ef-mVa"/>
-                        </constraints>
+                        <color key="backgroundColor" white="0.9725046375570775" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="FT8-Q0-hq5"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="7ge-xx-lDp"/>
+                    <navigationItem key="navigationItem" title="My Profile" id="i9A-SZ-Rpg">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="SMC-kg-nH6"/>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gc8-RQ-emm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="430" y="-187"/>
+            <point key="canvasLocation" x="1372" y="-187.68472906403943"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="LJ8-oO-WYv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EmI-jS-TMu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" id="7ge-xx-lDp"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CSe-0D-FBL">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="H9S-IX-DWc" kind="relationship" relationship="rootViewController" id="EB3-My-W7r"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e5S-eE-Ynm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="429.60000000000002" y="-187.68472906403943"/>
         </scene>
     </scenes>
 </document>
