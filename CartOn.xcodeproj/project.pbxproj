@@ -23,6 +23,9 @@
 		5AE1B4FA216208470069ED79 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE1B4F9216208470069ED79 /* SearchViewController.swift */; };
 		5AE1B4FC216217C80069ED79 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE1B4FB216217C80069ED79 /* HomeViewController.swift */; };
 		5C5E57DFC548CC2989DC4DB8 /* Pods_CartOn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE0B9EC7ABA9893E284B1D3 /* Pods_CartOn.framework */; };
+		E053CF4B216637BD00D44A47 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E053CF48216637BC00D44A47 /* ProfileHeaderView.swift */; };
+		E053CF4C216637BD00D44A47 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E053CF49216637BC00D44A47 /* CollectionViewCell.swift */; };
+		E053CF4D216637BD00D44A47 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E053CF4A216637BC00D44A47 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,9 @@
 		5AE1B4FB216217C80069ED79 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		830DB9B1A08A895848CF40D6 /* Pods-CartOn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CartOn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CartOn/Pods-CartOn.debug.xcconfig"; sourceTree = "<group>"; };
 		CAE0B9EC7ABA9893E284B1D3 /* Pods_CartOn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CartOn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E053CF48216637BC00D44A47 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		E053CF49216637BC00D44A47 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		E053CF4A216637BC00D44A47 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F7F06CF8879337D46BCE8E39 /* Pods-CartOn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CartOn.release.xcconfig"; path = "Pods/Target Support Files/Pods-CartOn/Pods-CartOn.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,11 +152,22 @@
 		5A601C78215A2A9B00DFD17A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E053CF47216637BC00D44A47 /* Profile Page */,
 				5A2FA5AE2166285900F50ECA /* Home Page */,
 				5A601C5A215A1CD500DFD17A /* ViewController.swift */,
 				5A2FA5AC2164EBF000F50ECA /* MyTabBarViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		E053CF47216637BC00D44A47 /* Profile Page */ = {
+			isa = PBXGroup;
+			children = (
+				E053CF48216637BC00D44A47 /* ProfileHeaderView.swift */,
+				E053CF49216637BC00D44A47 /* CollectionViewCell.swift */,
+				E053CF4A216637BC00D44A47 /* ProfileViewController.swift */,
+			);
+			path = "Profile Page";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,10 +274,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E053CF4C216637BD00D44A47 /* CollectionViewCell.swift in Sources */,
 				5AE1B4FA216208470069ED79 /* SearchViewController.swift in Sources */,
 				5A2FA5B02166287400F50ECA /* TopUploadViewCell.swift in Sources */,
 				5A601C5B215A1CD500DFD17A /* ViewController.swift in Sources */,
 				5A2FA5B22166289500F50ECA /* UploadViewCell.swift in Sources */,
+				E053CF4B216637BD00D44A47 /* ProfileHeaderView.swift in Sources */,
+				E053CF4D216637BD00D44A47 /* ProfileViewController.swift in Sources */,
 				5A601C59215A1CD500DFD17A /* AppDelegate.swift in Sources */,
 				5A2FA5AD2164EBF000F50ECA /* MyTabBarViewController.swift in Sources */,
 				5AE1B4FC216217C80069ED79 /* HomeViewController.swift in Sources */,
