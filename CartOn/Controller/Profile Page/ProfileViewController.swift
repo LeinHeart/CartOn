@@ -9,7 +9,14 @@
 import UIKit
 
 class ProfileViewController: UIViewController , UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-   
+    
+    //MARK Dummy data
+    let topUploadImageArray = ["image1","image2","image3","image4","image5"]
+    let uploadImageArray = ["upload1","upload2","upload3","upload4","upload5","upload6","upload7","upload8"]
+    let titleArray = ["kucing pisang","kucing kotak","monster merah","monster biru","monster kumbang","kucing gemes","kucing imut","kucing lope lope"]
+    
+    //MARK Setup
+    
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 16
@@ -26,6 +33,7 @@ class ProfileViewController: UIViewController , UICollectionViewDelegate, UIColl
         
         collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: "cellid")
         collectionView.register(ProfileHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
+        collectionView.showsVerticalScrollIndicator = false
         
         
         view.addSubview(collectionView)
@@ -35,16 +43,18 @@ class ProfileViewController: UIViewController , UICollectionViewDelegate, UIColl
     //MARK CollectionView : cell
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return uploadImageArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellid", for: indexPath) as! CollectionViewCell
+        cell.images = uploadImageArray[indexPath.item]
+        cell.title = titleArray[indexPath.item]
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width:(view.frame.width / 2) - 20, height: (view.frame.width / 2) + 20) //375
+        return CGSize(width:(view.frame.width / 2) - 20, height: (view.frame.width / 2) * 1.25) //375
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
