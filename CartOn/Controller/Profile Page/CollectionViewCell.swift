@@ -18,15 +18,30 @@ class CollectionViewCell: UICollectionViewCell {
         }
     }
     
+    var title: String? {
+        didSet{
+            if let titleName = title {
+                titleLabel.text = titleName
+            }
+        }
+    }
+    
     let imageView:UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         return iv
     }()
+    
+    let titleLabel: UILabel = {
+        let tl = UILabel()
+        tl.font = UIFont(name: "Avenir-Medium", size: 11)
+        tl.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+        return tl
+    }()
+    
     let likeIcon = UIImageView.init()
     let likeCount = UILabel.init()
-    let titleLabel = UILabel.init()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -41,12 +56,24 @@ class CollectionViewCell: UICollectionViewCell {
         imageView.layer.cornerRadius = 0.4
         imageView.clipsToBounds = true
         addSubview(imageView)
-        imageView.setAnchor(top: self.topAnchor, left: self.leftAnchor, bottom: nil, right: self.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: self.frame.size.width, height: 137)
+        imageView.setAnchor(top: self.topAnchor, left: self.leftAnchor, bottom: nil, right: self.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: self.frame.size.width, height: self.frame.size.height / 2 * 1.35)
+        
+        //titleLabel.text = "Lorem ipsum"
+        //titleLabel.font = UIFont(name: "Avenir-Medium", size: 11)
+        //titleLabel.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+        addSubview(titleLabel)
+        titleLabel.setAnchor(top: imageView.bottomAnchor, left: self.leftAnchor, bottom: nil, right: self.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 0)
         
         likeIcon.image = UIImage(named: "like")
         likeIcon.frame = CGRect(x: 0, y: 0, width: 18, height: 18)
         addSubview(likeIcon)
         likeIcon.setAnchor(top: nil, left: self.leftAnchor, bottom: self.bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 10, paddingBottom: -10, paddingRight: 0, width: 18, height: 18)
+        
+        likeCount.text = "512"
+        likeCount.font = UIFont(name: "Avenir-Medium", size: 11)
+        likeCount.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+        addSubview(likeCount)
+        likeCount.setAnchor(top: nil, left: likeIcon.rightAnchor, bottom: self.bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 10, paddingBottom: -10, paddingRight: 0)
       
     }
     

@@ -13,7 +13,9 @@ class ProfileViewController: UIViewController , UICollectionViewDelegate, UIColl
     //MARK Dummy data
     let topUploadImageArray = ["image1","image2","image3","image4","image5"]
     let uploadImageArray = ["upload1","upload2","upload3","upload4","upload5","upload6","upload7","upload8"]
-    //MARK : END
+    let titleArray = ["kucing pisang","kucing kotak","monster merah","monster biru","monster kumbang","kucing gemes","kucing imut","kucing lope lope"]
+    
+    //MARK Setup
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -47,11 +49,12 @@ class ProfileViewController: UIViewController , UICollectionViewDelegate, UIColl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellid", for: indexPath) as! CollectionViewCell
         cell.images = uploadImageArray[indexPath.item]
+        cell.title = titleArray[indexPath.item]
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width:(view.frame.width / 2) - 20, height: (view.frame.width / 2) + 30) //375
+        return CGSize(width:(view.frame.width / 2) - 20, height: (view.frame.width / 2) * 1.25) //375
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

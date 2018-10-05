@@ -61,19 +61,20 @@ class ProfileHeaderView: UICollectionReusableView {
         addSubview(origin)
         origin.setAnchor(top: name.bottomAnchor, left: profilePict.rightAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 0)
         
+        //set post, followers & following container
         viewPost.backgroundColor = .clear
         viewPost.frame = CGRect(x: 0, y: 0, width: self.frame.size.width / 3, height: 48)
-        viewPost.layer.borderColor = UIColor.lightGray.cgColor
+        viewPost.layer.borderColor = UIColor.orange.cgColor
         viewPost.layer.borderWidth = 0.3
         
         viewFollowers.backgroundColor = .clear
         viewFollowers.frame = CGRect(x: 0, y: 0, width: self.frame.size.width / 3, height: 48)
-        viewFollowers.layer.borderColor = UIColor.lightGray.cgColor
+        viewFollowers.layer.borderColor = UIColor.orange.cgColor
         viewFollowers.layer.borderWidth = 0.3
         
         viewFollowing.backgroundColor = .clear
         viewFollowing.frame = CGRect(x: 0, y: 0, width: self.frame.size.width / 3, height: 48)
-        viewFollowing.layer.borderColor = UIColor.lightGray.cgColor
+        viewFollowing.layer.borderColor = UIColor.orange.cgColor
         viewFollowing.layer.borderWidth = 0.3
         
         addSubview(viewPost)
