@@ -36,7 +36,7 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         collectionView.register(UploadViewCell.self, forCellWithReuseIdentifier: uploadCellId)
         
         view.addSubview(collectionView)
-        collectionView.setAnchor(top: segmentedOutlet.bottomAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 5, paddingLeft: 0, paddingBottom: 5, paddingRight: 0x1)
+        collectionView.setAnchor(top: segmentedOutlet.bottomAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 5, paddingLeft: 0, paddingBottom: 5, paddingRight: 0)
         // Do any additional setup after loading the view.
     }
     
@@ -59,6 +59,7 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: topUploadCellId, for: indexPath) as! TopUploadViewCell
         cell.images = topUploadImageArray
+        cell.backgroundColor = .orange
         return cell
     }
     
@@ -66,16 +67,16 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section == 1 {
-            return CGSize(width: (view.frame.width / 2) - 20 , height: (view.frame.width / 2) + 20 )
+            return CGSize(width: (view.frame.width / 2) - 20 , height: (view.frame.width / 2) * 1.25)
         }
-        return CGSize(width: view.frame.width, height: 300) //375 842
+        return CGSize(width: view.frame.width, height: (view.frame.width / 2 ) * 1.25 + 55) //375 842
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         if section == 1 {
             return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         }
-        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
 
     
