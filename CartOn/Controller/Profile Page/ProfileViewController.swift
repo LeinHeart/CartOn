@@ -9,13 +9,20 @@
 import UIKit
 
 class ProfileViewController: UIViewController , UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-   
+    
+    //MARK Dummy data
+    let topUploadImageArray = ["image1","image2","image3","image4","image5"]
+    let uploadImageArray = ["upload1","upload2","upload3","upload4","upload5","upload6","upload7","upload8"]
+    let titleArray = ["kucing pisang","kucing kotak","monster merah","monster biru","monster kumbang","kucing gemes","kucing imut","kucing lope lope"]
+    
+    //MARK Setup
+    
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 16
         layout.scrollDirection = .vertical
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.backgroundColor = .green
+        cv.backgroundColor = .white
         return cv
     }()
     
@@ -26,22 +33,35 @@ class ProfileViewController: UIViewController , UICollectionViewDelegate, UIColl
         
         collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: "cellid")
         collectionView.register(ProfileHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
+        collectionView.showsVerticalScrollIndicator = false
         
         
         view.addSubview(collectionView)
         collectionView.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
     }
     
-    //MARK CollectionView
+    //MARK CollectionView : cell
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return uploadImageArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellid", for: indexPath) as! CollectionViewCell
+        cell.images = uploadImageArray[indexPath.item]
+        cell.title = titleArray[indexPath.item]
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width:(view.frame.width / 2) - 20, height: (view.frame.width / 2) * 1.25) //375
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    }
+    
+    // MARK CollectionView : header
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
@@ -54,58 +74,8 @@ class ProfileViewController: UIViewController , UICollectionViewDelegate, UIColl
         return element
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width:(view.frame.width / 2) - 20, height: (view.frame.width / 2) + 20) //375
-    }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: self.view.frame.width, height: 180)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-    }
-
-}
-
-
-class CollectionViewCell: UICollectionViewCell {
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setup()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func setup() {
-        backgroundColor = .red
-        setCellShadow()
-    }
-}
-
-
-
-
-
-class ProfileHeaderView: UICollectionReusableView {
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setup()
-    }
-    let judulLbl = UILabel.init()
-    
-    func setup() {
-        backgroundColor = .blue
-        judulLbl.text = "asd"
-        judulLbl.frame = CGRect(x: 0, y: 0, width: 199, height: 20)
-        addSubview(judulLbl)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 }
