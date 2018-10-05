@@ -1,20 +1,19 @@
 //
-//  ViewController.swift
+//  CaptionViewController.swift
 //  CartOn
 //
-//  Created by Kristopher Chayadi on 25/09/18.
+//  Created by Eric Victor on 04/10/18.
 //  Copyright © 2018 Kristopher Chayadi. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class CaptionViewController: UIViewController {
 
+    @IBOutlet weak var imageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
-
-
 }
-

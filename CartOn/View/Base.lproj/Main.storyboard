@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EZj-TW-KbV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EZj-TW-KbV">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.9"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="W1N-tT-SKW">
             <objects>
-                <tabBarController id="EZj-TW-KbV" sceneMemberID="viewController">
+                <tabBarController id="EZj-TW-KbV" customClass="TabBarViewController" customModule="CartOn" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="T6M-tg-1k1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -27,30 +27,30 @@
             </objects>
             <point key="canvasLocation" x="-232" y="-69"/>
         </scene>
-        <!--home-->
+        <!--Home-->
         <scene sceneID="Wa0-j4-jnB">
             <objects>
-                <viewControllerPlaceholder storyboardName="home" id="G35-gI-wQC" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Home" id="G35-gI-wQC" userLabel="Home" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="n10-af-L0i"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hJQ-Lu-HJN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="696" y="-288"/>
         </scene>
-        <!--uploadImage-->
+        <!--UploadImage-->
         <scene sceneID="aQj-CL-7Wn">
             <objects>
-                <viewControllerPlaceholder storyboardName="uploadImage" id="orc-xf-VU5" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="UploadImage" id="orc-xf-VU5" userLabel="UploadImage" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="dGx-x4-c16"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gty-ic-Zyx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="714" y="-79"/>
         </scene>
-        <!--profile-->
+        <!--Profile-->
         <scene sceneID="qT6-7u-6BU">
             <objects>
-                <viewControllerPlaceholder storyboardName="profile" id="uV0-bG-1Vk" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Profile" id="uV0-bG-1Vk" userLabel="Profile" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="wtg-WS-cWg"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7mp-NG-8xr" userLabel="First Responder" sceneMemberID="firstResponder"/>
