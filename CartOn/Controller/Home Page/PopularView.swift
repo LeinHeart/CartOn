@@ -78,7 +78,7 @@ class PopularView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UI
             cell.uploadImages = uploadPost[indexPath.row].image
             cell.titleLabel.text = uploadPost[indexPath.row].imageTitle
             cell.uploaderLabel.text = uploadPost[indexPath.row].uploaderName
-            cell.likeCount.text = String(uploadPost[indexPath.row].likeCount)
+            cell.likeCount = uploadPost[indexPath.row].likeCount
             
             return cell
         }
