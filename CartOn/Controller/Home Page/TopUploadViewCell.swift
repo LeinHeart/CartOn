@@ -60,9 +60,11 @@ class TopUploadViewCell: UICollectionViewCell,UICollectionViewDelegate, UICollec
         return tl
     }()
     
+    var vcDelegate :TopUploadDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         setup()
     }
     
@@ -84,6 +86,7 @@ class TopUploadViewCell: UICollectionViewCell,UICollectionViewDelegate, UICollec
         //collectionView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         
         topTitle.text = "Top Upload"
+        topTitle.textColor = .white
         
         topView.addSubview(topTitle)
         topView.addSubview(collectionView)
@@ -130,6 +133,11 @@ class TopUploadViewCell: UICollectionViewCell,UICollectionViewDelegate, UICollec
         return UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        vcDelegate?.detail(name: title![indexPath.row], uploader: uploader![indexPath.row], image: images![indexPath.row], likeCount: likeCount![indexPath.row])
+    }
+    
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -140,7 +148,9 @@ class TopUploadViewCell: UICollectionViewCell,UICollectionViewDelegate, UICollec
             let iv = UIImageView()
             iv.contentMode = .scaleAspectFill
             iv.clipsToBounds = true
-            iv.layer.cornerRadius = 15
+//            iv.layer.cornerRadius = 15
+            iv.layer.borderWidth = 0.3
+            iv.layer.borderColor = UIColor.gray.cgColor
             return iv
         }()
         
@@ -187,7 +197,7 @@ class TopUploadViewCell: UICollectionViewCell,UICollectionViewDelegate, UICollec
             titleLabel.text = "Title Gambar"
             titleLabel.frame = CGRect(x: 0, y: 15, width: 0, height: 0)
             addSubview(titleLabel)
-            titleLabel.setAnchor(top: imageView.bottomAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
+            titleLabel.setAnchor(top: imageView.bottomAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 0)
             
             likeIcon.image = UIImage(named: "like")
             likeIcon.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
@@ -207,6 +217,10 @@ class TopUploadViewCell: UICollectionViewCell,UICollectionViewDelegate, UICollec
             fatalError("init(coder:) has not been implemented")
         }
     }
+}
+
+protocol TopUploadDelegate{
+    func detail(name: String, uploader: String, image: String, likeCount: Int)
 }
 
 

@@ -24,6 +24,8 @@ class SubscriptionView: UIView,UICollectionViewDelegate,UICollectionViewDataSour
         return cv
     }()
     
+    var vcDelegate :SubscriptionDelegate?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         print("Ter init")
@@ -53,7 +55,7 @@ class SubscriptionView: UIView,UICollectionViewDelegate,UICollectionViewDataSour
         cell.subscriptionNames = subsPost[indexPath.row].image
         cell.titleLabel.text = subsPost[indexPath.row].imageTitle
         cell.uploaderLabel.text = subsPost[indexPath.row].uploaderName
-        cell.likeCount.text = String(subsPost[indexPath.row].likeCount)
+        cell.likeCount = subsPost[indexPath.row].likeCount
         return cell
     }
     
@@ -64,12 +66,15 @@ class SubscriptionView: UIView,UICollectionViewDelegate,UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        vcDelegate?.detail(name: subsPost[indexPath.row].imageTitle, uploader: subsPost[indexPath.row].uploaderName, image: subsPost[indexPath.row].image, likeCount: subsPost[indexPath.row].likeCount)
     }
-    */
+    
+    
 
+}
+
+protocol SubscriptionDelegate {
+    func detail(name: String, uploader: String, image: String, likeCount: Int)
 }

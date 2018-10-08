@@ -8,7 +8,9 @@
 
 import UIKit
 
-class PopularView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+class PopularView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,TopUploadDelegate {
+    
+    
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -21,6 +23,8 @@ class PopularView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UI
     
     let topUploadCellId = "topUploadCellId"
     let uploadCellId = "uploadCellId"
+    
+    var vcDelegate :PopularDelegate?
     
     let uploadPost = PostList().uploadList
     let topUploadPost = PostList().topUploadList
@@ -85,6 +89,8 @@ class PopularView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UI
         cell.likeCount = topUploadLikeCountArray
         cell.descriptionImage = topUploadDescription
         cell.backgroundColor = .orange
+        cell.vcDelegate = self as! TopUploadDelegate
+
         return cell
     }
     
@@ -102,13 +108,21 @@ class PopularView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UI
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
     
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section == 1 {
+            vcDelegate?.detail(name: uploadPost[indexPath.row].imageTitle, uploader: uploadPost[indexPath.row].uploaderName, image: uploadPost[indexPath.row].image, likeCount: uploadPost[indexPath.row].likeCount)
+        }
+        
     }
-    */
+    
+    
+    func detail(name: String, uploader: String, image: String, likeCount: Int) {
+        vcDelegate?.detail(name: name, uploader: uploader, image: image, likeCount: likeCount)
+    }
 
+    
+}
+
+protocol PopularDelegate {
+    func detail(name: String, uploader: String, image: String, likeCount: Int)
 }
