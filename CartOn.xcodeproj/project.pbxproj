@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A09EB1E216B3B3E00268856 /* SubscriptionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A09EB1D216B3B3E00268856 /* SubscriptionViewCell.swift */; };
+		5A09EB20216B465C00268856 /* PopularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A09EB1F216B465C00268856 /* PopularView.swift */; };
+		5A09EB22216B4DBF00268856 /* SubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A09EB21216B4DBF00268856 /* SubscriptionView.swift */; };
 		5A2FA5AD2164EBF000F50ECA /* MyTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2FA5AC2164EBF000F50ECA /* MyTabBarViewController.swift */; };
 		5A2FA5B02166287400F50ECA /* TopUploadViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2FA5AF2166287400F50ECA /* TopUploadViewCell.swift */; };
 		5A2FA5B22166289500F50ECA /* UploadViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2FA5B12166289500F50ECA /* UploadViewCell.swift */; };
@@ -32,6 +35,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A09EB1D216B3B3E00268856 /* SubscriptionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionViewCell.swift; sourceTree = "<group>"; };
+		5A09EB1F216B465C00268856 /* PopularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularView.swift; sourceTree = "<group>"; };
+		5A09EB21216B4DBF00268856 /* SubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionView.swift; sourceTree = "<group>"; };
 		5A2FA5AC2164EBF000F50ECA /* MyTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarViewController.swift; sourceTree = "<group>"; };
 		5A2FA5AF2166287400F50ECA /* TopUploadViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopUploadViewCell.swift; sourceTree = "<group>"; };
 		5A2FA5B12166289500F50ECA /* UploadViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewCell.swift; sourceTree = "<group>"; };
@@ -89,7 +95,10 @@
 				5AE1B4FB216217C80069ED79 /* HomeViewController.swift */,
 				5A2FA5AF2166287400F50ECA /* TopUploadViewCell.swift */,
 				5A2FA5B12166289500F50ECA /* UploadViewCell.swift */,
+				5A09EB1D216B3B3E00268856 /* SubscriptionViewCell.swift */,
 				5AE1B4F9216208470069ED79 /* SearchViewController.swift */,
+				5A09EB1F216B465C00268856 /* PopularView.swift */,
+				5A09EB21216B4DBF00268856 /* SubscriptionView.swift */,
 			);
 			path = "Home Page";
 			sourceTree = "<group>";
@@ -292,7 +301,10 @@
 				5A601C5B215A1CD500DFD17A /* ViewController.swift in Sources */,
 				5A2FA5B22166289500F50ECA /* UploadViewCell.swift in Sources */,
 				E053CF4B216637BD00D44A47 /* ProfileHeaderView.swift in Sources */,
+				5A09EB20216B465C00268856 /* PopularView.swift in Sources */,
 				E053CF4D216637BD00D44A47 /* ProfileViewController.swift in Sources */,
+				5A09EB22216B4DBF00268856 /* SubscriptionView.swift in Sources */,
+				5A09EB1E216B3B3E00268856 /* SubscriptionViewCell.swift in Sources */,
 				5A601C59215A1CD500DFD17A /* AppDelegate.swift in Sources */,
 				5A2FA5AD2164EBF000F50ECA /* MyTabBarViewController.swift in Sources */,
 				5AE1B4FC216217C80069ED79 /* HomeViewController.swift in Sources */,
