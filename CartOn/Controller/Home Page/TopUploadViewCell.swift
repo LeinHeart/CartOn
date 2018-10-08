@@ -16,6 +16,30 @@ class TopUploadViewCell: UICollectionViewCell,UICollectionViewDelegate, UICollec
         }
     }
     
+    var title:[String]?{
+        didSet{
+            collectionView.reloadData()
+        }
+    }
+    
+    var uploader:[String]?{
+        didSet{
+            collectionView.reloadData()
+        }
+    }
+    
+    var likeCount:[Int]?{
+        didSet{
+            collectionView.reloadData()
+        }
+    }
+    
+    var descriptionImage:[String]?{
+        didSet{
+            collectionView.reloadData()
+        }
+    }
+    
     let topView = UIView.init()
     
     let collectionView :UICollectionView = {
@@ -85,6 +109,15 @@ class TopUploadViewCell: UICollectionViewCell,UICollectionViewDelegate, UICollec
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId , for: indexPath) as! IconsCell
         if let imageName = images?[indexPath.item]{
             cell.imageView.image = UIImage(named: imageName)
+        }
+        if let titleName = title?[indexPath.item]{
+            cell.titleLabel.text = titleName
+        }
+        if let uploaderName = uploader?[indexPath.item]{
+            cell.uploaderLabel.text = uploaderName
+        }
+        if let likeCount = likeCount?[indexPath.item]{
+            cell.likeCount.text = String(likeCount)
         }
         return cell
     }

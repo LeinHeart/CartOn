@@ -10,6 +10,8 @@
 		5A09EB1E216B3B3E00268856 /* SubscriptionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A09EB1D216B3B3E00268856 /* SubscriptionViewCell.swift */; };
 		5A09EB20216B465C00268856 /* PopularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A09EB1F216B465C00268856 /* PopularView.swift */; };
 		5A09EB22216B4DBF00268856 /* SubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A09EB21216B4DBF00268856 /* SubscriptionView.swift */; };
+		5A09EB24216B530600268856 /* PostClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A09EB23216B530600268856 /* PostClass.swift */; };
+		5A09EB26216B530F00268856 /* PostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A09EB25216B530F00268856 /* PostList.swift */; };
 		5A2FA5AD2164EBF000F50ECA /* MyTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2FA5AC2164EBF000F50ECA /* MyTabBarViewController.swift */; };
 		5A2FA5B02166287400F50ECA /* TopUploadViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2FA5AF2166287400F50ECA /* TopUploadViewCell.swift */; };
 		5A2FA5B22166289500F50ECA /* UploadViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2FA5B12166289500F50ECA /* UploadViewCell.swift */; };
@@ -38,6 +40,8 @@
 		5A09EB1D216B3B3E00268856 /* SubscriptionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionViewCell.swift; sourceTree = "<group>"; };
 		5A09EB1F216B465C00268856 /* PopularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularView.swift; sourceTree = "<group>"; };
 		5A09EB21216B4DBF00268856 /* SubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionView.swift; sourceTree = "<group>"; };
+		5A09EB23216B530600268856 /* PostClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostClass.swift; sourceTree = "<group>"; };
+		5A09EB25216B530F00268856 /* PostList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostList.swift; sourceTree = "<group>"; };
 		5A2FA5AC2164EBF000F50ECA /* MyTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarViewController.swift; sourceTree = "<group>"; };
 		5A2FA5AF2166287400F50ECA /* TopUploadViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopUploadViewCell.swift; sourceTree = "<group>"; };
 		5A2FA5B12166289500F50ECA /* UploadViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewCell.swift; sourceTree = "<group>"; };
@@ -149,6 +153,8 @@
 		5A601C76215A2A7600DFD17A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5A09EB23216B530600268856 /* PostClass.swift */,
+				5A09EB25216B530F00268856 /* PostList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -293,6 +299,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A09EB24216B530600268856 /* PostClass.swift in Sources */,
+				5A09EB26216B530F00268856 /* PostList.swift in Sources */,
 				E053CF4C216637BD00D44A47 /* CollectionViewCell.swift in Sources */,
 				5A6BCA5C21675B9800DB90DD /* UploadViewController.swift in Sources */,
 				5AE1B4FA216208470069ED79 /* SearchViewController.swift in Sources */,

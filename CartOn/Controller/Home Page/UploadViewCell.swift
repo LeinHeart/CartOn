@@ -26,20 +26,20 @@ class UploadViewCell: UICollectionViewCell{
         return iv
     }()
     
-    let titleLabel : UILabel = {
+    var titleLabel : UILabel = {
         let tl = UILabel()
         tl.font = UIFont(name: "Avenir-medium", size: 11)
         tl.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
         return tl
     }()
-    let uploaderLabel : UILabel = {
+    var uploaderLabel : UILabel = {
         let tl = UILabel()
         tl.font = UIFont(name: "Avenir-medium", size: 11)
         tl.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
         return tl
     }()
-    let likeCount = UILabel.init()
-    let likeIcon = UIImageView.init()
+    var likeCount = UILabel.init()
+    var likeIcon = UIImageView.init()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -51,13 +51,13 @@ class UploadViewCell: UICollectionViewCell{
         //backgroundColor = .clear
         setCellShadow()
         
-        uploaderLabel.text = "Nama Uploader"
+//        uploaderLabel.text = "Nama Uploader"
         uploaderLabel.frame = CGRect(x: 0, y: 0, width: 150, height: 20)
         
-        titleLabel.text = "Title Gambar"
+//        titleLabel.text = "Title Gambar"
         
         
-        likeCount.text = "100"
+//        likeCount.text = "100"
         likeCount.font = UIFont(name: "Avenir-Medium", size: 11)
         likeCount.frame = CGRect(x: 0, y: 0, width: 100, height: 10)
         

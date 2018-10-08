@@ -22,9 +22,14 @@ class PopularView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UI
     let topUploadCellId = "topUploadCellId"
     let uploadCellId = "uploadCellId"
     
-    let topUploadImageArray = ["image1","image2","image3","image4","image5"]
-    let uploadImageArray = ["upload1","upload2","upload3","upload4","upload5","upload6","upload7","upload8"]
-    
+    let uploadPost = PostList().uploadList
+    let topUploadPost = PostList().topUploadList
+    var topUploadImageArray = [String]()
+    var topUploadTitleArray = [String]()
+    var topUploadUploaderArray = [String]()
+    var topUploadLikeCountArray = [Int]()
+    var topUploadDescription = [String]()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         print("Ter init")
@@ -35,6 +40,14 @@ class PopularView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UI
         
         collectionView.register(TopUploadViewCell.self, forCellWithReuseIdentifier: topUploadCellId)
         collectionView.register(UploadViewCell.self, forCellWithReuseIdentifier: uploadCellId)
+        
+        for name in topUploadPost{
+            topUploadImageArray.append(name.image)
+            topUploadTitleArray.append(name.imageTitle)
+            topUploadUploaderArray.append(name.uploaderName)
+            topUploadLikeCountArray.append(name.likeCount)
+            topUploadDescription.append(name.imageDescription!)
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -50,7 +63,7 @@ class PopularView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UI
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 1 {
-            return uploadImageArray.count
+            return uploadPost.count
         }
         else {return 1}
     }
@@ -58,11 +71,19 @@ class PopularView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UI
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 1{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: uploadCellId, for: indexPath) as! UploadViewCell
-            cell.uploadImages = uploadImageArray[indexPath.item]
+            cell.uploadImages = uploadPost[indexPath.row].image
+            cell.titleLabel.text = uploadPost[indexPath.row].imageTitle
+            cell.uploaderLabel.text = uploadPost[indexPath.row].uploaderName
+            cell.likeCount.text = String(uploadPost[indexPath.row].likeCount)
+            
             return cell
         }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: topUploadCellId, for: indexPath) as! TopUploadViewCell
         cell.images = topUploadImageArray
+        cell.title = topUploadTitleArray
+        cell.uploader = topUploadUploaderArray
+        cell.likeCount = topUploadLikeCountArray
+        cell.descriptionImage = topUploadDescription
         cell.backgroundColor = .orange
         return cell
     }
