@@ -120,7 +120,7 @@ class TopUploadViewCell: UICollectionViewCell,UICollectionViewDelegate, UICollec
             cell.uploaderLabel.text = uploaderName
         }
         if let likeCount = likeCount?[indexPath.item]{
-            cell.likeCount.text = String(likeCount)
+            cell.likeCount = likeCount
         }
         return cell
     }
@@ -168,7 +168,8 @@ class TopUploadViewCell: UICollectionViewCell,UICollectionViewDelegate, UICollec
             return tl
         }()
         
-        let likeCount  : UILabel = {
+        
+        let likeLabel  : UILabel = {
             let tl = UILabel()
             tl.font = UIFont(name: "Avenir-medium", size: 11)
             tl.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
@@ -176,25 +177,36 @@ class TopUploadViewCell: UICollectionViewCell,UICollectionViewDelegate, UICollec
         }()
         
         let likeIcon = UIImageView.init()
-        
+        var likeCount = Int()
         
         override init(frame: CGRect) {
             super.init(frame: frame)
             setup()
         }
         
+        required init?(coder aDecoder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+        
         func setup(){
+            let tapRegoc = UITapGestureRecognizer(target: self, action: #selector(tapDetected))
+            likeIcon.isUserInteractionEnabled = true
+            likeIcon.addGestureRecognizer(tapRegoc)
+            
             setCellShadow()
             backgroundColor = .white
             
-            uploaderLabel.text = "Nama Upload"
+            DispatchQueue.main.async {
+                self.likeLabel.text = String(self.likeCount)
+            }
+
             addSubview(uploaderLabel)
             uploaderLabel.setAnchor(top: self.topAnchor, left: self.leftAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 10, paddingBottom: 0, paddingRight: 0 )
             
             addSubview(imageView)
             imageView.setAnchor(top: uploaderLabel.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: -30, paddingRight: 0, width: self.frame.size.width, height: self.frame.size.height / 2 * 1.35)
             
-            titleLabel.text = "Title Gambar"
+
             titleLabel.frame = CGRect(x: 0, y: 15, width: 0, height: 0)
             addSubview(titleLabel)
             titleLabel.setAnchor(top: imageView.bottomAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 0)
@@ -204,17 +216,30 @@ class TopUploadViewCell: UICollectionViewCell,UICollectionViewDelegate, UICollec
             addSubview(likeIcon)
             likeIcon.setAnchor(top: nil, left: self.leftAnchor, bottom: self.bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 10, paddingBottom: -10, paddingRight: 0,width: 18,height: 18)
             
-            likeCount.text = "100"
-            likeCount.font = UIFont(name: "Avenir-Medium", size: 11)
-            likeCount.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
             
-            addSubview(likeCount)
-            likeCount.setAnchor(top: nil, left: likeIcon.rightAnchor, bottom: self.bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 10, paddingBottom: -10, paddingRight: 0 )
+            addSubview(likeLabel)
+            likeLabel.setAnchor(top: nil, left: likeIcon.rightAnchor, bottom: self.bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 10, paddingBottom: -10, paddingRight: 0 )
             
         }
         
-        required init?(coder aDecoder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
+        @objc func tapDetected(){
+            if likeIcon.backgroundColor == nil{
+                likeIcon.backgroundColor = .orange
+                likeCount += 1
+                DispatchQueue.main.async {
+                    self.likeLabel.text = String(self.likeCount)
+                }
+                print(likeCount)
+            }
+            else{
+                likeIcon.backgroundColor = nil
+                likeCount -= 1
+                DispatchQueue.main.async {
+                    self.likeLabel.text = String(self.likeCount)
+                }
+                print(likeCount)
+            }
+            
         }
     }
 }

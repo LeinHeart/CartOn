@@ -40,7 +40,14 @@ class UploadViewCell: UICollectionViewCell{
         tl.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
         return tl
     }()
-    var likeCount = UILabel.init()
+    var likeCount = Int()
+    var likeLabel : UILabel = {
+        let tl = UILabel()
+        tl.font = UIFont(name: "Avenir-medium", size: 11)
+        tl.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+        return tl
+    }()
+    
     var likeIcon = UIImageView.init()
     
     override init(frame: CGRect) {
@@ -49,19 +56,21 @@ class UploadViewCell: UICollectionViewCell{
     }
     
     func setup(){
+        let tapRegoc = UITapGestureRecognizer(target: self, action: #selector(tapDetected))
+        
         backgroundColor = .white
         //backgroundColor = .clear
         setCellShadow()
         
-//        uploaderLabel.text = "Nama Uploader"
+        likeIcon.isUserInteractionEnabled = true
+        likeIcon.addGestureRecognizer(tapRegoc)
+        
+        
         uploaderLabel.frame = CGRect(x: 0, y: 0, width: 150, height: 20)
         
-//        titleLabel.text = "Title Gambar"
-        
-        
-//        likeCount.text = "100"
-        likeCount.font = UIFont(name: "Avenir-Medium", size: 11)
-        likeCount.frame = CGRect(x: 0, y: 0, width: 100, height: 10)
+        DispatchQueue.main.async {
+            self.likeLabel.text = String(self.likeCount)
+        }
         
         likeIcon.image = UIImage(named: "like")
         likeIcon.frame = CGRect(x: 0, y: 0, width: 18, height: 18)
@@ -70,13 +79,32 @@ class UploadViewCell: UICollectionViewCell{
         addSubview(titleLabel)
         addSubview(imageView)
         addSubview(likeIcon)
-        addSubview(likeCount)
+        addSubview(likeLabel)
         
         uploaderLabel.setAnchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 10, paddingBottom: 0, paddingRight: 0)
         imageView.setAnchor(top: uploaderLabel.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0,width: self.frame.size.width,height: self.frame.size.height / 2 * 1.35)
         titleLabel.setAnchor(top: imageView.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 0)
         likeIcon.setAnchor(top: nil, left: self.leftAnchor, bottom: self.bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 10, paddingBottom: -10, paddingRight: 0,width: 18,height: 18)
-        likeCount.setAnchor(top: nil, left: likeIcon.rightAnchor, bottom: self.bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 10, paddingBottom: -10, paddingRight: 0 )
+        likeLabel.setAnchor(top: nil, left: likeIcon.rightAnchor, bottom: self.bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 10, paddingBottom: -10, paddingRight: 0 )
+    }
+    
+    @objc func tapDetected(){
+        if likeIcon.backgroundColor == nil{
+            likeIcon.backgroundColor = .orange
+            likeCount += 1
+            DispatchQueue.main.async {
+                self.likeLabel.text = String(self.likeCount)
+            }
+            print(likeCount)
+        }
+        else{
+            likeIcon.backgroundColor = nil
+            likeCount -= 1
+            DispatchQueue.main.async {
+                self.likeLabel.text = String(self.likeCount)
+            }
+            print(likeCount)
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
