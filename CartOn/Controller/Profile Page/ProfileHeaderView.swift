@@ -62,20 +62,20 @@ class ProfileHeaderView: UICollectionReusableView {
         origin.setAnchor(top: name.bottomAnchor, left: profilePict.rightAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 0)
         
         //set post, followers & following container
-        viewPost.backgroundColor = .clear
+        viewPost.backgroundColor = .orange
         viewPost.frame = CGRect(x: 0, y: 0, width: self.frame.size.width / 3, height: 48)
-        viewPost.layer.borderColor = UIColor.orange.cgColor
-        viewPost.layer.borderWidth = 0.3
+        viewPost.layer.borderColor = UIColor.white.cgColor
+        viewPost.layer.borderWidth = 0.2
         
-        viewFollowers.backgroundColor = .clear
+        viewFollowers.backgroundColor = .orange
         viewFollowers.frame = CGRect(x: 0, y: 0, width: self.frame.size.width / 3, height: 48)
-        viewFollowers.layer.borderColor = UIColor.orange.cgColor
-        viewFollowers.layer.borderWidth = 0.3
+        viewFollowers.layer.borderColor = UIColor.white.cgColor
+        viewFollowers.layer.borderWidth = 0.2
         
-        viewFollowing.backgroundColor = .clear
+        viewFollowing.backgroundColor = .orange
         viewFollowing.frame = CGRect(x: 0, y: 0, width: self.frame.size.width / 3, height: 48)
-        viewFollowing.layer.borderColor = UIColor.orange.cgColor
-        viewFollowing.layer.borderWidth = 0.3
+        viewFollowing.layer.borderColor = UIColor.white.cgColor
+        viewFollowing.layer.borderWidth = 0.2
         
         addSubview(viewPost)
         addSubview(viewFollowers)
@@ -95,9 +95,10 @@ class ProfileHeaderView: UICollectionReusableView {
     //set post view
     func labelPostSetup(){
         
-        labelCountPost.text = "66"
+        labelCountPost.text = "8"
         labelCountPost.textAlignment = .center
         labelCountPost.font = UIFont(name: "Avenir-Heavy", size: 14)
+        labelCountPost.textColor = .white
         
         labelCountPost.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
         
@@ -108,20 +109,22 @@ class ProfileHeaderView: UICollectionReusableView {
         
         labelPost.text = "posts"
         labelPost.textAlignment = .center
-        labelPost.font = UIFont(name: "Avenir-Book", size: 11)
+        labelPost.font = UIFont(name: "Avenir-Book", size: 12)
+        labelPost.textColor = .white
         
         labelPost.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
         
         viewPost.addSubview(labelPost)
-        labelPost.setAnchor(top: labelCountPost.bottomAnchor, left: viewPost.leftAnchor, bottom: nil, right: viewPost.rightAnchor, paddingTop: 5, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: viewPost.frame.size.width, height: 12)
+        labelPost.setAnchor(top: labelCountPost.bottomAnchor, left: viewPost.leftAnchor, bottom: nil, right: viewPost.rightAnchor, paddingTop: 5, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: viewPost.frame.size.width, height: 12.5)
     }
     
     //set followers view
     func labelFollowersSetup(){
         
-        labelCountFollowers.text = "122"
+        labelCountFollowers.text = "5"
         labelCountFollowers.textAlignment = .center
         labelCountFollowers.font = UIFont(name: "Avenir-Heavy", size: 14)
+        labelCountFollowers.textColor = .white
         
         labelCountFollowers.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
         
@@ -130,30 +133,35 @@ class ProfileHeaderView: UICollectionReusableView {
         
         labelFollowers.text = "followers"
         labelFollowers.textAlignment = .center
-        labelFollowers.font = UIFont(name: "Avenir-Book", size: 11)
+        labelFollowers.font = UIFont(name: "Avenir-Book", size: 12)
+        labelFollowers.textColor = .white
         
         labelFollowers.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
         
         viewFollowers.addSubview(labelFollowers)
-        labelFollowers.setAnchor(top: labelCountFollowers.bottomAnchor, left: viewFollowers.leftAnchor, bottom: nil, right: viewFollowers.rightAnchor, paddingTop: 5, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: viewFollowers.frame.size.width, height: 12)
+        labelFollowers.setAnchor(top: labelCountFollowers.bottomAnchor, left: viewFollowers.leftAnchor, bottom: nil, right: viewFollowers.rightAnchor, paddingTop: 5, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: viewFollowers.frame.size.width, height: 12.5)
     }
     
     //set following view
     func labelFollowingSetup(){
         
-        labelCountFollowing.text = "300"
+        labelCountFollowing.text = "2000"
         labelCountFollowing.textAlignment = .center
         labelCountFollowing.font = UIFont(name: "Avenir-Heavy", size: 14)
+        labelCountFollowing.textColor = .white
+        
         labelCountFollowing.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
         viewFollowing.addSubview(labelCountFollowing)
         labelCountFollowing.setAnchor(top: viewFollowing.topAnchor, left: viewFollowing.leftAnchor, bottom: nil, right: viewFollowing.rightAnchor, paddingTop: 10, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: viewFollowing.frame.size.width, height: 12)
         
         labelFollowing.text = "following"
         labelFollowing.textAlignment = .center
-        labelFollowing.font = UIFont(name: "Avenir-Book", size: 11)
+        labelFollowing.font = UIFont(name: "Avenir-Book", size: 12)
+        labelFollowing.textColor = .white
+        
         labelFollowing.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
         viewFollowing.addSubview(labelFollowing)
-        labelFollowing.setAnchor(top: labelCountFollowing.bottomAnchor, left: viewFollowing.leftAnchor, bottom: nil, right: viewFollowing.rightAnchor, paddingTop: 5, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: viewFollowing.frame.size.width, height: 12)
+        labelFollowing.setAnchor(top: labelCountFollowing.bottomAnchor, left: viewFollowing.leftAnchor, bottom: nil, right: viewFollowing.rightAnchor, paddingTop: 5, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: viewFollowing.frame.size.width, height: 12.5)
     }
     
     required init?(coder aDecoder: NSCoder) {
