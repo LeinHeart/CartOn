@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, SubscriptionDelegate, PopularDelegate{
     //,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout
     
     @IBOutlet weak var segmentedOutlet: UISegmentedControl!
@@ -35,19 +35,29 @@ class HomeViewController: UIViewController {
 //    let uploadImageArray = ["upload1","upload2","upload3","upload4","upload5","upload6","upload7","upload8"]
 //    let subscriptionImageArray=["sub1","sub2","sub3","sub4","sub5"]
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         subsView = SubscriptionView(frame: CGRect.zero)
         self.view.addSubview(subsView)
+        subsView.vcDelegate = self
         subsView.setAnchor(top: segmentedOutlet.bottomAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 10, paddingLeft: 0, paddingBottom: 10, paddingRight: 0)
 
         popsView = PopularView(frame: CGRect.zero)
         self.view.addSubview(popsView)
+        popsView.vcDelegate = self
         popsView.setAnchor(top: segmentedOutlet.bottomAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 10, paddingLeft: 0, paddingBottom: 10, paddingRight: 0)
         
         subsView.isHidden = true
         popsView.isHidden = false
+        
+        
         
         
 //        popularView.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
@@ -147,6 +157,13 @@ class HomeViewController: UIViewController {
         default:
             print("kosong")
         }
+    }
+    
+    func detail(name: String, uploader: String, image: String, likeCount: Int) {
+        let dt = PostDetailViewController()
+        dt.setData(name: name, uploader: uploader, image: image, likeCount: likeCount)
+        self.navigationController?.pushViewController(dt, animated: true)
+        self.tabBarController?.tabBar.isHidden = true
     }
     
 }

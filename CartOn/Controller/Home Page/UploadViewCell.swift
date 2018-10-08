@@ -22,7 +22,9 @@ class UploadViewCell: UICollectionViewCell{
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
-        iv.layer.cornerRadius = 15
+//        iv.layer.cornerRadius = 15
+        iv.layer.borderWidth = 0.3
+        iv.layer.borderColor = UIColor.gray.cgColor
         return iv
     }()
     
