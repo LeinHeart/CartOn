@@ -10,6 +10,7 @@ import UIKit
 
 class SubscriptionView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
+    let subsPost = PostList().subsList
     
     let subcriptionCellId = "subscriptionCellId"
     let subscriptionImageArray=["sub1","sub2","sub3","sub4","sub5"]
@@ -44,12 +45,15 @@ class SubscriptionView: UIView,UICollectionViewDelegate,UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return subscriptionImageArray.count
+        return subsPost.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: subcriptionCellId, for: indexPath) as! SubscriptionViewCell
-        cell.subscriptionNames = subscriptionImageArray[indexPath.item]
+        cell.subscriptionNames = subsPost[indexPath.row].image
+        cell.titleLabel.text = subsPost[indexPath.row].imageTitle
+        cell.uploaderLabel.text = subsPost[indexPath.row].uploaderName
+        cell.likeCount.text = String(subsPost[indexPath.row].likeCount)
         return cell
     }
     
