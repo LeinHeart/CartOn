@@ -1,18 +1,17 @@
 //
-//  UploadViewCell.swift
+//  SubscriptionViewCell.swift
 //  CartOn
 //
-//  Created by Kristopher Chayadi on 04/10/18.
+//  Created by Kristopher Chayadi on 08/10/18.
 //  Copyright © 2018 Kristopher Chayadi. All rights reserved.
 //
 
 import UIKit
 
-class UploadViewCell: UICollectionViewCell{
-    
-    var uploadImages: String? {
+class SubscriptionViewCell: UICollectionViewCell{
+    var subscriptionNames: String? {
         didSet{
-            if let imageName = uploadImages {
+            if let imageName = subscriptionNames {
                 imageView.image = UIImage(named: imageName)
             }
         }
@@ -81,4 +80,3 @@ class UploadViewCell: UICollectionViewCell{
         fatalError("init(coder:) has not been implemented")
     }
 }
-
