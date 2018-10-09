@@ -1,22 +1,23 @@
 //
-//  UploadViewCell.swift
+//  SubscriptionViewCell.swift
 //  CartOn
 //
-//  Created by Kristopher Chayadi on 04/10/18.
+//  Created by Kristopher Chayadi on 08/10/18.
 //  Copyright © 2018 Kristopher Chayadi. All rights reserved.
 //
 
 import UIKit
 
-class UploadViewCell: UICollectionViewCell{
-    
-    var uploadImages: String? {
+class SubscriptionViewCell: UICollectionViewCell{
+    var subscriptionNames: String? {
         didSet{
-            if let imageName = uploadImages {
+            if let imageName = subscriptionNames {
                 imageView.image = UIImage(named: imageName)
             }
         }
     }
+    
+    
     
     let imageView:UIImageView = {
         let iv = UIImageView()
@@ -28,34 +29,42 @@ class UploadViewCell: UICollectionViewCell{
         return iv
     }()
     
-    var titleLabel : UILabel = {
+
+    
+    let titleLabel : UILabel = {
         let tl = UILabel()
         tl.font = UIFont(name: "Avenir-medium", size: 11)
         tl.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
         return tl
     }()
-    var uploaderLabel : UILabel = {
-        let tl = UILabel()
-        tl.font = UIFont(name: "Avenir-medium", size: 11)
-        tl.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
-        return tl
-    }()
-    var likeCount = Int()
-    var likeLabel : UILabel = {
+    let uploaderLabel : UILabel = {
         let tl = UILabel()
         tl.font = UIFont(name: "Avenir-medium", size: 11)
         tl.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
         return tl
     }()
     
-    var likeIcon = UIImageView.init()
+    var likeCount = Int()
+    let likeLabel : UILabel = {
+        let tl = UILabel()
+        tl.font = UIFont(name: "Avenir-medium", size: 11)
+        tl.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+        return tl
+    }()
+    
+    
+    let likeIcon = UIImageView.init()
+    
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
+
     }
     
     func setup(){
+        
         let tapRegoc = UITapGestureRecognizer(target: self, action: #selector(tapDetected))
         
         backgroundColor = .white
@@ -65,12 +74,12 @@ class UploadViewCell: UICollectionViewCell{
         likeIcon.isUserInteractionEnabled = true
         likeIcon.addGestureRecognizer(tapRegoc)
         
-        
         uploaderLabel.frame = CGRect(x: 0, y: 0, width: 150, height: 20)
         
         DispatchQueue.main.async {
             self.likeLabel.text = String(self.likeCount)
         }
+        
         
         likeIcon.image = UIImage(named: "like")
         likeIcon.frame = CGRect(x: 0, y: 0, width: 18, height: 18)
@@ -92,6 +101,7 @@ class UploadViewCell: UICollectionViewCell{
         if likeIcon.backgroundColor == nil{
             likeIcon.backgroundColor = .orange
                 self.likeCount += 1
+            
             DispatchQueue.main.async {
                 self.likeLabel.text = String(self.likeCount)
             }
@@ -100,6 +110,7 @@ class UploadViewCell: UICollectionViewCell{
         else{
             likeIcon.backgroundColor = nil
                 self.likeCount -= 1
+            
             DispatchQueue.main.async {
                 self.likeLabel.text = String(self.likeCount)
             }
@@ -111,4 +122,3 @@ class UploadViewCell: UICollectionViewCell{
         fatalError("init(coder:) has not been implemented")
     }
 }
-

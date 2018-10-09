@@ -20,7 +20,11 @@
                         <viewLayoutGuide key="safeArea" id="FT8-Q0-hq5"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Profile" id="i9A-SZ-Rpg">
-                        <barButtonItem key="rightBarButtonItem" title="Edit" id="SMC-kg-nH6"/>
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="SMC-kg-nH6">
+                            <connections>
+                                <action selector="editBtnAction:" destination="H9S-IX-DWc" id="1Rh-DY-i6p"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
