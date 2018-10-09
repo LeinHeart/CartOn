@@ -13,7 +13,6 @@
 		5A09EB24216B530600268856 /* PostClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A09EB23216B530600268856 /* PostClass.swift */; };
 		5A09EB26216B530F00268856 /* PostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A09EB25216B530F00268856 /* PostList.swift */; };
 		5A09EB28216B79B200268856 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A09EB27216B79B200268856 /* PostDetailViewController.swift */; };
-		5A2FA5AD2164EBF000F50ECA /* MyTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2FA5AC2164EBF000F50ECA /* MyTabBarViewController.swift */; };
 		5A2FA5B02166287400F50ECA /* TopUploadViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2FA5AF2166287400F50ECA /* TopUploadViewCell.swift */; };
 		5A2FA5B22166289500F50ECA /* UploadViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2FA5B12166289500F50ECA /* UploadViewCell.swift */; };
 		5A2FA5B4216628CF00F50ECA /* ExtentionUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2FA5B3216628CF00F50ECA /* ExtentionUIView.swift */; };
@@ -29,6 +28,7 @@
 		5A6BCA5921675B6600DB90DD /* Caption.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A6BCA5521675B6600DB90DD /* Caption.storyboard */; };
 		5A6BCA5C21675B9800DB90DD /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6BCA5A21675B9800DB90DD /* UploadViewController.swift */; };
 		5A6BCA5D21675B9800DB90DD /* CaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6BCA5B21675B9800DB90DD /* CaptionViewController.swift */; };
+		5AC05D50216CA906009251FC /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC05D4F216CA906009251FC /* TabBarViewController.swift */; };
 		5AE1B4FA216208470069ED79 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE1B4F9216208470069ED79 /* SearchViewController.swift */; };
 		5AE1B4FC216217C80069ED79 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE1B4FB216217C80069ED79 /* HomeViewController.swift */; };
 		5C5E57DFC548CC2989DC4DB8 /* Pods_CartOn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE0B9EC7ABA9893E284B1D3 /* Pods_CartOn.framework */; };
@@ -45,7 +45,6 @@
 		5A09EB23216B530600268856 /* PostClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostClass.swift; sourceTree = "<group>"; };
 		5A09EB25216B530F00268856 /* PostList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostList.swift; sourceTree = "<group>"; };
 		5A09EB27216B79B200268856 /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
-		5A2FA5AC2164EBF000F50ECA /* MyTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarViewController.swift; sourceTree = "<group>"; };
 		5A2FA5AF2166287400F50ECA /* TopUploadViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopUploadViewCell.swift; sourceTree = "<group>"; };
 		5A2FA5B12166289500F50ECA /* UploadViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewCell.swift; sourceTree = "<group>"; };
 		5A2FA5B3216628CF00F50ECA /* ExtentionUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionUIView.swift; sourceTree = "<group>"; };
@@ -64,6 +63,7 @@
 		5A6BCA5521675B6600DB90DD /* Caption.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Caption.storyboard; sourceTree = "<group>"; };
 		5A6BCA5A21675B9800DB90DD /* UploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UploadViewController.swift; path = CartOn/Controller/UploadViewController.swift; sourceTree = SOURCE_ROOT; };
 		5A6BCA5B21675B9800DB90DD /* CaptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CaptionViewController.swift; path = CartOn/Controller/CaptionViewController.swift; sourceTree = SOURCE_ROOT; };
+		5AC05D4F216CA906009251FC /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		5AE1B4F9216208470069ED79 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		5AE1B4FB216217C80069ED79 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		830DB9B1A08A895848CF40D6 /* Pods-CartOn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CartOn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CartOn/Pods-CartOn.debug.xcconfig"; sourceTree = "<group>"; };
@@ -181,8 +181,8 @@
 				E053CF47216637BC00D44A47 /* Profile Page */,
 				5A2FA5AE2166285900F50ECA /* Home Page */,
 				5A601C5A215A1CD500DFD17A /* ViewController.swift */,
+				5AC05D4F216CA906009251FC /* TabBarViewController.swift */,
 				5A09EB27216B79B200268856 /* PostDetailViewController.swift */,
-				5A2FA5AC2164EBF000F50ECA /* MyTabBarViewController.swift */,
 				5A6BCA5B21675B9800DB90DD /* CaptionViewController.swift */,
 				5A6BCA5A21675B9800DB90DD /* UploadViewController.swift */,
 			);
@@ -309,6 +309,7 @@
 				5A09EB26216B530F00268856 /* PostList.swift in Sources */,
 				E053CF4C216637BD00D44A47 /* CollectionViewCell.swift in Sources */,
 				5A6BCA5C21675B9800DB90DD /* UploadViewController.swift in Sources */,
+				5AC05D50216CA906009251FC /* TabBarViewController.swift in Sources */,
 				5AE1B4FA216208470069ED79 /* SearchViewController.swift in Sources */,
 				5A6BCA5D21675B9800DB90DD /* CaptionViewController.swift in Sources */,
 				5A09EB28216B79B200268856 /* PostDetailViewController.swift in Sources */,
@@ -322,7 +323,6 @@
 				5A09EB22216B4DBF00268856 /* SubscriptionView.swift in Sources */,
 				5A09EB1E216B3B3E00268856 /* SubscriptionViewCell.swift in Sources */,
 				5A601C59215A1CD500DFD17A /* AppDelegate.swift in Sources */,
-				5A2FA5AD2164EBF000F50ECA /* MyTabBarViewController.swift in Sources */,
 				5AE1B4FC216217C80069ED79 /* HomeViewController.swift in Sources */,
 				5A2FA5B4216628CF00F50ECA /* ExtentionUIView.swift in Sources */,
 			);
