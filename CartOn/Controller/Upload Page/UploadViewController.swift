@@ -8,19 +8,27 @@
 
 import UIKit
 
-class UploadViewController: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate {
+class UploadViewController: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate, CaptionViewProtocol {
 
     var opened: Bool = false
+    var vc = CaptionViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: nil, action: #selector(cancelBtn))
+    
+        vc.vcDelegate = self
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: nil, action: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
         super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = false
         
-        if (self.opened == false){
+        if(self.opened == false){
             self.opened = true
             
             if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary){
@@ -30,14 +38,10 @@ class UploadViewController: UIViewController,UINavigationControllerDelegate,UIIm
                 imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
                 self.present(imagePicker, animated: true, completion: nil)
             }
+        } else {
+            navigateHome()
         }
-        else{
-            self.opened = false
-            self.tabBarController?.selectedIndex = 0
-        }
-        
     }
-    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let selectedImage = info[.originalImage] as? UIImage else {
@@ -45,5 +49,17 @@ class UploadViewController: UIViewController,UINavigationControllerDelegate,UIIm
         }
         //imageView.image = selectedImage
         dismiss(animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.dismiss(animated: true, completion: nil)
+        self.tabBarController?.selectedIndex = 0
+        self.opened = false
+    }
+    
+    func navigateHome() {
+        self.tabBarController?.selectedIndex = 0
+        self.opened = false
     }
 }
