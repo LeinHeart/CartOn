@@ -14,13 +14,18 @@ class UploadViewController: UIViewController,UINavigationControllerDelegate,UIIm
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: nil, action: #selector(cancelBtn))
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: nil, action: #selector(cancelBtn))
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
         super.viewWillAppear(animated)
         
-        if (self.opened == false){
+        if(self.opened == false){
             self.opened = true
             
             if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary){
@@ -31,13 +36,7 @@ class UploadViewController: UIViewController,UINavigationControllerDelegate,UIIm
                 self.present(imagePicker, animated: true, completion: nil)
             }
         }
-        else{
-            self.opened = false
-            self.tabBarController?.selectedIndex = 0
-        }
-        
     }
-    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let selectedImage = info[.originalImage] as? UIImage else {
@@ -45,5 +44,18 @@ class UploadViewController: UIViewController,UINavigationControllerDelegate,UIIm
         }
         //imageView.image = selectedImage
         dismiss(animated: true, completion: nil)
+        self.navigationController?.pushViewController(CaptionViewController(), animated: true)
     }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.dismiss(animated: true, completion: nil)
+        self.tabBarController?.selectedIndex = 0
+        self.opened = false
+    }
+    
+    @objc func cancelBtn(){
+        self.opened = false
+        tabBarController?.selectedIndex = 0
+    }
+    
 }

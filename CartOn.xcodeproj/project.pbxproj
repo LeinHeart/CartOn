@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5A2FA5AD2164EBF000F50ECA /* MyTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2FA5AC2164EBF000F50ECA /* MyTabBarViewController.swift */; };
+		16075C192167673E00072897 /* Caption.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16075C182167673D00072897 /* Caption.storyboard */; };
+		16600D382167532E00582749 /* CaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16600D372167532E00582749 /* CaptionViewController.swift */; };
+		16600D3C2167534D00582749 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16600D3B2167534D00582749 /* UploadViewController.swift */; };
+		16600D3E2167538200582749 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16600D3D2167538200582749 /* TabBarViewController.swift */; };
 		5A2FA5B02166287400F50ECA /* TopUploadViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2FA5AF2166287400F50ECA /* TopUploadViewCell.swift */; };
 		5A2FA5B22166289500F50ECA /* UploadViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2FA5B12166289500F50ECA /* UploadViewCell.swift */; };
 		5A2FA5B4216628CF00F50ECA /* ExtentionUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2FA5B3216628CF00F50ECA /* ExtentionUIView.swift */; };
@@ -16,9 +19,9 @@
 		5A601C5E215A1CD500DFD17A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A601C5C215A1CD500DFD17A /* Main.storyboard */; };
 		5A601C60215A1CD700DFD17A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A601C5F215A1CD700DFD17A /* Assets.xcassets */; };
 		5A601C63215A1CD700DFD17A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A601C61215A1CD700DFD17A /* LaunchScreen.storyboard */; };
-		5A601C6B215A1D3000DFD17A /* home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A601C6A215A1D3000DFD17A /* home.storyboard */; };
-		5A601C6D215A1D8F00DFD17A /* profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A601C6C215A1D8F00DFD17A /* profile.storyboard */; };
-		5A601C6F215A1E5500DFD17A /* uploadImage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A601C6E215A1E5500DFD17A /* uploadImage.storyboard */; };
+		5A601C6B215A1D3000DFD17A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A601C6A215A1D3000DFD17A /* Home.storyboard */; };
+		5A601C6D215A1D8F00DFD17A /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A601C6C215A1D8F00DFD17A /* Profile.storyboard */; };
+		5A601C6F215A1E5500DFD17A /* UploadImage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A601C6E215A1E5500DFD17A /* UploadImage.storyboard */; };
 		5A601C75215A253000DFD17A /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A601C74215A253000DFD17A /* CloudKit.framework */; };
 		5AE1B4FA216208470069ED79 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE1B4F9216208470069ED79 /* SearchViewController.swift */; };
 		5AE1B4FC216217C80069ED79 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE1B4FB216217C80069ED79 /* HomeViewController.swift */; };
@@ -29,7 +32,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5A2FA5AC2164EBF000F50ECA /* MyTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarViewController.swift; sourceTree = "<group>"; };
+		16075C182167673D00072897 /* Caption.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Caption.storyboard; sourceTree = "<group>"; };
+		16600D372167532E00582749 /* CaptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CaptionViewController.swift; path = "CartOn/Controller/Upload Page/CaptionViewController.swift"; sourceTree = SOURCE_ROOT; };
+		16600D3B2167534D00582749 /* UploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
+		16600D3D2167538200582749 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		5A2FA5AF2166287400F50ECA /* TopUploadViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopUploadViewCell.swift; sourceTree = "<group>"; };
 		5A2FA5B12166289500F50ECA /* UploadViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewCell.swift; sourceTree = "<group>"; };
 		5A2FA5B3216628CF00F50ECA /* ExtentionUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionUIView.swift; sourceTree = "<group>"; };
@@ -40,9 +46,9 @@
 		5A601C5F215A1CD700DFD17A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A601C62215A1CD700DFD17A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A601C64215A1CD700DFD17A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5A601C6A215A1D3000DFD17A /* home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = home.storyboard; sourceTree = "<group>"; };
-		5A601C6C215A1D8F00DFD17A /* profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = profile.storyboard; sourceTree = "<group>"; };
-		5A601C6E215A1E5500DFD17A /* uploadImage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = uploadImage.storyboard; sourceTree = "<group>"; };
+		5A601C6A215A1D3000DFD17A /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		5A601C6C215A1D8F00DFD17A /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		5A601C6E215A1E5500DFD17A /* UploadImage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UploadImage.storyboard; sourceTree = "<group>"; };
 		5A601C72215A252800DFD17A /* CartOn.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CartOn.entitlements; sourceTree = "<group>"; };
 		5A601C74215A253000DFD17A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		5AE1B4F9216208470069ED79 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +74,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		16F0A3FF216B5D2500488052 /* Upload Page */ = {
+			isa = PBXGroup;
+			children = (
+				16600D3B2167534D00582749 /* UploadViewController.swift */,
+				16600D372167532E00582749 /* CaptionViewController.swift */,
+			);
+			path = "Upload Page";
+			sourceTree = "<group>";
+		};
 		3C027F3FD55A768B5E329274 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,10 +156,11 @@
 		5A601C77215A2A9000DFD17A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5A601C6A215A1D3000DFD17A /* home.storyboard */,
+				16075C182167673D00072897 /* Caption.storyboard */,
+				5A601C6A215A1D3000DFD17A /* Home.storyboard */,
 				5A601C5C215A1CD500DFD17A /* Main.storyboard */,
-				5A601C6C215A1D8F00DFD17A /* profile.storyboard */,
-				5A601C6E215A1E5500DFD17A /* uploadImage.storyboard */,
+				5A601C6C215A1D8F00DFD17A /* Profile.storyboard */,
+				5A601C6E215A1E5500DFD17A /* UploadImage.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -152,10 +168,11 @@
 		5A601C78215A2A9B00DFD17A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E053CF47216637BC00D44A47 /* Profile Page */,
+				16600D3D2167538200582749 /* TabBarViewController.swift */,
 				5A2FA5AE2166285900F50ECA /* Home Page */,
+				16F0A3FF216B5D2500488052 /* Upload Page */,
+				E053CF47216637BC00D44A47 /* Profile Page */,
 				5A601C5A215A1CD500DFD17A /* ViewController.swift */,
-				5A2FA5AC2164EBF000F50ECA /* MyTabBarViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -238,11 +255,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A601C63215A1CD700DFD17A /* LaunchScreen.storyboard in Resources */,
-				5A601C6F215A1E5500DFD17A /* uploadImage.storyboard in Resources */,
+				5A601C6F215A1E5500DFD17A /* UploadImage.storyboard in Resources */,
+				16075C192167673E00072897 /* Caption.storyboard in Resources */,
 				5A601C60215A1CD700DFD17A /* Assets.xcassets in Resources */,
-				5A601C6D215A1D8F00DFD17A /* profile.storyboard in Resources */,
+				5A601C6D215A1D8F00DFD17A /* Profile.storyboard in Resources */,
 				5A601C5E215A1CD500DFD17A /* Main.storyboard in Resources */,
-				5A601C6B215A1D3000DFD17A /* home.storyboard in Resources */,
+				5A601C6B215A1D3000DFD17A /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,15 +293,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				E053CF4C216637BD00D44A47 /* CollectionViewCell.swift in Sources */,
+				16600D3C2167534D00582749 /* UploadViewController.swift in Sources */,
 				5AE1B4FA216208470069ED79 /* SearchViewController.swift in Sources */,
 				5A2FA5B02166287400F50ECA /* TopUploadViewCell.swift in Sources */,
 				5A601C5B215A1CD500DFD17A /* ViewController.swift in Sources */,
 				5A2FA5B22166289500F50ECA /* UploadViewCell.swift in Sources */,
 				E053CF4B216637BD00D44A47 /* ProfileHeaderView.swift in Sources */,
 				E053CF4D216637BD00D44A47 /* ProfileViewController.swift in Sources */,
+				16600D382167532E00582749 /* CaptionViewController.swift in Sources */,
 				5A601C59215A1CD500DFD17A /* AppDelegate.swift in Sources */,
-				5A2FA5AD2164EBF000F50ECA /* MyTabBarViewController.swift in Sources */,
 				5AE1B4FC216217C80069ED79 /* HomeViewController.swift in Sources */,
+				16600D3E2167538200582749 /* TabBarViewController.swift in Sources */,
 				5A2FA5B4216628CF00F50ECA /* ExtentionUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

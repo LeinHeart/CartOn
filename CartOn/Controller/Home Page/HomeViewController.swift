@@ -8,7 +8,10 @@
 
 import UIKit
 
-class HomeViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+class HomeViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout, TabBarViewControllerDelegate {
+    func customTabBarControllerDelegate_CenterButtonTapped(tabBarController: TabBarViewController, button: UIButton, buttonState: Bool) {
+    }
+    
     
     @IBOutlet weak var segmentedOutlet: UISegmentedControl!
     
@@ -38,6 +41,8 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         view.addSubview(collectionView)
         collectionView.setAnchor(top: segmentedOutlet.bottomAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 5, paddingLeft: 0, paddingBottom: 5, paddingRight: 0x1)
         // Do any additional setup after loading the view.
+        
+         (self.tabBarController as! TabBarViewController).customTabBarControllerDelegate = self;
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
