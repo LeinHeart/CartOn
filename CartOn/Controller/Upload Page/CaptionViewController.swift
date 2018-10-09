@@ -14,12 +14,10 @@ class CaptionViewController: UIViewController {
     let imageView = UIImageView.init()
     let textLabel = UILabel.init()
     
-    
+    var vcDelegate: CaptionViewProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: nil, action: #selector(cancelBtn))
-        
         self.view.backgroundColor = .gray
         
         stack = UIStackView(frame: CGRect(x: 0, y: 0, width: 0, height: 0 ))
@@ -28,8 +26,16 @@ class CaptionViewController: UIViewController {
         self.view.addSubview(stack)
         stack.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
         
-        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: nil, action: nil)
         setup()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        //vcDelegate?.navigateHome()
     }
     
   
@@ -67,3 +73,8 @@ class CaptionViewController: UIViewController {
         stack.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
     }
 }
+
+protocol CaptionViewProtocol {
+    func navigateHome()
+}
+

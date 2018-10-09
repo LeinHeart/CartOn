@@ -8,22 +8,25 @@
 
 import UIKit
 
-class UploadViewController: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate {
+class UploadViewController: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate, CaptionViewProtocol {
 
     var opened: Bool = false
+    var vc = CaptionViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: nil, action: #selector(cancelBtn))
-        
+    
+        vc.vcDelegate = self
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: nil, action: #selector(cancelBtn))
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: nil, action: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = false
         
         if(self.opened == false){
             self.opened = true
@@ -35,6 +38,8 @@ class UploadViewController: UIViewController,UINavigationControllerDelegate,UIIm
                 imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
                 self.present(imagePicker, animated: true, completion: nil)
             }
+        } else {
+            navigateHome()
         }
     }
     
@@ -44,7 +49,7 @@ class UploadViewController: UIViewController,UINavigationControllerDelegate,UIIm
         }
         //imageView.image = selectedImage
         dismiss(animated: true, completion: nil)
-        self.navigationController?.pushViewController(CaptionViewController(), animated: true)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -53,9 +58,8 @@ class UploadViewController: UIViewController,UINavigationControllerDelegate,UIIm
         self.opened = false
     }
     
-    @objc func cancelBtn(){
+    func navigateHome() {
+        self.tabBarController?.selectedIndex = 0
         self.opened = false
-        tabBarController?.selectedIndex = 0
     }
-    
 }
