@@ -35,6 +35,7 @@
 		E053CF4B216637BD00D44A47 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E053CF48216637BC00D44A47 /* ProfileHeaderView.swift */; };
 		E053CF4C216637BD00D44A47 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E053CF49216637BC00D44A47 /* CollectionViewCell.swift */; };
 		E053CF4D216637BD00D44A47 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E053CF4A216637BC00D44A47 /* ProfileViewController.swift */; };
+		E0ABE11E216DF6850052217D /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ABE11D216DF6850052217D /* RootTabBarViewController.swift */; };
 		E0DF6D6B216B833E007CD383 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DF6D6A216B833E007CD383 /* EditProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		E053CF48216637BC00D44A47 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		E053CF49216637BC00D44A47 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		E053CF4A216637BC00D44A47 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E0ABE11D216DF6850052217D /* RootTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarViewController.swift; sourceTree = "<group>"; };
 		E0DF6D6A216B833E007CD383 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		F7F06CF8879337D46BCE8E39 /* Pods-CartOn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CartOn.release.xcconfig"; path = "Pods/Target Support Files/Pods-CartOn/Pods-CartOn.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -185,6 +187,7 @@
 				5A2FA5AC2164EBF000F50ECA /* MyTabBarViewController.swift */,
 				5A6BCA5B21675B9800DB90DD /* CaptionViewController.swift */,
 				5A6BCA5A21675B9800DB90DD /* UploadViewController.swift */,
+				E0ABE11D216DF6850052217D /* RootTabBarViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				E053CF4D216637BD00D44A47 /* ProfileViewController.swift in Sources */,
 				5A09EB22216B4DBF00268856 /* SubscriptionView.swift in Sources */,
 				5A09EB1E216B3B3E00268856 /* SubscriptionViewCell.swift in Sources */,
+				E0ABE11E216DF6850052217D /* RootTabBarViewController.swift in Sources */,
 				5A601C59215A1CD500DFD17A /* AppDelegate.swift in Sources */,
 				5A2FA5AD2164EBF000F50ECA /* MyTabBarViewController.swift in Sources */,
 				5AE1B4FC216217C80069ED79 /* HomeViewController.swift in Sources */,
