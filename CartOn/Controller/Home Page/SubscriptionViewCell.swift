@@ -100,7 +100,8 @@ class SubscriptionViewCell: UICollectionViewCell{
     @objc func tapDetected(){
         if likeIcon.backgroundColor == nil{
             likeIcon.backgroundColor = .orange
-            likeCount += 1
+                self.likeCount += 1
+            
             DispatchQueue.main.async {
                 self.likeLabel.text = String(self.likeCount)
             }
@@ -108,7 +109,8 @@ class SubscriptionViewCell: UICollectionViewCell{
         }
         else{
             likeIcon.backgroundColor = nil
-            likeCount -= 1
+                self.likeCount -= 1
+            
             DispatchQueue.main.async {
                 self.likeLabel.text = String(self.likeCount)
             }
