@@ -39,6 +39,7 @@ class ProfileViewController: UIViewController , UICollectionViewDelegate, UIColl
         
         view.addSubview(collectionView)
         collectionView.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: nil, action: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,7 +47,7 @@ class ProfileViewController: UIViewController , UICollectionViewDelegate, UIColl
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: nil, action: #selector(editBtnAction))
     }
     
     //MARK CollectionView : cell
@@ -87,8 +88,8 @@ class ProfileViewController: UIViewController , UICollectionViewDelegate, UIColl
         return CGSize(width: self.view.frame.width, height: 180)
     }
     
-    @IBAction func editBtnAction(_ sender: Any) {
-        self.navigationController?.pushViewController(EditProfileViewController(), animated: true)
+    @objc func editBtnAction() {
+        navigationController?.pushViewController(EditProfileViewController(), animated: true)
         self.tabBarController?.tabBar.isHidden = true
     }
 }

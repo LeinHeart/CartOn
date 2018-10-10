@@ -16,7 +16,6 @@
 		5A09EB24216B530600268856 /* PostClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A09EB23216B530600268856 /* PostClass.swift */; };
 		5A09EB26216B530F00268856 /* PostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A09EB25216B530F00268856 /* PostList.swift */; };
 		5A09EB28216B79B200268856 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A09EB27216B79B200268856 /* PostDetailViewController.swift */; };
-		5A2FA5AD2164EBF000F50ECA /* MyTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2FA5AC2164EBF000F50ECA /* MyTabBarViewController.swift */; };
 		5A2FA5B02166287400F50ECA /* TopUploadViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2FA5AF2166287400F50ECA /* TopUploadViewCell.swift */; };
 		5A2FA5B22166289500F50ECA /* UploadViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2FA5B12166289500F50ECA /* UploadViewCell.swift */; };
 		5A2FA5B4216628CF00F50ECA /* ExtentionUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2FA5B3216628CF00F50ECA /* ExtentionUIView.swift */; };
@@ -48,7 +47,6 @@
 		5A09EB23216B530600268856 /* PostClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostClass.swift; sourceTree = "<group>"; };
 		5A09EB25216B530F00268856 /* PostList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostList.swift; sourceTree = "<group>"; };
 		5A09EB27216B79B200268856 /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
-		5A2FA5AC2164EBF000F50ECA /* MyTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarViewController.swift; sourceTree = "<group>"; };
 		5A2FA5AF2166287400F50ECA /* TopUploadViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopUploadViewCell.swift; sourceTree = "<group>"; };
 		5A2FA5B12166289500F50ECA /* UploadViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewCell.swift; sourceTree = "<group>"; };
 		5A2FA5B3216628CF00F50ECA /* ExtentionUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionUIView.swift; sourceTree = "<group>"; };
@@ -188,11 +186,10 @@
 			children = (
 				E053CF47216637BC00D44A47 /* Profile Page */,
 				5A2FA5AE2166285900F50ECA /* Home Page */,
+				16F0A400216C995C00488052 /* Upload Page */,
 				5A601C5A215A1CD500DFD17A /* ViewController.swift */,
 				5A09EB27216B79B200268856 /* PostDetailViewController.swift */,
 				16F0A405216CA7EC00488052 /* TabBarViewController.swift */,
-				5A2FA5AC2164EBF000F50ECA /* MyTabBarViewController.swift */,
-				16F0A400216C995C00488052 /* Upload Page */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -330,7 +327,6 @@
 				5A09EB22216B4DBF00268856 /* SubscriptionView.swift in Sources */,
 				5A09EB1E216B3B3E00268856 /* SubscriptionViewCell.swift in Sources */,
 				5A601C59215A1CD500DFD17A /* AppDelegate.swift in Sources */,
-				5A2FA5AD2164EBF000F50ECA /* MyTabBarViewController.swift in Sources */,
 				5AE1B4FC216217C80069ED79 /* HomeViewController.swift in Sources */,
 				5A2FA5B4216628CF00F50ECA /* ExtentionUIView.swift in Sources */,
 			);

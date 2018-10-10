@@ -43,14 +43,13 @@ class HomeViewController: UIViewController, SubscriptionDelegate, PopularDelegat
         super.viewDidLoad()
         
         
-        
         subsView = SubscriptionView(frame: CGRect.zero)
-        self.view.addSubview(subsView)
+        view.addSubview(subsView)
         subsView.vcDelegate = self
-        subsView.setAnchor(top: segmentedOutlet.bottomAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 10, paddingLeft: 0, paddingBottom: 10, paddingRight: 0)
+        subsView.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 10, paddingLeft: 0, paddingBottom: 10, paddingRight: 0)
 
         popsView = PopularView(frame: CGRect.zero)
-        self.view.addSubview(popsView)
+        view.addSubview(popsView)
         popsView.vcDelegate = self
         popsView.setAnchor(top: segmentedOutlet.bottomAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 10, paddingLeft: 0, paddingBottom: 10, paddingRight: 0)
         
