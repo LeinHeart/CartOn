@@ -8,9 +8,13 @@
 
 import UIKit
 
+struct Chosen {
+    static var isChosen: Bool = false
+}
+
 class UploadViewController: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate, CaptionViewProtocol {
 
-    var opened: Bool = false
+    var quit: Bool = false
     var vc = CaptionViewController()
     
     override func viewDidLoad() {
@@ -27,19 +31,21 @@ class UploadViewController: UIViewController,UINavigationControllerDelegate,UIIm
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = false
-        
-        if(self.opened == false){
-            self.opened = true
+        if(self.quit == false){
+            self.quit = true
             
-            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary){
-                let imagePicker = UIImagePickerController()
-                imagePicker.delegate = self
-                imagePicker.allowsEditing = true
-                imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
-                self.present(imagePicker, animated: true, completion: nil)
+            if (Chosen.isChosen == false){
+                if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary){
+                    let imagePicker = UIImagePickerController()
+                    imagePicker.delegate = self
+                    imagePicker.allowsEditing = true
+                    imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+                    self.present(imagePicker, animated: true, completion: nil)
+                }
             }
-        } else {
-            navigateHome()
+        }
+        else {
+            self.navigateHome()
         }
     }
     
@@ -48,18 +54,19 @@ class UploadViewController: UIViewController,UINavigationControllerDelegate,UIIm
             fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
         }
         //imageView.image = selectedImage
+        self.quit = false
+        Chosen.isChosen = true
         dismiss(animated: true, completion: nil)
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.dismiss(animated: true, completion: nil)
-        self.tabBarController?.selectedIndex = 0
-        self.opened = false
+        self.navigateHome()
     }
     
     func navigateHome() {
         self.tabBarController?.selectedIndex = 0
-        self.opened = false
+        self.quit = false
     }
 }

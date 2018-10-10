@@ -36,6 +36,7 @@ class CaptionViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         //vcDelegate?.navigateHome()
+        Chosen.isChosen = false
     }
     
   
