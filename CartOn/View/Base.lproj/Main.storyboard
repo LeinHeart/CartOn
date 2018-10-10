@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar View Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="W1N-tT-SKW">
             <objects>
-                <tabBarController id="EZj-TW-KbV" customClass="TabBarViewController" customModule="CartOn" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="EZj-TW-KbV" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="T6M-tg-1k1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -32,7 +32,7 @@
         <scene sceneID="Wa0-j4-jnB">
             <objects>
                 <viewControllerPlaceholder storyboardName="Home" id="G35-gI-wQC" userLabel="Home" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="1" title="Home" image="Home " landscapeImage="Home " largeContentSizeImage="Home " selectedImage="Home " id="n10-af-L0i"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Home" image="Home" landscapeImage="Home" largeContentSizeImage="Home" selectedImage="Home" id="n10-af-L0i"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hJQ-Lu-HJN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -52,7 +52,7 @@
         <scene sceneID="qT6-7u-6BU">
             <objects>
                 <viewControllerPlaceholder storyboardName="Profile" id="uV0-bG-1Vk" userLabel="Profile" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="3" title="Profile" image="Profile " landscapeImage="Profile " largeContentSizeImage="Profile " selectedImage="Profile " id="wtg-WS-cWg"/>
+                    <tabBarItem key="tabBarItem" tag="3" title="Profile" image="Profile" landscapeImage="Profile" largeContentSizeImage="Profile" selectedImage="Profile" id="wtg-WS-cWg"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7mp-NG-8xr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -61,7 +61,7 @@
     </scenes>
     <resources>
         <image name="Add" width="31" height="32"/>
-        <image name="Home " width="33" height="32"/>
-        <image name="Profile " width="32" height="32"/>
+        <image name="Home" width="33" height="32"/>
+        <image name="Profile" width="32" height="32"/>
     </resources>
 </document>
