@@ -15,13 +15,14 @@ class PostDetailViewController: UIViewController {
     var uploader = String.init()
     var likeCount = Int.init()
     
+    //Mark Image Title
     var titleLabel :UILabel = {
         let tl = UILabel()
-        tl.font = UIFont(name: "Avenir-medium", size: 20)
+        tl.font = UIFont(name: "Avenir-medium", size: 18)
         tl.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
         return tl
     }()
-    
+    //Mark UIImage
     let imageView :UIImageView = {
         let iv = UIImageView()
 //        iv.frame = CGRect(x: 0, y: 64, width: 0, height: 0)
@@ -31,16 +32,19 @@ class PostDetailViewController: UIViewController {
         return iv
     }()
     
+    //Mark Uploader Name
     var uploaderName :UILabel = {
         let tl = UILabel()
-        tl.font = UIFont(name: "Avenir-medium", size: 20)
+        tl.font = UIFont(name: "Avenir-medium", size: 14)
         tl.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+        tl.textColor = .blue
         return tl
     }()
     
+    //Mark Like
     var likeLabel :UILabel = {
         let tl = UILabel()
-        tl.font = UIFont(name: "Avenir-medium", size: 20)
+        tl.font = UIFont(name: "Avenir-medium", size: 14)
         tl.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
         return tl
     }()
@@ -51,6 +55,69 @@ class PostDetailViewController: UIViewController {
         iv.image = UIImage(named: "like")
         return iv
     }()
+    
+    //Mark Time Uploaded
+    var timeIcon :UIImageView = {
+        let iv = UIImageView()
+        iv.frame = CGRect(x: 0, y: 0, width: 18, height: 18)
+        iv.image = UIImage(named: "like")
+        return iv
+    }()
+    var timeStamp :UILabel = {
+        let tl = UILabel()
+        tl.font = UIFont(name: "Avenir-medium", size: 14)
+        tl.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+        return tl
+    }()
+    
+    
+    //Mark : Saw
+    var sawIcon :UIImageView = {
+        let iv = UIImageView()
+        iv.frame = CGRect(x: 0, y: 0, width: 18, height: 18)
+        iv.image = UIImage(named: "like")
+        return iv
+    }()
+    var sawCount :UILabel = {
+        let tl = UILabel()
+        tl.font = UIFont(name: "Avenir-medium", size: 14)
+        tl.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+        return tl
+    }()
+    
+    
+    //Mark : Tags
+    var tagsIcon :UIImageView = {
+        let iv = UIImageView()
+        iv.frame = CGRect(x: 0, y: 0, width: 18, height: 18)
+        iv.image = UIImage(named: "like")
+        return iv
+    }()
+    
+    var tagsCount :UILabel = {
+        let tl = UILabel()
+        tl.font = UIFont(name: "Avenir-medium", size: 14)
+        tl.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+        return tl
+    }()
+    
+    //Mark : Description
+    var descIcon :UIImageView = {
+        let iv = UIImageView()
+        iv.frame = CGRect(x: 0, y: 0, width: 18, height: 18)
+        iv.image = UIImage(named: "like")
+        return iv
+    }()
+    
+    var descLabel :UILabel = {
+        let tl = UILabel()
+        tl.font = UIFont(name: "Avenir-medium", size: 14)
+        tl.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+        return tl
+    }()
+    
+    
+    
     
     
     override func viewDidLoad() {
@@ -70,6 +137,11 @@ class PostDetailViewController: UIViewController {
         view.backgroundColor = .white
         
         titleLabel.text = name
+        timeStamp.text = "Uploaded 7 minutes ago by "
+        sawCount.text = "250"
+        tagsCount.text = "Memes,Cat,Bear,Animal,Cute"
+        descLabel.text = "Ini lucu loh :)"
+        
         
         let imageTampung = UIImage(named: image)
         imageView.image = imageTampung
@@ -96,12 +168,28 @@ class PostDetailViewController: UIViewController {
         view.addSubview(likeIcon)
         view.addSubview(uploaderName)
         view.addSubview(likeLabel)
+        view.addSubview(timeIcon)
+        view.addSubview(timeStamp)
+        view.addSubview(sawIcon)
+        view.addSubview(sawCount)
+        view.addSubview(tagsIcon)
+        view.addSubview(tagsCount)
+        view.addSubview(descIcon)
+        view.addSubview(descLabel)
         
         imageView.setAnchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0,width : view.frame.width, height: (imageTampung!.size.height) * (view.frame.width / (imageTampung?.size.height)!))
-        titleLabel.setAnchor(top: imageView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 0)
-        uploaderName.setAnchor(top: titleLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 0)
-        likeIcon.setAnchor(top: uploaderName.bottomAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 15, paddingLeft: 10, paddingBottom: 0, paddingRight: 0)
-        likeLabel.setAnchor(top: uploaderName.bottomAnchor, left: likeIcon.rightAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 0)
+        titleLabel.setAnchor(top: imageView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 10, paddingLeft: 18, paddingBottom: 0, paddingRight: 0)
+        timeIcon.setAnchor(top: titleLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 18, paddingBottom: 0, paddingRight: 0)
+        timeStamp.setAnchor(top: titleLabel.bottomAnchor, left: timeIcon.leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 43, paddingBottom: 0, paddingRight: 0)
+        uploaderName.setAnchor(top: titleLabel.bottomAnchor, left: timeStamp.rightAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 5, paddingBottom: 0, paddingRight: 0)
+        likeIcon.setAnchor(top: timeIcon.bottomAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 18, paddingBottom: 0, paddingRight: 0)
+        likeLabel.setAnchor(top: timeIcon.bottomAnchor, left: likeIcon.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 43, paddingBottom: 0, paddingRight: 0)
+        sawIcon.setAnchor(top: likeIcon.bottomAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 18, paddingBottom: 0, paddingRight: 0)
+        sawCount.setAnchor(top: likeIcon.bottomAnchor, left: sawIcon.leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 43, paddingBottom: 0, paddingRight: 0)
+        tagsIcon.setAnchor(top: sawIcon.bottomAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 18, paddingBottom: 0, paddingRight: 0)
+        tagsCount.setAnchor(top: sawIcon.bottomAnchor, left: tagsIcon.leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 43, paddingBottom: 0, paddingRight: 0)
+        descIcon.setAnchor(top: tagsIcon.bottomAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 18, paddingBottom: 0, paddingRight: 0)
+        descLabel.setAnchor(top: tagsIcon.bottomAnchor, left: descIcon.leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 43, paddingBottom: 0, paddingRight: 0)
         
     }
     

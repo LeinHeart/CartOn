@@ -18,9 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Czy-z3-ZFd">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Czy-z3-ZFd">
                                 <rect key="frame" x="16" y="102" width="343" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Popular"/>
                                     <segment title="Subscription"/>
@@ -31,6 +30,11 @@
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Czy-z3-ZFd" firstAttribute="top" secondItem="aCu-Ct-r5z" secondAttribute="top" constant="14" id="HKH-3W-NP1"/>
+                            <constraint firstItem="Czy-z3-ZFd" firstAttribute="leading" secondItem="aCu-Ct-r5z" secondAttribute="leading" constant="16" id="ffd-3b-TTR"/>
+                            <constraint firstItem="aCu-Ct-r5z" firstAttribute="trailing" secondItem="Czy-z3-ZFd" secondAttribute="trailing" constant="16" id="whB-Hq-2SF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="aCu-Ct-r5z"/>
                     </view>
                     <navigationItem key="navigationItem" id="B4c-lF-p6P">
@@ -72,9 +76,7 @@
         <scene sceneID="Z8k-Ht-pm1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NpD-MF-Qmc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="Home" id="DT1-kI-JXd">
-                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Home" image="PicoloLogo" id="DT1-kI-JXd"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Gwa-gr-2AA">
@@ -92,6 +94,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Home" width="33" height="32"/>
+        <image name="PicoloLogo" width="33" height="25"/>
     </resources>
 </document>
