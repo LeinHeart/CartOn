@@ -39,7 +39,11 @@ class ProfileViewController: UIViewController , UICollectionViewDelegate, UIColl
         
         view.addSubview(collectionView)
         collectionView.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: nil, action: nil)
+        
+        let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(ProfileViewController.editBtnAction))
+        
+        navigationItem.rightBarButtonItem = editButton
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

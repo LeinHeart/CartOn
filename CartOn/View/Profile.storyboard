@@ -31,8 +31,11 @@
         <scene sceneID="LJ8-oO-WYv">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EmI-jS-TMu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="7ge-xx-lDp"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="Profile" image="Profile" id="uBi-1d-O0k">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
+                    </tabBarItem>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CSe-0D-FBL">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -47,4 +50,7 @@
             <point key="canvasLocation" x="429.60000000000002" y="-187.68472906403943"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Profile" width="32" height="32"/>
+    </resources>
 </document>

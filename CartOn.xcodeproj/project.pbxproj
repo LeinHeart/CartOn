@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		16F0A403216C995C00488052 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F0A401216C995C00488052 /* UploadViewController.swift */; };
 		16F0A404216C995C00488052 /* CaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F0A402216C995C00488052 /* CaptionViewController.swift */; };
-		16F0A406216CA7EC00488052 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F0A405216CA7EC00488052 /* TabBarViewController.swift */; };
 		5A09EB1E216B3B3E00268856 /* SubscriptionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A09EB1D216B3B3E00268856 /* SubscriptionViewCell.swift */; };
 		5A09EB20216B465C00268856 /* PopularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A09EB1F216B465C00268856 /* PopularView.swift */; };
 		5A09EB22216B4DBF00268856 /* SubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A09EB21216B4DBF00268856 /* SubscriptionView.swift */; };
@@ -40,7 +39,6 @@
 /* Begin PBXFileReference section */
 		16F0A401216C995C00488052 /* UploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		16F0A402216C995C00488052 /* CaptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptionViewController.swift; sourceTree = "<group>"; };
-		16F0A405216CA7EC00488052 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		5A09EB1D216B3B3E00268856 /* SubscriptionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionViewCell.swift; sourceTree = "<group>"; };
 		5A09EB1F216B465C00268856 /* PopularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularView.swift; sourceTree = "<group>"; };
 		5A09EB21216B4DBF00268856 /* SubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionView.swift; sourceTree = "<group>"; };
@@ -189,7 +187,6 @@
 				16F0A400216C995C00488052 /* Upload Page */,
 				5A601C5A215A1CD500DFD17A /* ViewController.swift */,
 				5A09EB27216B79B200268856 /* PostDetailViewController.swift */,
-				16F0A405216CA7EC00488052 /* TabBarViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -313,7 +310,6 @@
 				16F0A403216C995C00488052 /* UploadViewController.swift in Sources */,
 				5A09EB26216B530F00268856 /* PostList.swift in Sources */,
 				E053CF4C216637BD00D44A47 /* CollectionViewCell.swift in Sources */,
-				16F0A406216CA7EC00488052 /* TabBarViewController.swift in Sources */,
 				5AE1B4FA216208470069ED79 /* SearchViewController.swift in Sources */,
 				5A09EB28216B79B200268856 /* PostDetailViewController.swift in Sources */,
 				5A2FA5B02166287400F50ECA /* TopUploadViewCell.swift in Sources */,
