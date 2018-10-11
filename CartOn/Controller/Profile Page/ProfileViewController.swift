@@ -79,7 +79,7 @@ class ProfileViewController: UIViewController , UICollectionViewDelegate, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        detail(name: post[indexPath.item].imageTitle, uploader: post[indexPath.item].uploaderName, image: post[indexPath.item].image, likeCount: post[indexPath.item].likeCount)
+        detail(name: post[indexPath.item].imageTitle, uploader: post[indexPath.item].uploaderName, image: post[indexPath.item].image, likeCount: post[indexPath.item].likeCount, description: post[indexPath.row].imageDescription!, tag: post[indexPath.row].tags)
     }
     
     // MARK CollectionView : header
@@ -104,10 +104,15 @@ class ProfileViewController: UIViewController , UICollectionViewDelegate, UIColl
         self.tabBarController?.tabBar.isHidden = true
     }
     
-    func detail(name: String, uploader: String, image: String, likeCount: Int) {
+    func detail(name: String, uploader: String, image: String, likeCount: Int, description: String ,tag:[String]) {
         let dt = PostDetailViewController()
-        dt.setData(name: name, uploader: uploader, image: image, likeCount: likeCount)
+        dt.setData(name: name, uploader: uploader, image: image, likeCount: likeCount, description: description, tag: tag)
         self.navigationController?.pushViewController(dt, animated: true)
         self.tabBarController?.tabBar.isHidden = true
     }
+    
+    func appendData(){
+        
+    }
+    
 }

@@ -36,6 +36,7 @@ class PopularView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UI
     var topUploadUploaderArray = [String]()
     var topUploadLikeCountArray = [Int]()
     var topUploadDescription = [String]()
+    var topUploadTags = [[String]]()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -58,6 +59,7 @@ class PopularView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UI
             topUploadUploaderArray.append(name.uploaderName)
             topUploadLikeCountArray.append(name.likeCount)
             topUploadDescription.append(name.imageDescription!)
+            topUploadTags.append(name.tags)
         }
     }
     
@@ -86,6 +88,7 @@ class PopularView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UI
             cell.titleLabel.text = uploadPost[indexPath.row].imageTitle
             cell.uploaderLabel.text = uploadPost[indexPath.row].uploaderName
             cell.likeCount = uploadPost[indexPath.row].likeCount
+            cell.tags = uploadPost[indexPath.row].tags
             
             return cell
         }
@@ -95,8 +98,10 @@ class PopularView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UI
         cell.uploader = topUploadUploaderArray
         cell.likeCount = topUploadLikeCountArray
         cell.descriptionImage = topUploadDescription
+        cell.tags = topUploadTags
         cell.backgroundColor = .orange
         cell.vcDelegate = self as! TopUploadDelegate
+        
 
         return cell
     }
@@ -117,19 +122,19 @@ class PopularView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UI
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 1 {
-            vcDelegate?.detail(name: uploadPost[indexPath.row].imageTitle, uploader: uploadPost[indexPath.row].uploaderName, image: uploadPost[indexPath.row].image, likeCount: uploadPost[indexPath.row].likeCount)
+            vcDelegate?.detail(name: uploadPost[indexPath.row].imageTitle, uploader: uploadPost[indexPath.row].uploaderName, image: uploadPost[indexPath.row].image, likeCount: uploadPost[indexPath.row].likeCount, description: uploadPost[indexPath.row].imageDescription!, tag: uploadPost[indexPath.row].tags)
         }
         
     }
     
     
-    func detail(name: String, uploader: String, image: String, likeCount: Int) {
-        vcDelegate?.detail(name: name, uploader: uploader, image: image, likeCount: likeCount)
+    func detail(name: String, uploader: String, image: String, likeCount: Int, description: String ,tag:[String]) {
+        vcDelegate?.detail(name: name, uploader: uploader, image: image, likeCount: likeCount, description: description, tag: tag)
     }
 
     
 }
 
 protocol PopularDelegate {
-    func detail(name: String, uploader: String, image: String, likeCount: Int)
+    func detail(name: String, uploader: String, image: String, likeCount: Int, description: String ,tag:[String])
 }

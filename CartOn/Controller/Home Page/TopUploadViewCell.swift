@@ -39,6 +39,11 @@ class TopUploadViewCell: UICollectionViewCell,UICollectionViewDelegate, UICollec
             collectionView.reloadData()
         }
     }
+    var tags:[[String]]?{
+        didSet{
+            collectionView.reloadData()
+        }
+    }
     
     let topView = UIView.init()
     
@@ -134,7 +139,7 @@ class TopUploadViewCell: UICollectionViewCell,UICollectionViewDelegate, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        vcDelegate?.detail(name: title![indexPath.row], uploader: uploader![indexPath.row], image: images![indexPath.row], likeCount: likeCount![indexPath.row])
+        vcDelegate?.detail(name: title![indexPath.row], uploader: uploader![indexPath.row], image: images![indexPath.row], likeCount: likeCount![indexPath.row], description: descriptionImage![indexPath.row], tag: tags![indexPath.row])
     }
     
     
@@ -245,7 +250,7 @@ class TopUploadViewCell: UICollectionViewCell,UICollectionViewDelegate, UICollec
 }
 
 protocol TopUploadDelegate{
-    func detail(name: String, uploader: String, image: String, likeCount: Int)
+    func detail(name: String, uploader: String, image: String, likeCount: Int, description: String ,tag:[String])
 }
 
 
