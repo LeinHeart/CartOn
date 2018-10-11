@@ -19,6 +19,7 @@ class CaptionViewController: UIViewController, UITextViewDelegate {
     let captionTextField = UITextView.init()
     let tagsTextField = UITextView.init()
     let imageContainer = UIView.init()
+    var ricky = UIImage.init()
     
 //    let titleContainer = UIView.init()
 //    let inputTitleContainer = UIView.init()
@@ -39,22 +40,27 @@ class CaptionViewController: UIViewController, UITextViewDelegate {
         stack = UIStackView(frame: CGRect(x: 0, y: 0, width: 0, height: 0 ))
         stack.alignment = .center
         
+        //vcDelegate?.ambilImage()
+        
         stack.backgroundColor = UIColor.gray
         self.view.addSubview(stack)
         stack.setAnchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: nil, action: nil)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(selesai))
+        
         //stack.distribution = .fill
         setup()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = true
+        setup()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         //vcDelegate?.navigateHome()
         Chosen.isChosen = false
+        imageView.image = nil
     }
     
   
@@ -94,13 +100,14 @@ class CaptionViewController: UIViewController, UITextViewDelegate {
         imageContainer.heightAnchor.constraint(equalToConstant: 250).isActive = true
         
         //View 1
-        imageView.backgroundColor = UIColor.blue
-        imageView.frame = CGRect(x: 0, y: 0, width: 173, height: 173)
-
+        imageView.frame = CGRect(x: 0, y: 0, width: 200, height: 220)
+        DispatchQueue.main.async {
+            self.imageView.image = self.ricky
+        }
         //imageView.center = CGPoint(x: view.bounds.width / 2, y: view.bounds.height / 2)
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.heightAnchor.constraint(equalToConstant: 173).isActive = true
-        imageView.widthAnchor.constraint(equalToConstant: 173).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 220).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: 200).isActive = true
         imageView.centerXAnchor.constraint(equalTo: imageContainer.centerXAnchor).isActive = true
         imageView.centerYAnchor.constraint(equalTo: imageContainer.centerYAnchor).isActive = true
         imageView.image = UIImage(named: "buttonFollowCheckGreen")
@@ -217,9 +224,19 @@ class CaptionViewController: UIViewController, UITextViewDelegate {
             }
         }
     }
+    
+    func setImage(image: UIImage) {
+        ricky = image
+    }
+    
+    @objc func selesai()
+    {
+        navigationController?.popViewController(animated: true)
+    }
 }
 
 protocol CaptionViewProtocol {
     func navigateHome()
 }
+
 
