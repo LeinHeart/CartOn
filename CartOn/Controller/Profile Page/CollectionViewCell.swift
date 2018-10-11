@@ -41,15 +41,19 @@ class CollectionViewCell: UICollectionViewCell {
     }()
     
     let likeIcon = UIImageView.init()
-    let likeCount = UILabel.init()
+    var likeCount = UILabel.init()
+    var intLikeCount = Int()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         setup()
     }
     
     func setup() {
         backgroundColor = .white
+         let tapRegoc = UITapGestureRecognizer(target: self, action: #selector(tapDetected))
+        
         setCellShadow()
         
         imageView.contentMode = .scaleAspectFill
@@ -66,10 +70,12 @@ class CollectionViewCell: UICollectionViewCell {
         
         likeIcon.image = UIImage(named: "like")
         likeIcon.frame = CGRect(x: 0, y: 0, width: 18, height: 18)
+        likeIcon.isUserInteractionEnabled = true
+        likeIcon.addGestureRecognizer(tapRegoc)
         addSubview(likeIcon)
         likeIcon.setAnchor(top: nil, left: self.leftAnchor, bottom: self.bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 10, paddingBottom: -10, paddingRight: 0, width: 18, height: 18)
         
-        likeCount.text = "512"
+        likeCount.text = "\(intLikeCount)"
         likeCount.font = UIFont(name: "Avenir-Medium", size: 11)
         likeCount.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
         addSubview(likeCount)
@@ -79,5 +85,25 @@ class CollectionViewCell: UICollectionViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc func tapDetected(){
+        if likeIcon.backgroundColor == nil{
+            likeIcon.backgroundColor = .orange
+            intLikeCount += 1
+            DispatchQueue.main.async {
+                self.likeCount.text = "\(self.intLikeCount)"
+            }
+            print(likeCount)
+        }
+        else{
+            likeIcon.backgroundColor = nil
+            intLikeCount -= 1
+            DispatchQueue.main.async {
+                self.likeCount.text = "\(self.intLikeCount)"
+            }
+            print(likeCount)
+        }
+        
     }
 }

@@ -12,6 +12,7 @@ class PostList{
     var uploadList = [PostClass]()
     var topUploadList = [PostClass]()
     var subsList = [PostClass]()
+    var profileList = [PostClass]()
     
     init(){
         uploadList.append(PostClass(uploaderName: "John Doe", imageTitle: "Kucing Pisang", imageDescription: "Kucing ga suka pisang mukanya enyoi", tags: ["Kucing","Pisang","Meme"], likeCount: 100, image:"upload1"))
@@ -36,5 +37,17 @@ class PostList{
         topUploadList.append(PostClass(uploaderName: "Kristopher", imageTitle: "Bare Bear 3", imageDescription: "Kucing ga suka pisang mukanya enyoi", tags: ["Kucing","Pisang","Meme"], likeCount: 150, image:"image3"))
         topUploadList.append(PostClass(uploaderName: "Ricky", imageTitle: "Bare Bear 4", imageDescription: "Kucing ga suka pisang mukanya enyoi", tags: ["Kucing","Pisang","Meme"], likeCount: 150, image:"image4"))
         topUploadList.append(PostClass(uploaderName: "Yudha", imageTitle: "Bare Bear 5", imageDescription: "Kucing ga suka pisang mukanya enyoi", tags: ["Kucing","Pisang","Meme"], likeCount: 150, image:"image5"))
+        
+        
+        profileList.append(PostClass(uploaderName: "John Doe", imageTitle: "kucing profil", imageDescription: "anjay men kucing ashoy", tags: ["anjay","kucing"], likeCount: 100, image: "image5"))
+        profileList.append(PostClass(uploaderName: "John Doe", imageTitle: "kucing profil", imageDescription: "anjay men kucing ashoy", tags: ["anjay","kucing"], likeCount: 100, image: "image5"))
+        profileList.append(PostClass(uploaderName: "John Doe", imageTitle: "kucing profil", imageDescription: "anjay men kucing ashoy", tags: ["anjay","kucing"], likeCount: 100, image: "image5"))
+        profileList.append(PostClass(uploaderName: "John Doe", imageTitle: "kucing profil", imageDescription: "anjay men kucing ashoy", tags: ["anjay","kucing"], likeCount: 100, image: "image5"))
+        profileList.append(PostClass(uploaderName: "John Doe", imageTitle: "kucing profil", imageDescription: "anjay men kucing ashoy", tags: ["anjay","kucing"], likeCount: 100, image: "image5"))
+        profileList.append(PostClass(uploaderName: "John Doe", imageTitle: "kucing profil", imageDescription: "anjay men kucing ashoy", tags: ["anjay","kucing"], likeCount: 100, image: "image5"))
+        profileList.append(PostClass(uploaderName: "John Doe", imageTitle: "kucing profil", imageDescription: "anjay men kucing ashoy", tags: ["anjay","kucing"], likeCount: 100, image: "image5"))
+        profileList.append(PostClass(uploaderName: "John Doe", imageTitle: "kucing profil", imageDescription: "anjay men kucing ashoy", tags: ["anjay","kucing"], likeCount: 100, image: "image5"))
+        profileList.append(PostClass(uploaderName: "John Doe", imageTitle: "kucing profil", imageDescription: "anjay men kucing ashoy", tags: ["anjay","kucing"], likeCount: 100, image: "image5"))
+        
     }
 }

@@ -26,8 +26,11 @@ class PopularView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UI
     
     var vcDelegate :PopularDelegate?
     
-    let uploadPost = PostList().uploadList
-    let topUploadPost = PostList().topUploadList
+    var uploadPost = PostList().uploadList
+    var topUploadPost = PostList().topUploadList
+    
+    
+    
     var topUploadImageArray = [String]()
     var topUploadTitleArray = [String]()
     var topUploadUploaderArray = [String]()
@@ -36,6 +39,10 @@ class PopularView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UI
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        uploadPost.reverse()
+        topUploadPost.reverse()
+        
         print("Ter init")
         addSubview(collectionView)
         collectionView.setAnchor(top: self.topAnchor, left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)

@@ -42,8 +42,6 @@ class EditProfileViewController: UIViewController {
         profPicEdit.textAlignment = .center
         profPicEdit.font = UIFont(name: "Avenir-Heavy", size: 11)
         
-        
-      
         view.addSubview(headerView)
         headerView.setAnchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width, height: 180)
         
@@ -52,6 +50,10 @@ class EditProfileViewController: UIViewController {
         profPic.center = CGPoint(x: headerView.bounds.size.width / 2, y: headerView.bounds.size.height / 2 - 20)
         profPicEdit.setAnchor(top: profPic.bottomAnchor, left: headerView.leftAnchor, bottom: nil, right: headerView.rightAnchor, paddingTop: 15, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
 
+        
+        
+        
+        
     }
 
 }
