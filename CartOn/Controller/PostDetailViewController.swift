@@ -145,7 +145,7 @@ class PostDetailViewController: UIViewController {
         
         let imageTampung = UIImage(named: image)
         imageView.image = imageTampung
-        imageView.backgroundColor = .gray
+        imageView.backgroundColor = .white
         
        
 //            let ratio = imageTampung.size.width / imageTampung.size.height
