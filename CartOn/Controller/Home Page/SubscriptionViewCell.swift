@@ -9,6 +9,7 @@
 import UIKit
 
 class SubscriptionViewCell: UICollectionViewCell{
+   
     var subscriptionNames: String? {
         didSet{
             if let imageName = subscriptionNames {

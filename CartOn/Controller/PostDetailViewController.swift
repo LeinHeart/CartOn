@@ -139,8 +139,8 @@ class PostDetailViewController: UIViewController {
         titleLabel.text = name
         timeStamp.text = "Uploaded 7 minutes ago by "
         sawCount.text = "250"
-        tagsCount.text = "Memes,Cat,Bear,Animal,Cute"
-        descLabel.text = "Ini lucu loh :)"
+        //tagsCount.text = "Memes,Cat,Bear,Animal,Cute"
+//        descLabel.text = "Ini lucu loh :)"
         
         
         let imageTampung = UIImage(named: image)
@@ -200,11 +200,20 @@ class PostDetailViewController: UIViewController {
     }
     
     
-    func setData(name: String, uploader: String, image: String, likeCount: Int) {
+    func setData(name: String, uploader: String, image: String, likeCount: Int, description: String ,tag:[String]) {
         self.name = name
         self.image = image
         self.uploader = uploader
         self.likeCount = likeCount
+        self.descLabel.text = description
+        var tampung = String()
+        for i in tag {
+            tampung += i
+            if i != tag.last {
+                tampung = tampung + ", "
+            }
+        }
+        self.tagsCount.text = tampung
     }
     
     @objc func tapDetected(){

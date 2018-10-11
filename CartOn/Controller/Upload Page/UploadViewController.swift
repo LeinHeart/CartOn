@@ -13,14 +13,15 @@ struct Chosen {
 }
 
 class UploadViewController: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate, CaptionViewProtocol {
-
+    
+    
+    var imageSelect = UIImage()
     var quit: Bool = false
     var vc = CaptionViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: nil, action: #selector(cancelBtn))
-    
         vc.vcDelegate = self
     }
     
@@ -38,7 +39,7 @@ class UploadViewController: UIViewController,UINavigationControllerDelegate,UIIm
                 if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary){
                     let imagePicker = UIImagePickerController()
                     imagePicker.delegate = self
-                    imagePicker.allowsEditing = true
+                    imagePicker.allowsEditing = false
                     imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
                     self.present(imagePicker, animated: true, completion: nil)
                 }
@@ -53,10 +54,11 @@ class UploadViewController: UIViewController,UINavigationControllerDelegate,UIIm
         guard let selectedImage = info[.originalImage] as? UIImage else {
             fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
         }
-        //imageView.image = selectedImage
+        //imageSelect = selectedImage
         self.quit = false
         Chosen.isChosen = true
         dismiss(animated: true, completion: nil)
+        vc.setImage(image: selectedImage)
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

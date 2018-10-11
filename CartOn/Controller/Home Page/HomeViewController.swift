@@ -9,6 +9,9 @@
 import UIKit
 
 class HomeViewController: UIViewController, SubscriptionDelegate, PopularDelegate{
+    
+    
+
     //,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout
     
     @IBOutlet weak var segmentedOutlet: UISegmentedControl!
@@ -159,9 +162,9 @@ class HomeViewController: UIViewController, SubscriptionDelegate, PopularDelegat
         }
     }
     
-    func detail(name: String, uploader: String, image: String, likeCount: Int) {
+    func detail(name: String, uploader: String, image: String, likeCount: Int, description: String ,tag:[String]) {
         let dt = PostDetailViewController()
-        dt.setData(name: name, uploader: uploader, image: image, likeCount: likeCount)
+        dt.setData(name: name, uploader: uploader, image: image, likeCount: likeCount, description: description ,tag: tag )
         self.navigationController?.pushViewController(dt, animated: true)
         self.tabBarController?.tabBar.isHidden = true
     }

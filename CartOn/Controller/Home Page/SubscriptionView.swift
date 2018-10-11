@@ -10,7 +10,7 @@ import UIKit
 
 class SubscriptionView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
-    let subsPost = PostList().subsList
+    var subsPost = PostList().subsList
     
     let subcriptionCellId = "subscriptionCellId"
     let subscriptionImageArray=["sub1","sub2","sub3","sub4","sub5"]
@@ -28,6 +28,7 @@ class SubscriptionView: UIView,UICollectionViewDelegate,UICollectionViewDataSour
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+    
         print("Ter init")
         addSubview(collectionView)
         collectionView.setAnchor(top: self.topAnchor, left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
@@ -35,6 +36,7 @@ class SubscriptionView: UIView,UICollectionViewDelegate,UICollectionViewDataSour
         collectionView.dataSource = self
         
         collectionView.register(SubscriptionViewCell.self, forCellWithReuseIdentifier: subcriptionCellId)
+        subsPost.reverse()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -68,10 +70,10 @@ class SubscriptionView: UIView,UICollectionViewDelegate,UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        vcDelegate?.detail(name: subsPost[indexPath.row].imageTitle, uploader: subsPost[indexPath.row].uploaderName, image: subsPost[indexPath.row].image, likeCount: subsPost[indexPath.row].likeCount)
+        vcDelegate?.detail(name: subsPost[indexPath.row].imageTitle, uploader: subsPost[indexPath.row].uploaderName, image: subsPost[indexPath.row].image, likeCount: subsPost[indexPath.row].likeCount, description: subsPost[indexPath.row].imageDescription!, tag: subsPost[indexPath.row].tags)
     }
 }
 
 protocol SubscriptionDelegate {
-    func detail(name: String, uploader: String, image: String, likeCount: Int)
+    func detail(name: String, uploader: String, image: String, likeCount: Int, description: String ,tag:[String])
 }

@@ -48,6 +48,8 @@ class UploadViewCell: UICollectionViewCell{
         return tl
     }()
     
+    var tags = [String]()
+    
     var likeIcon = UIImageView.init()
     
     override init(frame: CGRect) {
