@@ -486,7 +486,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = picolo.carton;
+				PRODUCT_BUNDLE_IDENTIFIER = main.carton;
 				PRODUCT_NAME = Picolo;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -505,7 +505,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = picolo.carton;
+				PRODUCT_BUNDLE_IDENTIFIER = main.carton;
 				PRODUCT_NAME = Picolo;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Czy-z3-ZFd">
-                                <rect key="frame" x="16" y="101" width="343" height="29"/>
+                                <rect key="frame" x="16" y="102" width="343" height="29"/>
                                 <segments>
                                     <segment title="Popular"/>
                                     <segment title="Subscription"/>
@@ -96,6 +96,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="PicoloLogo" width="33" height="25"/>
+        <image name="PicoloLogo" width="44" height="33"/>
     </resources>
 </document>

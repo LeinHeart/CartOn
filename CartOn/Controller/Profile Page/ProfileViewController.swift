@@ -111,8 +111,9 @@ class ProfileViewController: UIViewController , UICollectionViewDelegate, UIColl
         self.tabBarController?.tabBar.isHidden = true
     }
     
-    func appendData(){
-        
+    func appendData(name: String, title: String, description: String?, tags: [String]!, like: Int!, image: String!){
+        post.append(PostClass(uploaderName: name, imageTitle: title, imageDescription: description, tags: tags, likeCount: like, image: image))
     }
     
 }
+

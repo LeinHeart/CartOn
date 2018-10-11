@@ -232,11 +232,16 @@ class CaptionViewController: UIViewController, UITextViewDelegate {
     @objc func selesai()
     {
         navigationController?.popViewController(animated: true)
+        
     }
 }
 
 protocol CaptionViewProtocol {
     func navigateHome()
+}
+
+protocol CaptionViewAppend {
+    func appendData(name: String, title: String, description: String?, tags: [String]!, like: Int!, image: String!)
 }
 
 
