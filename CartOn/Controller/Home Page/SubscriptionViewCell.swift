@@ -18,13 +18,10 @@ class SubscriptionViewCell: UICollectionViewCell{
         }
     }
     
-    
-    
     let imageView:UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
-//        iv.layer.cornerRadius = 15
         iv.layer.borderWidth = 0.3
         iv.layer.borderColor = UIColor.gray.cgColor
         return iv
@@ -69,7 +66,6 @@ class SubscriptionViewCell: UICollectionViewCell{
         let tapRegoc = UITapGestureRecognizer(target: self, action: #selector(tapDetected))
         
         backgroundColor = .white
-        //backgroundColor = .clear
         setCellShadow()
         
         likeIcon.isUserInteractionEnabled = true

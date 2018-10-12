@@ -15,6 +15,7 @@ class PostList{
     var profileList = [PostClass]()
     
     init(){
+        
         //MARK : Upload List
         //51-60
         uploadList.append(PostClass(uploaderName: "John Doe", imageTitle: "Power Angel", imageDescription: "Recreating Angel with Mecha.", tags: ["Mecha","Gundam","Angel","Wings", "White"], likeCount: 112, image:"51"))
@@ -89,7 +90,6 @@ class PostList{
         topUploadList.append(PostClass(uploaderName: "Yudha", imageTitle: "Bare Bear 5", imageDescription: "Kucing ga suka pisang mukanya enyoi", tags: ["Kucing","Pisang","Meme"], likeCount: 150, image:"image5"))
         
         //MARK : Profile
-        
         profileList.append(PostClass(uploaderName: "John Doe", imageTitle: "kucing profil", imageDescription: "anjay men kucing ashoy", tags: ["anjay","kucing"], likeCount: 100, image: "image5"))
         profileList.append(PostClass(uploaderName: "John Doe", imageTitle: "kucing profil", imageDescription: "anjay men kucing ashoy", tags: ["anjay","kucing"], likeCount: 100, image: "image5"))
         profileList.append(PostClass(uploaderName: "John Doe", imageTitle: "kucing profil", imageDescription: "anjay men kucing ashoy", tags: ["anjay","kucing"], likeCount: 100, image: "image5"))
@@ -99,6 +99,5 @@ class PostList{
         profileList.append(PostClass(uploaderName: "John Doe", imageTitle: "kucing profil", imageDescription: "anjay men kucing ashoy", tags: ["anjay","kucing"], likeCount: 100, image: "image5"))
         profileList.append(PostClass(uploaderName: "John Doe", imageTitle: "kucing profil", imageDescription: "anjay men kucing ashoy", tags: ["anjay","kucing"], likeCount: 100, image: "image5"))
         profileList.append(PostClass(uploaderName: "John Doe", imageTitle: "kucing profil", imageDescription: "anjay men kucing ashoy", tags: ["anjay","kucing"], likeCount: 100, image: "image5"))
-        
     }
 }

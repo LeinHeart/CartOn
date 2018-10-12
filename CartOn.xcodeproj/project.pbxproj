@@ -20,7 +20,6 @@
 		5A2FA5B4216628CF00F50ECA /* ExtentionUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2FA5B3216628CF00F50ECA /* ExtentionUIView.swift */; };
 		5A5A4CF421708247005109BC /* PostDetailImagePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5A4CF321708247005109BC /* PostDetailImagePreviewViewController.swift */; };
 		5A601C59215A1CD500DFD17A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A601C58215A1CD500DFD17A /* AppDelegate.swift */; };
-		5A601C5B215A1CD500DFD17A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A601C5A215A1CD500DFD17A /* ViewController.swift */; };
 		5A601C5E215A1CD500DFD17A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A601C5C215A1CD500DFD17A /* Main.storyboard */; };
 		5A601C63215A1CD700DFD17A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A601C61215A1CD700DFD17A /* LaunchScreen.storyboard */; };
 		5A6BCA5621675B6600DB90DD /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A6BCA5221675B6600DB90DD /* Home.storyboard */; };
@@ -54,7 +53,6 @@
 		5A5A4CF321708247005109BC /* PostDetailImagePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailImagePreviewViewController.swift; sourceTree = "<group>"; };
 		5A601C55215A1CD500DFD17A /* Picolo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Picolo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A601C58215A1CD500DFD17A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5A601C5A215A1CD500DFD17A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5A601C5D215A1CD500DFD17A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5A601C62215A1CD700DFD17A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A601C64215A1CD700DFD17A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -190,7 +188,6 @@
 				5A2FA5AE2166285900F50ECA /* Home Page */,
 				16F0A400216C995C00488052 /* Upload Page */,
 				E053CF47216637BC00D44A47 /* Profile Page */,
-				5A601C5A215A1CD500DFD17A /* ViewController.swift */,
 				5A09EB27216B79B200268856 /* PostDetailViewController.swift */,
 				5A5A4CF321708247005109BC /* PostDetailImagePreviewViewController.swift */,
 				5AEB04CE216F39A800C0D2FB /* LoginViewControllerProg.swift */,
@@ -326,7 +323,6 @@
 				E0DF6D6B216B833E007CD383 /* EditProfileViewController.swift in Sources */,
 				5AEB04CF216F39A800C0D2FB /* LoginViewControllerProg.swift in Sources */,
 				5A5A4CF421708247005109BC /* PostDetailImagePreviewViewController.swift in Sources */,
-				5A601C5B215A1CD500DFD17A /* ViewController.swift in Sources */,
 				16F0A404216C995C00488052 /* CaptionViewController.swift in Sources */,
 				5A2FA5B22166289500F50ECA /* UploadViewCell.swift in Sources */,
 				E053CF4B216637BD00D44A47 /* ProfileHeaderView.swift in Sources */,

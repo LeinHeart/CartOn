@@ -81,14 +81,11 @@ class TopUploadViewCell: UICollectionViewCell,UICollectionViewDelegate, UICollec
         topView.frame = CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height)
         addSubview(topView)
         
-        
-        
         collectionView.delegate = self
         collectionView.dataSource = self
         
         collectionView.register(IconsCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.showsHorizontalScrollIndicator = false
-        //collectionView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         
         topTitle.text = "Top Upload"
         topTitle.textColor = .white
@@ -100,16 +97,9 @@ class TopUploadViewCell: UICollectionViewCell,UICollectionViewDelegate, UICollec
         topTitle.setAnchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: frame.width, height: 20)
         
         collectionView.setAnchor(top: topTitle.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 10, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: frame.width, height: 0)
-        
-        //collectionView.setAnchor(top: topView.topAnchor, left: topView.leftAnchor, bottom: bottomAnchor, right: nil , paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
-        //topTitle.setAnchor(top: topAnchor, left: leftAnchor, bottom: collectionView.topAnchor, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
-        
-        
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //return (images?.count)!
         return 5
     }
     
@@ -153,7 +143,6 @@ class TopUploadViewCell: UICollectionViewCell,UICollectionViewDelegate, UICollec
             let iv = UIImageView()
             iv.contentMode = .scaleAspectFill
             iv.clipsToBounds = true
-//            iv.layer.cornerRadius = 15
             iv.layer.borderWidth = 0.3
             iv.layer.borderColor = UIColor.gray.cgColor
             return iv

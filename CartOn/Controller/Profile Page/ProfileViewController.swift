@@ -18,7 +18,6 @@ class ProfileViewController: UIViewController , UICollectionViewDelegate, UIColl
     
     
     //MARK Setup
-    
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 16
@@ -58,7 +57,6 @@ class ProfileViewController: UIViewController , UICollectionViewDelegate, UIColl
     }
     
     //MARK CollectionView : cell
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return post.count
     }
@@ -83,7 +81,6 @@ class ProfileViewController: UIViewController , UICollectionViewDelegate, UIColl
     }
     
     // MARK CollectionView : header
-    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         var element = UICollectionReusableView()

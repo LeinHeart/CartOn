@@ -24,7 +24,6 @@ class PostDetailViewController: UIViewController{
     //Mark UIImage
     let imageView :UIImageView = {
         let iv = UIImageView()
-//        iv.frame = CGRect(x: 0, y: 64, width: 0, height: 0)
         iv.contentMode = .scaleAspectFit
         iv.clipsToBounds = true
         
@@ -115,10 +114,6 @@ class PostDetailViewController: UIViewController{
         return tl
     }()
     
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         let tapRegoc = UITapGestureRecognizer(target: self, action: #selector(tapDetected))
@@ -132,32 +127,16 @@ class PostDetailViewController: UIViewController{
         DispatchQueue.main.async {
             self.likeLabel.text = String(self.likeCount)
         }
-        //self.extendedLayoutIncludesOpaqueBars = true
-        //self.edgesForExtendedLayout = []
         
         view.backgroundColor = .white
         
         titleLabel.text = name
         timeStamp.text = "Uploaded 7 minutes ago by "
         sawCount.text = "250"
-        //tagsCount.text = "Memes,Cat,Bear,Animal,Cute"
-//        descLabel.text = "Ini lucu loh :)"
-        
         
         let imageTampung = UIImage(named: image)
         imageView.image = imageTampung
         imageView.backgroundColor = .white
-        
-       
-//            let ratio = imageTampung.size.width / imageTampung.size.height
-//            if view.frame.width > view.frame.height{
-//                let newHeight = view.frame.width / ratio
-//                imageView.frame.size = CGSize(width: view.frame.width, height: newHeight)
-//            }
-//            else{
-//                let newWidth = view.frame.height * ratio
-//                imageView.frame.size = CGSize(width: newWidth, height: view.frame.height)
-//            }
         
         uploaderName.text = uploader
         likeLabel.text = String(likeCount)
@@ -198,13 +177,13 @@ class PostDetailViewController: UIViewController{
         }
     }
     
-    
     func setData(name: String, uploader: String, image: String, likeCount: Int, description: String ,tag:[String]) {
         self.name = name
         self.image = image
         self.uploader = uploader
         self.likeCount = likeCount
         self.descLabel.text = description
+        
         var tampung = String()
         for i in tag {
             tampung += i
@@ -237,7 +216,6 @@ class PostDetailViewController: UIViewController{
     }
     
     @objc func tapImageDetail(){
-//        let vc = self.storyboard?.instantiateViewController(withIdentifier: "id") as! PostDetailImagePreviewViewController
         let vc = PostDetailImagePreviewViewController()
         vc.receivedImage = imageView.image
         self.present(vc, animated: true, completion: nil)

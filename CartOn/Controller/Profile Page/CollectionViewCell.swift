@@ -62,9 +62,6 @@ class CollectionViewCell: UICollectionViewCell {
         addSubview(imageView)
         imageView.setAnchor(top: self.topAnchor, left: self.leftAnchor, bottom: nil, right: self.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: self.frame.size.width, height: self.frame.size.height / 2 * 1.35)
         
-        //titleLabel.text = "Lorem ipsum"
-        //titleLabel.font = UIFont(name: "Avenir-Medium", size: 11)
-        //titleLabel.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
         addSubview(titleLabel)
         titleLabel.setAnchor(top: imageView.bottomAnchor, left: self.leftAnchor, bottom: nil, right: self.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 0)
         

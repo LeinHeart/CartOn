@@ -20,14 +20,6 @@ class CaptionViewController: UIViewController, UITextViewDelegate {
     let tagsTextField = UITextView.init()
     let imageContainer = UIView.init()
     var ricky = UIImage.init()
-    
-//    let titleContainer = UIView.init()
-//    let inputTitleContainer = UIView.init()
-//    let captionContainer = UIView.init()
-//    let inputCaptionContainer = UIView.init()
-//    let tagsContainer = UIView.init()
-//    let inputTagsContainer = UIView.init()
-
     var vcDelegate: CaptionViewProtocol?
     
     override func viewDidLoad() {
@@ -40,15 +32,11 @@ class CaptionViewController: UIViewController, UITextViewDelegate {
         stack = UIStackView(frame: CGRect(x: 0, y: 0, width: 0, height: 0 ))
         stack.alignment = .center
         
-        //vcDelegate?.ambilImage()
-        
         stack.backgroundColor = UIColor.gray
         self.view.addSubview(stack)
         stack.setAnchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(selesai))
-        
-        //stack.distribution = .fill
         setup()
     }
     
@@ -65,13 +53,7 @@ class CaptionViewController: UIViewController, UITextViewDelegate {
     
   
     func setup() {
-        
-//        var rect = captionTextField.frame
-//
-//        rect.size.height = 50
-//
-//        captionTextField.frame = rect
-        
+
         self.view.addSubview(stack)
         stack.addArrangedSubview(imageContainer)
         imageContainer.addSubview(imageView)
@@ -82,11 +64,6 @@ class CaptionViewController: UIViewController, UITextViewDelegate {
         stack.addArrangedSubview(tagsLabel)
         stack.addArrangedSubview(tagsTextField)
         stack.translatesAutoresizingMaskIntoConstraints = false
-        
-        
-//        titleContainer.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 35)
-//        inputTitleContainer.frame = CGRect(x: 0, y: 0, width: <#T##Int#>, height: <#T##Int#>)
-        
         
         //Stack View
         stack.axis  = NSLayoutConstraint.Axis.vertical
@@ -104,7 +81,6 @@ class CaptionViewController: UIViewController, UITextViewDelegate {
         DispatchQueue.main.async {
             self.imageView.image = self.ricky
         }
-        //imageView.center = CGPoint(x: view.bounds.width / 2, y: view.bounds.height / 2)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.heightAnchor.constraint(equalToConstant: 220).isActive = true
         imageView.widthAnchor.constraint(equalToConstant: 200).isActive = true
@@ -141,9 +117,6 @@ class CaptionViewController: UIViewController, UITextViewDelegate {
         captionTextField.widthAnchor.constraint(equalToConstant: self.view.frame.width).isActive = true
         captionTextField.heightAnchor.constraint(equalToConstant: 159.0).isActive = true
         captionTextField.backgroundColor = UIColor.white
-        // captionTextField.placeholder = "Input Caption"
-        // captionTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
-        // captionTextField.leftViewMode = .always
         captionTextField.font = UIFont(name: "Avenir-Book", size: 18)
         captionTextField.text = " Input Caption"
         captionTextField.textColor = .lightGray
@@ -161,39 +134,10 @@ class CaptionViewController: UIViewController, UITextViewDelegate {
         tagsTextField.widthAnchor.constraint(equalToConstant: self.view.frame.width).isActive = true
         tagsTextField.heightAnchor.constraint(equalToConstant: 148.0).isActive = true
         tagsTextField.backgroundColor = UIColor.white
-        // tagsTextField.placeholder = "Add Tags"
-        // tagsTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
-        // tagsTextField.leftViewMode = .always
         tagsTextField.font = UIFont(name: "Avenir-Book", size: 18)
         tagsTextField.text = " Add Tags"
         tagsTextField.textColor = .lightGray
         tagsTextField.tag = 1
-
-        
-//        self.view.addSubview(stack)
-//        stack.addArrangedSubview(imageContainer)
-//        imageContainer.addSubview(imageView)
-//        stack.addArrangedSubview(titleLabel)
-//        stack.addArrangedSubview(titleTextField)
-//        stack.addArrangedSubview(captionLabel)
-//        stack.addArrangedSubview(captionTextField)
-//        stack.addArrangedSubview(tagsLabel)
-//        stack.addArrangedSubview(tagsTextField)
-//        stack.translatesAutoresizingMaskIntoConstraints = false
-        
-        //imageView.setAnchor(top: stack.topAnchor, left: nil ,bottom: titleLabel.topAnchor, right: nil, paddingTop: 20, paddingLeft: 0, paddingBottom: 57, paddingRight: 0)
-        
-       // titleTextField.setAnchor(top: titleLabel.bottomAnchor, left: nil, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
-        
-        
-        
-        
-        //imageView.centerXAnchor.constraint(equalTo: imageContainer.centerXAnchor).isActive = true
-        //imageView.centerYAnchor.constraint(equalTo: imageContainer.centerYAnchor).isActive = true
-        
-        //Constraints
-        //stack.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        //stack.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
     }
     
     
@@ -229,10 +173,8 @@ class CaptionViewController: UIViewController, UITextViewDelegate {
         ricky = image
     }
     
-    @objc func selesai()
-    {
+    @objc func selesai() {
         navigationController?.popViewController(animated: true)
-        
     }
 }
 

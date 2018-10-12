@@ -45,11 +45,6 @@ class LoginViewControllerProg: UIViewController {
         
         backgroundImg.image = UIImage(named: "Background")
         view.addSubview(backgroundImg)
-//        view.addSubview(appName)
-//        view.addSubview(loginBtn)
-//        view.addSubview(usernameTxtField)
-//        view.addSubview(passwordTxtField)
-        
         backgroundImg.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
        
         
