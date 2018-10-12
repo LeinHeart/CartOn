@@ -112,7 +112,7 @@ class ProfileViewController: UIViewController , UICollectionViewDelegate, UIColl
     }
     
     func appendData(){
-        
+ 
     }
     
 }
