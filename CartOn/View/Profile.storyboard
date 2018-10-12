@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EmI-jS-TMu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.23.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EmI-jS-TMu">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.9"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.16.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +13,7 @@
         <!--My Profile-->
         <scene sceneID="niB-RO-fsv">
             <objects>
-                <viewController id="H9S-IX-DWc" customClass="ProfileViewController" customModule="CartOn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="H9S-IX-DWc" customClass="ProfileViewController" customModule="Picolo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gxc-uy-ZHg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,11 +27,11 @@
             </objects>
             <point key="canvasLocation" x="1372" y="-187.68472906403943"/>
         </scene>
-        <!--Profile-->
+        <!--Navigation Controller-->
         <scene sceneID="LJ8-oO-WYv">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EmI-jS-TMu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="2" title="Profile" image="Profile" id="uBi-1d-O0k">
+                    <tabBarItem key="tabBarItem" tag="2" title="" image="Profile" id="uBi-1d-O0k">
                         <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-10"/>
                         <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
                     </tabBarItem>
@@ -52,6 +52,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Profile" width="32" height="32"/>
+        <image name="Profile" width="37" height="37"/>
     </resources>
 </document>

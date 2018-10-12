@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2p2-qS-fZc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.23.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2p2-qS-fZc">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.9"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.16.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +13,7 @@
         <!--Upload View Controller-->
         <scene sceneID="99D-Iz-X6S">
             <objects>
-                <viewController id="oXl-dl-8CY" customClass="UploadViewController" customModule="CartOn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="oXl-dl-8CY" customClass="UploadViewController" customModule="Picolo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Y2L-yS-eJi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,11 +27,11 @@
             </objects>
             <point key="canvasLocation" x="1228" y="-150"/>
         </scene>
-        <!--Upload-->
+        <!--Navigation Controller-->
         <scene sceneID="gvD-lJ-Q4g">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2p2-qS-fZc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Upload" image="Add" id="Pzt-dB-Xaw">
+                    <tabBarItem key="tabBarItem" title="" image="Add" id="Pzt-dB-Xaw">
                         <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-10"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -51,6 +51,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Add" width="31" height="32"/>
+        <image name="Add" width="36" height="36"/>
     </resources>
 </document>
