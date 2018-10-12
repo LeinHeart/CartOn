@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
 class CaptionViewController: UIViewController, UITextViewDelegate {
 
+    
     var stack = UIStackView.init()
     let imageView = UIImageView.init()
     let titleLabel = UILabel.init()
@@ -24,6 +26,11 @@ class CaptionViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let fetchRequest: NSFetchRequest<PostImage> = PostImage.fetchRequest()
+        do {
+            let postImage = try PersistenceService.context.fetch(fetchRequest)
+        }catch {}
         
         captionTextField.delegate = self
         tagsTextField.delegate = self
@@ -174,6 +181,15 @@ class CaptionViewController: UIViewController, UITextViewDelegate {
     }
     
     @objc func selesai() {
+        let postingImage = PostImage(context: PersistenceService.context)
+        postingImage.title = titleTextField.text
+        postingImage.uploader = "John Doe"
+        postingImage.imgDesc = captionTextField.text
+        postingImage.tag = tagsTextField.text
+        postingImage.likeCount = 0
+        let imagePresentation = imageView.image
+        postingImage.image = UIImage.pngData(imagePresentation!)()
+        PersistenceService.saveContext()
         navigationController?.popViewController(animated: true)
     }
 }
