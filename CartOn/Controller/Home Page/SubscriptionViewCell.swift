@@ -10,10 +10,10 @@ import UIKit
 
 class SubscriptionViewCell: UICollectionViewCell{
    
-    var subscriptionNames: String? {
+    var subscriptionNames: UIImage? {
         didSet{
             if let imageName = subscriptionNames {
-                imageView.image = UIImage(named: imageName)
+                imageView.image = imageName
             }
         }
     }

@@ -10,7 +10,7 @@ import UIKit
 
 class TopUploadViewCell: UICollectionViewCell,UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
-    var images:[String]?{
+    var images:[UIImage]?{
         didSet{
             collectionView.reloadData()
         }
@@ -106,7 +106,7 @@ class TopUploadViewCell: UICollectionViewCell,UICollectionViewDelegate, UICollec
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId , for: indexPath) as! IconsCell
         if let imageName = images?[indexPath.item]{
-            cell.imageView.image = UIImage(named: imageName)
+            cell.imageView.image = imageName
         }
         if let titleName = title?[indexPath.item]{
             cell.titleLabel.text = titleName
@@ -240,7 +240,7 @@ class TopUploadViewCell: UICollectionViewCell,UICollectionViewDelegate, UICollec
 }
 
 protocol TopUploadDelegate{
-    func detail(name: String, uploader: String, image: String, likeCount: Int, description: String ,tag:[String])
+    func detail(name: String, uploader: String, image: UIImage, likeCount: Int, description: String ,tag:[String])
 }
 
 

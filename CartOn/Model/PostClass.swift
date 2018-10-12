@@ -14,7 +14,7 @@ class PostClass{
     var imageDescription:String?
     var tags:[String]!
     var likeCount:Int!
-    var image:String!
+    var image:UIImage!
     
     init(uploaderName:String,imageTitle:String,imageDescription:String?,tags:[String]!,likeCount:Int!,image:String!) {
         self.uploaderName = uploaderName
@@ -22,7 +22,11 @@ class PostClass{
         self.imageDescription = imageDescription
         self.tags = tags
         self.likeCount = likeCount
-        self.image = image
+        self.image = UIImage(named: image)
+    }
+    
+    convenience init(uploaderName:String,imageTitle:String,imageDescription:String?,tags:[String]!,likeCount:Int!,image:UIImage!) {
+        self.init(uploaderName: uploaderName, imageTitle: imageTitle, imageDescription: imageDescription, tags: tags, likeCount: likeCount, image: image)
     }
     
     

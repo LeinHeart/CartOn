@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CoreData
 
 class PopularView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,TopUploadDelegate {
     
@@ -31,7 +30,8 @@ class PopularView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UI
     var topUploadPost = PostList().topUploadList
     
     
-    var topUploadImageArray = [String]()
+    
+    var topUploadImageArray = [UIImage]()
     var topUploadTitleArray = [String]()
     var topUploadUploaderArray = [String]()
     var topUploadLikeCountArray = [Int]()
@@ -40,20 +40,6 @@ class PopularView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UI
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        let fetchRequest:NSFetchRequest<PostImage> = PostImage.fetchRequest()
-        do{
-            let imageFetch = try PersistenceService.context.fetch(fetchRequest)
-            for i in imageFetch {
-                let image = UIImage(data: i.image!)
-                let title = i.title
-                let uploader = i.uploader
-                let imgDesc = i.imgDesc
-                let likeCount = Int(i.likeCount)
-                let tag = i.tag
-                uploadPost.append(PostClass(uploaderName: uploader!, imageTitle: title!, imageDescription: imgDesc, tags: [tag!], likeCount: likeCount, image: image))
-            }
-        }catch{}
         
         uploadPost.reverse()
         topUploadPost.reverse()
@@ -138,12 +124,12 @@ class PopularView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UI
         
     }
     
-    func detail(name: String, uploader: String, image: String, likeCount: Int, description: String ,tag:[String]) {
+    func detail(name: String, uploader: String, image: UIImage, likeCount: Int, description: String ,tag:[String]) {
         vcDelegate?.detail(name: name, uploader: uploader, image: image, likeCount: likeCount, description: description, tag: tag)
     }
 
 }
 
 protocol PopularDelegate {
-    func detail(name: String, uploader: String, image: String, likeCount: Int, description: String ,tag:[String])
+    func detail(name: String, uploader: String, image: UIImage, likeCount: Int, description: String ,tag:[String])
 }
