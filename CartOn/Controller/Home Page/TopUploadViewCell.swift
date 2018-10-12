@@ -216,7 +216,7 @@ class TopUploadViewCell: UICollectionViewCell,UICollectionViewDelegate, UICollec
             addSubview(titleLabel)
             titleLabel.setAnchor(top: imageView.bottomAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 0)
             
-            likeIcon.image = UIImage(named: "like")
+            likeIcon.image = UIImage(named: "Like")
             likeIcon.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
             addSubview(likeIcon)
             likeIcon.setAnchor(top: nil, left: self.leftAnchor, bottom: self.bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 10, paddingBottom: -10, paddingRight: 0,width: 18,height: 18)
@@ -228,23 +228,24 @@ class TopUploadViewCell: UICollectionViewCell,UICollectionViewDelegate, UICollec
         }
         
         @objc func tapDetected(){
-            if likeIcon.backgroundColor == nil{
-                likeIcon.backgroundColor = .orange
-                likeCount += 1
+            if likeIcon.image == UIImage(named: "Like"){
+                likeIcon.image = UIImage(named: "Liked")
+                self.likeCount += 1
+                
                 DispatchQueue.main.async {
                     self.likeLabel.text = String(self.likeCount)
                 }
                 print(likeCount)
             }
             else{
-                likeIcon.backgroundColor = nil
-                likeCount -= 1
+                likeIcon.image = UIImage(named: "Like")
+                self.likeCount -= 1
+                
                 DispatchQueue.main.async {
                     self.likeLabel.text = String(self.likeCount)
                 }
                 print(likeCount)
             }
-            
         }
     }
 }
