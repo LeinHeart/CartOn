@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import CoreData
 class PopularView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,TopUploadDelegate {
     
     
@@ -26,7 +26,8 @@ class PopularView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UI
     
     var vcDelegate :PopularDelegate?
     
-    var uploadPost = PostList().uploadList
+    var uploadPost = [PostClass]()
+    //var uploadPost = PostList().uploadList
     var topUploadPost = PostList().topUploadList
     
     
@@ -41,6 +42,7 @@ class PopularView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UI
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        //fetchData()
         uploadPost.reverse()
         topUploadPost.reverse()
         
@@ -61,6 +63,8 @@ class PopularView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UI
             topUploadDescription.append(name.imageDescription!)
             topUploadTags.append(name.tags)
         }
+        
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -98,7 +102,6 @@ class PopularView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UI
         cell.tags = topUploadTags
         cell.backgroundColor = .orange
         cell.vcDelegate = self as! TopUploadDelegate
-        
 
         return cell
     }
@@ -127,6 +130,8 @@ class PopularView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UI
     func detail(name: String, uploader: String, image: UIImage, likeCount: Int, description: String ,tag:[String]) {
         vcDelegate?.detail(name: name, uploader: uploader, image: image, likeCount: likeCount, description: description, tag: tag)
     }
+    
+    
 
 }
 
