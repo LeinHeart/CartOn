@@ -8,8 +8,7 @@
 
 import UIKit
 
-class PostDetailViewController: UIViewController {
-
+class PostDetailViewController: UIViewController{
     var name = String.init()
     var image = String.init()
     var uploader = String.init()
@@ -52,7 +51,7 @@ class PostDetailViewController: UIViewController {
     var likeIcon :UIImageView = {
         let iv = UIImageView()
         iv.frame = CGRect(x: 0, y: 0, width: 18, height: 18)
-        iv.image = UIImage(named: "like")
+        iv.image = UIImage(named: "Like")
         return iv
     }()
     
@@ -60,7 +59,7 @@ class PostDetailViewController: UIViewController {
     var timeIcon :UIImageView = {
         let iv = UIImageView()
         iv.frame = CGRect(x: 0, y: 0, width: 18, height: 18)
-        iv.image = UIImage(named: "like")
+        iv.image = UIImage(named: "Time")
         return iv
     }()
     var timeStamp :UILabel = {
@@ -75,7 +74,7 @@ class PostDetailViewController: UIViewController {
     var sawIcon :UIImageView = {
         let iv = UIImageView()
         iv.frame = CGRect(x: 0, y: 0, width: 18, height: 18)
-        iv.image = UIImage(named: "like")
+        iv.image = UIImage(named: "View")
         return iv
     }()
     var sawCount :UILabel = {
@@ -90,7 +89,7 @@ class PostDetailViewController: UIViewController {
     var tagsIcon :UIImageView = {
         let iv = UIImageView()
         iv.frame = CGRect(x: 0, y: 0, width: 18, height: 18)
-        iv.image = UIImage(named: "like")
+        iv.image = UIImage(named: "Tag")
         return iv
     }()
     
@@ -105,7 +104,7 @@ class PostDetailViewController: UIViewController {
     var descIcon :UIImageView = {
         let iv = UIImageView()
         iv.frame = CGRect(x: 0, y: 0, width: 18, height: 18)
-        iv.image = UIImage(named: "like")
+        iv.image = UIImage(named: "Information")
         return iv
     }()
     
@@ -122,11 +121,13 @@ class PostDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let tapRegoc = UITapGestureRecognizer(target: self, action: #selector(tapDetected))
+        let tapRegocImage = UITapGestureRecognizer(target: self, action: #selector(tapImageDetail))
         
         likeIcon.isUserInteractionEnabled = true
         likeIcon.addGestureRecognizer(tapRegoc)
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(tapRegocImage)
         
         DispatchQueue.main.async {
             self.likeLabel.text = String(self.likeCount)
@@ -157,8 +158,6 @@ class PostDetailViewController: UIViewController {
 //                let newWidth = view.frame.height * ratio
 //                imageView.frame.size = CGSize(width: newWidth, height: view.frame.height)
 //            }
-            
-        
         
         uploaderName.text = uploader
         likeLabel.text = String(likeCount)
@@ -217,8 +216,8 @@ class PostDetailViewController: UIViewController {
     }
     
     @objc func tapDetected(){
-        if likeIcon.backgroundColor == nil{
-            likeIcon.backgroundColor = .orange
+        if likeIcon.image == UIImage(named: "Like"){
+            likeIcon.image = UIImage(named: "Liked")
                 self.likeCount += 1
             
             DispatchQueue.main.async {
@@ -227,7 +226,7 @@ class PostDetailViewController: UIViewController {
             print(likeCount)
         }
         else{
-            likeIcon.backgroundColor = nil
+            likeIcon.image = UIImage(named: "Like")
                 self.likeCount -= 1
             
             DispatchQueue.main.async {
@@ -236,4 +235,14 @@ class PostDetailViewController: UIViewController {
             print(likeCount)
         }
     }
+    
+    @objc func tapImageDetail(){
+//        let vc = self.storyboard?.instantiateViewController(withIdentifier: "id") as! PostDetailImagePreviewViewController
+        let vc = PostDetailImagePreviewViewController()
+        vc.receivedImage = imageView.image
+        self.present(vc, animated: true, completion: nil)
+        
+    }
+    
+    
 }

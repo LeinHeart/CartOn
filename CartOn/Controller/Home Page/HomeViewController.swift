@@ -59,8 +59,7 @@ class HomeViewController: UIViewController, SubscriptionDelegate, PopularDelegat
         subsView.isHidden = true
         popsView.isHidden = false
         
-        tabBarItem.title = "Testing"
-        tabBarItem.image = #imageLiteral(resourceName: "like")
+        
         
         
 //        popularView.frame = CGRect(x: 0, y: 0, width: 0, height: 0)

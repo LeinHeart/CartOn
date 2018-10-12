@@ -82,7 +82,7 @@ class SubscriptionViewCell: UICollectionViewCell{
         }
         
         
-        likeIcon.image = UIImage(named: "like")
+        likeIcon.image = UIImage(named: "Like")
         likeIcon.frame = CGRect(x: 0, y: 0, width: 18, height: 18)
         
         addSubview(uploaderLabel)
@@ -99,9 +99,9 @@ class SubscriptionViewCell: UICollectionViewCell{
     }
     
     @objc func tapDetected(){
-        if likeIcon.backgroundColor == nil{
-            likeIcon.backgroundColor = .orange
-                self.likeCount += 1
+        if likeIcon.image == UIImage(named: "Like"){
+            likeIcon.image = UIImage(named: "Liked")
+            self.likeCount += 1
             
             DispatchQueue.main.async {
                 self.likeLabel.text = String(self.likeCount)
@@ -109,8 +109,8 @@ class SubscriptionViewCell: UICollectionViewCell{
             print(likeCount)
         }
         else{
-            likeIcon.backgroundColor = nil
-                self.likeCount -= 1
+            likeIcon.image = UIImage(named: "Like")
+            self.likeCount -= 1
             
             DispatchQueue.main.async {
                 self.likeLabel.text = String(self.likeCount)
