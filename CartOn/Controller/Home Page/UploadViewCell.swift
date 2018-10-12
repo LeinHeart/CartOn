@@ -10,10 +10,10 @@ import UIKit
 
 class UploadViewCell: UICollectionViewCell{
     
-    var uploadImages: String? {
+    var uploadImages: UIImage? {
         didSet{
             if let imageName = uploadImages {
-                imageView.image = UIImage(named: imageName)
+                imageView.image = imageName
             }
         }
     }

@@ -31,7 +31,7 @@ class PopularView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UI
     
     
     
-    var topUploadImageArray = [String]()
+    var topUploadImageArray = [UIImage]()
     var topUploadTitleArray = [String]()
     var topUploadUploaderArray = [String]()
     var topUploadLikeCountArray = [Int]()
@@ -124,12 +124,12 @@ class PopularView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UI
         
     }
     
-    func detail(name: String, uploader: String, image: String, likeCount: Int, description: String ,tag:[String]) {
+    func detail(name: String, uploader: String, image: UIImage, likeCount: Int, description: String ,tag:[String]) {
         vcDelegate?.detail(name: name, uploader: uploader, image: image, likeCount: likeCount, description: description, tag: tag)
     }
 
 }
 
 protocol PopularDelegate {
-    func detail(name: String, uploader: String, image: String, likeCount: Int, description: String ,tag:[String])
+    func detail(name: String, uploader: String, image: UIImage, likeCount: Int, description: String ,tag:[String])
 }

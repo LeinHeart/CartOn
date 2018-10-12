@@ -10,7 +10,7 @@ import UIKit
 
 class PostDetailViewController: UIViewController{
     var name = String.init()
-    var image = String.init()
+    var image = UIImage.init()
     var uploader = String.init()
     var likeCount = Int.init()
     
@@ -134,7 +134,7 @@ class PostDetailViewController: UIViewController{
         timeStamp.text = "Uploaded 7 minutes ago by "
         sawCount.text = "250"
         
-        let imageTampung = UIImage(named: image)
+        let imageTampung = image
         imageView.image = imageTampung
         imageView.backgroundColor = .white
         
@@ -164,7 +164,7 @@ class PostDetailViewController: UIViewController{
         descLabel.sizeToFit()
         
         
-        imageView.setAnchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0,width : view.frame.width, height: (imageTampung!.size.height) * (view.frame.width / (imageTampung?.size.height)!))
+        imageView.setAnchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0,width : view.frame.width, height: (imageTampung.size.height) * (view.frame.width / (imageTampung.size.height)))
         titleLabel.setAnchor(top: imageView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 10, paddingLeft: 18, paddingBottom: 0, paddingRight: 0)
         timeIcon.setAnchor(top: titleLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 18, paddingBottom: 0, paddingRight: 0)
         timeStamp.setAnchor(top: titleLabel.bottomAnchor, left: timeIcon.leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 43, paddingBottom: 0, paddingRight: 0)
@@ -186,7 +186,7 @@ class PostDetailViewController: UIViewController{
         }
     }
     
-    func setData(name: String, uploader: String, image: String, likeCount: Int, description: String ,tag:[String]) {
+    func setData(name: String, uploader: String, image: UIImage, likeCount: Int, description: String ,tag:[String]) {
         self.name = name
         self.image = image
         self.uploader = uploader

@@ -75,5 +75,5 @@ class SubscriptionView: UIView,UICollectionViewDelegate,UICollectionViewDataSour
 }
 
 protocol SubscriptionDelegate {
-    func detail(name: String, uploader: String, image: String, likeCount: Int, description: String ,tag:[String])
+    func detail(name: String, uploader: String, image: UIImage, likeCount: Int, description: String ,tag:[String])
 }

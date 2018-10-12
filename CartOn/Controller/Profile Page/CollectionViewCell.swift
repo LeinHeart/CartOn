@@ -10,10 +10,10 @@ import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
     
-    var images: String? {
+    var images: UIImage? {
         didSet{
             if let imageName = images {
-                imageView.image = UIImage(named: imageName)
+                imageView.image = imageName
             }
         }
     }
