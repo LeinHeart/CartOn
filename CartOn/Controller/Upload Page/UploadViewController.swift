@@ -21,7 +21,6 @@ class UploadViewController: UIViewController,UINavigationControllerDelegate,UIIm
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: nil, action: #selector(cancelBtn))
         vc.vcDelegate = self
     }
     
@@ -54,7 +53,6 @@ class UploadViewController: UIViewController,UINavigationControllerDelegate,UIIm
         guard let selectedImage = info[.originalImage] as? UIImage else {
             fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
         }
-        //imageSelect = selectedImage
         self.quit = false
         Chosen.isChosen = true
         dismiss(animated: true, completion: nil)

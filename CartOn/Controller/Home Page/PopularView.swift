@@ -65,10 +65,7 @@ class PopularView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UI
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
-        
     }
-    
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 2
@@ -127,12 +124,10 @@ class PopularView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UI
         
     }
     
-    
     func detail(name: String, uploader: String, image: String, likeCount: Int, description: String ,tag:[String]) {
         vcDelegate?.detail(name: name, uploader: uploader, image: image, likeCount: likeCount, description: description, tag: tag)
     }
 
-    
 }
 
 protocol PopularDelegate {

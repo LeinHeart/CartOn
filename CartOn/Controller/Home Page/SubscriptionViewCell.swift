@@ -18,13 +18,10 @@ class SubscriptionViewCell: UICollectionViewCell{
         }
     }
     
-    
-    
     let imageView:UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
-//        iv.layer.cornerRadius = 15
         iv.layer.borderWidth = 0.3
         iv.layer.borderColor = UIColor.gray.cgColor
         return iv
@@ -69,7 +66,6 @@ class SubscriptionViewCell: UICollectionViewCell{
         let tapRegoc = UITapGestureRecognizer(target: self, action: #selector(tapDetected))
         
         backgroundColor = .white
-        //backgroundColor = .clear
         setCellShadow()
         
         likeIcon.isUserInteractionEnabled = true
@@ -82,7 +78,7 @@ class SubscriptionViewCell: UICollectionViewCell{
         }
         
         
-        likeIcon.image = UIImage(named: "like")
+        likeIcon.image = UIImage(named: "Like")
         likeIcon.frame = CGRect(x: 0, y: 0, width: 18, height: 18)
         
         addSubview(uploaderLabel)
@@ -99,9 +95,9 @@ class SubscriptionViewCell: UICollectionViewCell{
     }
     
     @objc func tapDetected(){
-        if likeIcon.backgroundColor == nil{
-            likeIcon.backgroundColor = .orange
-                self.likeCount += 1
+        if likeIcon.image == UIImage(named: "Like"){
+            likeIcon.image = UIImage(named: "Liked")
+            self.likeCount += 1
             
             DispatchQueue.main.async {
                 self.likeLabel.text = String(self.likeCount)
@@ -109,8 +105,8 @@ class SubscriptionViewCell: UICollectionViewCell{
             print(likeCount)
         }
         else{
-            likeIcon.backgroundColor = nil
-                self.likeCount -= 1
+            likeIcon.image = UIImage(named: "Like")
+            self.likeCount -= 1
             
             DispatchQueue.main.async {
                 self.likeLabel.text = String(self.likeCount)

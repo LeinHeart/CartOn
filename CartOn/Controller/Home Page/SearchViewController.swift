@@ -16,7 +16,6 @@ class SearchViewController: UIViewController,UISearchBarDelegate {
         super.viewDidLoad()
         createSearchBar()
         searchBar.becomeFirstResponder()
-        // Do any additional setup after loading the view.
     }
     func createSearchBar(){
         searchBar.placeholder = "Search"
@@ -28,14 +27,4 @@ class SearchViewController: UIViewController,UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.endEditing(true)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

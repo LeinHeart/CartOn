@@ -8,8 +8,7 @@
 
 import UIKit
 
-class PostDetailViewController: UIViewController {
-
+class PostDetailViewController: UIViewController{
     var name = String.init()
     var image = String.init()
     var uploader = String.init()
@@ -25,10 +24,8 @@ class PostDetailViewController: UIViewController {
     //Mark UIImage
     let imageView :UIImageView = {
         let iv = UIImageView()
-//        iv.frame = CGRect(x: 0, y: 64, width: 0, height: 0)
         iv.contentMode = .scaleAspectFit
         iv.clipsToBounds = true
-        
         return iv
     }()
     
@@ -52,7 +49,7 @@ class PostDetailViewController: UIViewController {
     var likeIcon :UIImageView = {
         let iv = UIImageView()
         iv.frame = CGRect(x: 0, y: 0, width: 18, height: 18)
-        iv.image = UIImage(named: "like")
+        iv.image = UIImage(named: "Like")
         return iv
     }()
     
@@ -60,7 +57,7 @@ class PostDetailViewController: UIViewController {
     var timeIcon :UIImageView = {
         let iv = UIImageView()
         iv.frame = CGRect(x: 0, y: 0, width: 18, height: 18)
-        iv.image = UIImage(named: "like")
+        iv.image = UIImage(named: "Time")
         return iv
     }()
     var timeStamp :UILabel = {
@@ -75,7 +72,7 @@ class PostDetailViewController: UIViewController {
     var sawIcon :UIImageView = {
         let iv = UIImageView()
         iv.frame = CGRect(x: 0, y: 0, width: 18, height: 18)
-        iv.image = UIImage(named: "like")
+        iv.image = UIImage(named: "View")
         return iv
     }()
     var sawCount :UILabel = {
@@ -90,13 +87,14 @@ class PostDetailViewController: UIViewController {
     var tagsIcon :UIImageView = {
         let iv = UIImageView()
         iv.frame = CGRect(x: 0, y: 0, width: 18, height: 18)
-        iv.image = UIImage(named: "like")
+        iv.image = UIImage(named: "Tag")
         return iv
     }()
     
     var tagsCount :UILabel = {
         let tl = UILabel()
         tl.font = UIFont(name: "Avenir-medium", size: 14)
+        tl.textColor = .blue
         tl.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
         return tl
     }()
@@ -105,7 +103,7 @@ class PostDetailViewController: UIViewController {
     var descIcon :UIImageView = {
         let iv = UIImageView()
         iv.frame = CGRect(x: 0, y: 0, width: 18, height: 18)
-        iv.image = UIImage(named: "like")
+        iv.image = UIImage(named: "Information")
         return iv
     }()
     
@@ -116,49 +114,29 @@ class PostDetailViewController: UIViewController {
         return tl
     }()
     
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let tapRegoc = UITapGestureRecognizer(target: self, action: #selector(tapDetected))
+        let tapRegocImage = UITapGestureRecognizer(target: self, action: #selector(tapImageDetail))
         
         likeIcon.isUserInteractionEnabled = true
         likeIcon.addGestureRecognizer(tapRegoc)
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(tapRegocImage)
         
         DispatchQueue.main.async {
             self.likeLabel.text = String(self.likeCount)
         }
-        //self.extendedLayoutIncludesOpaqueBars = true
-        //self.edgesForExtendedLayout = []
         
         view.backgroundColor = .white
         
         titleLabel.text = name
         timeStamp.text = "Uploaded 7 minutes ago by "
         sawCount.text = "250"
-        //tagsCount.text = "Memes,Cat,Bear,Animal,Cute"
-//        descLabel.text = "Ini lucu loh :)"
-        
         
         let imageTampung = UIImage(named: image)
         imageView.image = imageTampung
         imageView.backgroundColor = .white
-        
-       
-//            let ratio = imageTampung.size.width / imageTampung.size.height
-//            if view.frame.width > view.frame.height{
-//                let newHeight = view.frame.width / ratio
-//                imageView.frame.size = CGSize(width: view.frame.width, height: newHeight)
-//            }
-//            else{
-//                let newWidth = view.frame.height * ratio
-//                imageView.frame.size = CGSize(width: newWidth, height: view.frame.height)
-//            }
-            
-        
         
         uploaderName.text = uploader
         likeLabel.text = String(likeCount)
@@ -177,6 +155,15 @@ class PostDetailViewController: UIViewController {
         view.addSubview(descIcon)
         view.addSubview(descLabel)
         
+        descLabel.lineBreakMode = .byWordWrapping
+        descLabel.numberOfLines = 0
+        descLabel.sizeToFit()
+        
+        tagsCount.lineBreakMode = .byWordWrapping
+        tagsCount.numberOfLines = 0
+        descLabel.sizeToFit()
+        
+        
         imageView.setAnchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0,width : view.frame.width, height: (imageTampung!.size.height) * (view.frame.width / (imageTampung?.size.height)!))
         titleLabel.setAnchor(top: imageView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 10, paddingLeft: 18, paddingBottom: 0, paddingRight: 0)
         timeIcon.setAnchor(top: titleLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 18, paddingBottom: 0, paddingRight: 0)
@@ -187,9 +174,9 @@ class PostDetailViewController: UIViewController {
         sawIcon.setAnchor(top: likeIcon.bottomAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 18, paddingBottom: 0, paddingRight: 0)
         sawCount.setAnchor(top: likeIcon.bottomAnchor, left: sawIcon.leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 43, paddingBottom: 0, paddingRight: 0)
         tagsIcon.setAnchor(top: sawIcon.bottomAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 18, paddingBottom: 0, paddingRight: 0)
-        tagsCount.setAnchor(top: sawIcon.bottomAnchor, left: tagsIcon.leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 43, paddingBottom: 0, paddingRight: 0)
+        tagsCount.setAnchor(top: sawIcon.bottomAnchor, left: tagsIcon.leftAnchor, bottom: nil, right: view.safeAreaLayoutGuide.rightAnchor, paddingTop: 20, paddingLeft: 43, paddingBottom: 0, paddingRight: 0)
         descIcon.setAnchor(top: tagsIcon.bottomAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 18, paddingBottom: 0, paddingRight: 0)
-        descLabel.setAnchor(top: tagsIcon.bottomAnchor, left: descIcon.leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 43, paddingBottom: 0, paddingRight: 0)
+        descLabel.setAnchor(top: tagsIcon.bottomAnchor, left: descIcon.leftAnchor, bottom: nil, right: view.safeAreaLayoutGuide.rightAnchor, paddingTop: 20, paddingLeft: 43, paddingBottom: 0, paddingRight: 0)
         
     }
     
@@ -199,13 +186,13 @@ class PostDetailViewController: UIViewController {
         }
     }
     
-    
     func setData(name: String, uploader: String, image: String, likeCount: Int, description: String ,tag:[String]) {
         self.name = name
         self.image = image
         self.uploader = uploader
         self.likeCount = likeCount
         self.descLabel.text = description
+        
         var tampung = String()
         for i in tag {
             tampung += i
@@ -217,8 +204,8 @@ class PostDetailViewController: UIViewController {
     }
     
     @objc func tapDetected(){
-        if likeIcon.backgroundColor == nil{
-            likeIcon.backgroundColor = .orange
+        if likeIcon.image == UIImage(named: "Like"){
+            likeIcon.image = UIImage(named: "Liked")
                 self.likeCount += 1
             
             DispatchQueue.main.async {
@@ -227,7 +214,7 @@ class PostDetailViewController: UIViewController {
             print(likeCount)
         }
         else{
-            likeIcon.backgroundColor = nil
+            likeIcon.image = UIImage(named: "Like")
                 self.likeCount -= 1
             
             DispatchQueue.main.async {
@@ -236,4 +223,13 @@ class PostDetailViewController: UIViewController {
             print(likeCount)
         }
     }
+    
+    @objc func tapImageDetail(){
+        let vc = PostDetailImagePreviewViewController()
+        vc.receivedImage = imageView.image
+        self.present(vc, animated: true, completion: nil)
+        
+    }
+    
+    
 }

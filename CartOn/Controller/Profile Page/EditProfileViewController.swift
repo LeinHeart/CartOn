@@ -49,11 +49,5 @@ class EditProfileViewController: UIViewController {
         headerView.addSubview(profPicEdit)
         profPic.center = CGPoint(x: headerView.bounds.size.width / 2, y: headerView.bounds.size.height / 2 - 20)
         profPicEdit.setAnchor(top: profPic.bottomAnchor, left: headerView.leftAnchor, bottom: nil, right: headerView.rightAnchor, paddingTop: 15, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
-
-        
-        
-        
-        
     }
-
 }

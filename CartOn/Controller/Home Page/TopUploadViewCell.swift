@@ -81,14 +81,11 @@ class TopUploadViewCell: UICollectionViewCell,UICollectionViewDelegate, UICollec
         topView.frame = CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height)
         addSubview(topView)
         
-        
-        
         collectionView.delegate = self
         collectionView.dataSource = self
         
         collectionView.register(IconsCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.showsHorizontalScrollIndicator = false
-        //collectionView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         
         topTitle.text = "Top Upload"
         topTitle.textColor = .white
@@ -100,16 +97,9 @@ class TopUploadViewCell: UICollectionViewCell,UICollectionViewDelegate, UICollec
         topTitle.setAnchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: frame.width, height: 20)
         
         collectionView.setAnchor(top: topTitle.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 10, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: frame.width, height: 0)
-        
-        //collectionView.setAnchor(top: topView.topAnchor, left: topView.leftAnchor, bottom: bottomAnchor, right: nil , paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
-        //topTitle.setAnchor(top: topAnchor, left: leftAnchor, bottom: collectionView.topAnchor, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
-        
-        
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //return (images?.count)!
         return 5
     }
     
@@ -153,7 +143,6 @@ class TopUploadViewCell: UICollectionViewCell,UICollectionViewDelegate, UICollec
             let iv = UIImageView()
             iv.contentMode = .scaleAspectFill
             iv.clipsToBounds = true
-//            iv.layer.cornerRadius = 15
             iv.layer.borderWidth = 0.3
             iv.layer.borderColor = UIColor.gray.cgColor
             return iv
@@ -216,7 +205,7 @@ class TopUploadViewCell: UICollectionViewCell,UICollectionViewDelegate, UICollec
             addSubview(titleLabel)
             titleLabel.setAnchor(top: imageView.bottomAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 0)
             
-            likeIcon.image = UIImage(named: "like")
+            likeIcon.image = UIImage(named: "Like")
             likeIcon.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
             addSubview(likeIcon)
             likeIcon.setAnchor(top: nil, left: self.leftAnchor, bottom: self.bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 10, paddingBottom: -10, paddingRight: 0,width: 18,height: 18)
@@ -228,23 +217,24 @@ class TopUploadViewCell: UICollectionViewCell,UICollectionViewDelegate, UICollec
         }
         
         @objc func tapDetected(){
-            if likeIcon.backgroundColor == nil{
-                likeIcon.backgroundColor = .orange
-                likeCount += 1
+            if likeIcon.image == UIImage(named: "Like"){
+                likeIcon.image = UIImage(named: "Liked")
+                self.likeCount += 1
+                
                 DispatchQueue.main.async {
                     self.likeLabel.text = String(self.likeCount)
                 }
                 print(likeCount)
             }
             else{
-                likeIcon.backgroundColor = nil
-                likeCount -= 1
+                likeIcon.image = UIImage(named: "Like")
+                self.likeCount -= 1
+                
                 DispatchQueue.main.async {
                     self.likeLabel.text = String(self.likeCount)
                 }
                 print(likeCount)
             }
-            
         }
     }
 }
