@@ -185,7 +185,7 @@ class CaptionViewController: UIViewController, UITextViewDelegate, UITextFieldDe
     @objc func selesai() {
         let postingImage = PostImage(context: PersistenceService.context)
         postingImage.title = titleTextField.text
-        postingImage.uploader = "John Doe"
+        postingImage.uploader = "Lily-chan"
         postingImage.imgDesc = captionTextField.text
         postingImage.tag = tagsTextField.text
         postingImage.likeCount = 0

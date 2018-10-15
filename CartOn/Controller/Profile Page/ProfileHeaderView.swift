@@ -41,6 +41,7 @@ class ProfileHeaderView: UICollectionReusableView {
         
         //set profile picture
         profilePict.image = UIImage(named: "profPic")
+        profilePict.backgroundColor = .white
         profilePict.frame = CGRect(x: 25, y: 20, width: 90, height: 90)
         profilePict.contentMode = .scaleAspectFit
         profilePict.layer.cornerRadius =  self.profilePict.frame.size.width / 2
@@ -48,7 +49,7 @@ class ProfileHeaderView: UICollectionReusableView {
         addSubview(profilePict)
         
         //set name
-        name.text = "Firdenon"
+        name.text = "Lily-chan"
         name.frame = CGRect(x: 0, y: 0, width: 50, height: 10)
         name.font = UIFont(name: "Avenir-Heavy", size: 20)
         addSubview(name)
