@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ProfileViewController: UIViewController , UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -15,6 +16,7 @@ class ProfileViewController: UIViewController , UICollectionViewDelegate, UIColl
     let uploadImageArray = ["upload1","upload2","upload3","upload4","upload5","upload6","upload7","upload8"]
     let titleArray = ["kucing pisang","kucing kotak","monster merah","monster biru","monster kumbang","kucing gemes","kucing imut","kucing lope lope"]
     var post = PostList().profileList
+    
     
     
     //MARK Setup
@@ -29,8 +31,7 @@ class ProfileViewController: UIViewController , UICollectionViewDelegate, UIColl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        post.reverse()
-        
+        profileFetchData()
         collectionView.delegate = self
         collectionView.dataSource = self
         
@@ -50,6 +51,8 @@ class ProfileViewController: UIViewController , UICollectionViewDelegate, UIColl
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
+        profileFetchData()
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -87,7 +90,9 @@ class ProfileViewController: UIViewController , UICollectionViewDelegate, UIColl
         
         if kind == UICollectionView.elementKindSectionHeader{
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath) as! ProfileHeaderView
+            header.labelCountPost.text = String(post.count)
             element = header
+            
         }
         return element
     }
@@ -110,6 +115,30 @@ class ProfileViewController: UIViewController , UICollectionViewDelegate, UIColl
     
     func appendData(name: String, title: String, description: String?, tags: [String]!, like: Int!, image: String!){
         post.append(PostClass(uploaderName: name, imageTitle: title, imageDescription: description, tags: tags, likeCount: like, image: image))
+    }
+    
+    func profileFetchData(){
+        let fetchRequest :NSFetchRequest<PostImage> = PostImage.fetchRequest()
+        post.removeAll()
+        post = PostList().profileList
+        do{
+            let postImage = try PersistenceService.context.fetch(fetchRequest)
+            for i in postImage{
+                let image = UIImage(data: i.image!)
+                let title = i.title
+                let imgDesc = i.imgDesc
+                let likeCount = Int(i.likeCount)
+                let uploader = i.uploader
+                let tag = i.tag
+                let po = PostClass(uploaderName: uploader!, imageTitle: title!, imageDescription: imgDesc, tags: [tag!], likeCount: likeCount)
+                po.addImageFromUiImage(image: image!)
+                print("ini title = \(i.title)")
+                post.append(po)
+            }
+            post.reverse()
+            collectionView.reloadData()
+        }catch{}
+        print("data fetched")
     }
     
 }
