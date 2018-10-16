@@ -47,6 +47,8 @@ class ProfileViewController: UIViewController , UICollectionViewDelegate, UIColl
         
         navigationItem.rightBarButtonItem = editButton
         
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Saved", style: .plain, target: self, action: #selector(ProfileViewController.savedBtnAction))
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -103,6 +105,11 @@ class ProfileViewController: UIViewController , UICollectionViewDelegate, UIColl
     
     @objc func editBtnAction() {
         navigationController?.pushViewController(EditProfileViewController(), animated: true)
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    @objc func savedBtnAction() {
+        navigationController?.pushViewController(SavedPageViewController(), animated: true)
         self.tabBarController?.tabBar.isHidden = true
     }
     
