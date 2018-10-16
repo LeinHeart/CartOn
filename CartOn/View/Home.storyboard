@@ -21,7 +21,7 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Czy-z3-ZFd">
                                 <rect key="frame" x="16" y="102" width="343" height="29"/>
                                 <segments>
-                                    <segment title="Popular"/>
+                                    <segment title="Home"/>
                                     <segment title="Following"/>
                                 </segments>
                                 <connections>
@@ -40,7 +40,7 @@
                     <navigationItem key="navigationItem" id="B4c-lF-p6P">
                         <nil key="title"/>
                         <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mjG-Ov-rIV">
-                            <rect key="frame" x="153.66666666666666" y="7" width="48" height="30"/>
+                            <rect key="frame" x="163.66666666666666" y="7" width="48" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Search"/>
                             <connections>
