@@ -26,35 +26,36 @@ class CaptionViewController: UIViewController, UITextViewDelegate, UITextFieldDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.addDoneButtonOnKeyboard()
         let fetchRequest: NSFetchRequest<PostImage> = PostImage.fetchRequest()
         do {
             let postImage = try PersistenceService.context.fetch(fetchRequest)
         }catch {}
+        
+        
         titleTextField.delegate = self
         captionTextField.delegate = self
         tagsTextField.delegate = self
-        self.view.backgroundColor = .gray
+        self.view.backgroundColor = .white
         
         stack = UIStackView(frame: CGRect(x: 0, y: 0, width: 0, height: 0 ))
         stack.alignment = .center
-        
         stack.backgroundColor = UIColor.gray
         self.view.addSubview(stack)
-        stack.setAnchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
+        stack.setAnchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(selesai))
         setup()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        setKeyboardListener()
         tabBarController?.tabBar.isHidden = true
         setup()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         //vcDelegate?.navigateHome()
+        removeKeyboarfListener()
         Chosen.isChosen = false
         imageView.image = nil
     }
@@ -62,7 +63,10 @@ class CaptionViewController: UIViewController, UITextViewDelegate, UITextFieldDe
   
     func setup() {
 
-        self.view.addSubview(stack)
+        
+        self.addDoneButtonOnKeyboard()
+        
+        //self.view.addSubview(stack)
         stack.addArrangedSubview(imageContainer)
         imageContainer.addSubview(imageView)
         stack.addArrangedSubview(titleLabel)
@@ -81,7 +85,7 @@ class CaptionViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         
         //Container
         imageContainer.backgroundColor = UIColor(red: 74/255, green: 74/255, blue: 74/255, alpha: 1.0)
-        imageContainer.widthAnchor.constraint(equalToConstant: self.view.frame.width).isActive = true
+        //imageContainer.widthAnchor.constraint(equalToConstant: self.view.frame.width).isActive = true
         imageContainer.heightAnchor.constraint(equalToConstant: 250).isActive = true
         
         //View 1
@@ -210,17 +214,17 @@ class CaptionViewController: UIViewController, UITextViewDelegate, UITextFieldDe
     
     func addDoneButtonOnKeyboard()
     {
-        var doneToolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
-        doneToolbar.barStyle = UIBarStyle.blackTranslucent
+        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
+        doneToolbar.barStyle = .default
 
-        var flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        var done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self, action: #selector(doneButtonAction))
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self, action: #selector(doneButtonAction))
 
-        var items = NSMutableArray()
+        let items = NSMutableArray()
         items.add(flexSpace)
         items.add(done)
 
-        doneToolbar.items = items as! [UIBarButtonItem]
+        doneToolbar.items = (items as! [UIBarButtonItem])
         doneToolbar.sizeToFit()
 
         self.titleTextField.inputAccessoryView = doneToolbar
@@ -234,6 +238,40 @@ class CaptionViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         self.captionTextField.resignFirstResponder()
         self.tagsTextField.resignFirstResponder()
     }
+    
+    func setKeyboardListener(){
+        NotificationCenter.default.addObserver(self, selector: #selector(CaptionViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(CaptionViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    func removeKeyboarfListener(){
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(_ notification:Notification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            //self.view.frame.origin.y -= keyboardSize.height
+            if captionTextField.isFirstResponder {
+                self.view.frame.origin.y -= keyboardSize.height - 30
+            } else if tagsTextField.isFirstResponder {
+                self.view.frame.origin.y -= keyboardSize.height - 10
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(_ notification:Notification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            //self.view.frame.origin.y += keyboardSize.height
+            self.view.frame.origin.y = 0
+        }
+    }
+    
+    
+    
+    
+    
+    
 }
 
 protocol CaptionViewProtocol {
