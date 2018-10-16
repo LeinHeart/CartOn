@@ -2,12 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:PostImage+CoreDataClass.swift">
-   </FileRef>
-   <FileRef
-      location = "group:PostImage+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
       location = "group:CartOn.xcodeproj">
    </FileRef>
    <FileRef

@@ -45,7 +45,7 @@ class ProfileViewController: UIViewController , UICollectionViewDelegate, UIColl
         let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(ProfileViewController.editBtnAction))
         
         navigationItem.rightBarButtonItem = editButton
-        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Saved", style: .plain, target: self, action: #selector(savedButton))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,7 +53,7 @@ class ProfileViewController: UIViewController , UICollectionViewDelegate, UIColl
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: nil, action: #selector(editBtnAction))
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: #selector(editBtnAction))
     }
     
     //MARK CollectionView : cell
@@ -110,6 +110,13 @@ class ProfileViewController: UIViewController , UICollectionViewDelegate, UIColl
     
     func appendData(name: String, title: String, description: String?, tags: [String]!, like: Int!, image: String!){
         post.append(PostClass(uploaderName: name, imageTitle: title, imageDescription: description, tags: tags, likeCount: like, image: image))
+    }
+    
+    @objc func savedButton(){
+        print("go to saved page")
+        let sv = SavedPageViewController()
+        navigationController?.pushViewController(sv, animated: true)
+        self.tabBarController?.tabBar.isHidden = true
     }
     
 }
