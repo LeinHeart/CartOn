@@ -65,7 +65,7 @@ class CollectionViewCell: UICollectionViewCell {
         addSubview(titleLabel)
         titleLabel.setAnchor(top: imageView.bottomAnchor, left: self.leftAnchor, bottom: nil, right: self.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 0)
         
-        likeIcon.image = UIImage(named: "like")
+        likeIcon.image = UIImage(named: "Like")
         likeIcon.frame = CGRect(x: 0, y: 0, width: 18, height: 18)
         likeIcon.isUserInteractionEnabled = true
         likeIcon.addGestureRecognizer(tapRegoc)

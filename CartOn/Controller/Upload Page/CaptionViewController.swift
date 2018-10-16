@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class CaptionViewController: UIViewController, UITextViewDelegate {
+class CaptionViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate {
 
     
     var stack = UIStackView.init()
@@ -27,12 +27,12 @@ class CaptionViewController: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self.addDoneButtonOnKeyboard()
+        self.addDoneButtonOnKeyboard()
         let fetchRequest: NSFetchRequest<PostImage> = PostImage.fetchRequest()
         do {
             let postImage = try PersistenceService.context.fetch(fetchRequest)
         }catch {}
-        
+        titleTextField.delegate = self
         captionTextField.delegate = self
         tagsTextField.delegate = self
         self.view.backgroundColor = .gray
@@ -110,6 +110,7 @@ class CaptionViewController: UIViewController, UITextViewDelegate {
         titleTextField.heightAnchor.constraint(equalToConstant: 60.0).isActive = true
         titleTextField.backgroundColor = UIColor.white
         titleTextField.placeholder = "Input Title"
+        titleTextField.text = ""
         titleTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
         titleTextField.leftViewMode = .always
         titleTextField.font = UIFont(name: "Avenir-Book", size: 20)
@@ -184,7 +185,7 @@ class CaptionViewController: UIViewController, UITextViewDelegate {
     @objc func selesai() {
         let postingImage = PostImage(context: PersistenceService.context)
         postingImage.title = titleTextField.text
-        postingImage.uploader = "John Doe"
+        postingImage.uploader = "Lily-chan"
         postingImage.imgDesc = captionTextField.text
         postingImage.tag = tagsTextField.text
         postingImage.likeCount = 0
@@ -193,32 +194,46 @@ class CaptionViewController: UIViewController, UITextViewDelegate {
         PersistenceService.saveContext()
         navigationController?.popViewController(animated: true)
     }
-//    func addDoneButtonOnKeyboard()
-//    {
-//        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 300, height: 200))
-//        doneToolbar.barStyle = UIBarStyle.blackTranslucent
-//
-//        var flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-//        var done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self, action: Selector("doneButtonAction"))
-//
-//        var items = NSMutableArray()
-//        items.add(flexSpace)
-//        items.add(done)
-//
-//        doneToolbar.items = items as! [UIBarButtonItem]
-//        doneToolbar.sizeToFit()
-//
-//        self.titleTextField.inputAccessoryView = doneToolbar
-//        self.captionTextField.inputAccessoryView = doneToolbar
-//        self.tagsTextField.inputAccessoryView = doneToolbar
-//    }
-//
-//    func doneButtonAction()
-//    {
-//        self.titleTextField.resignFirstResponder()
-//        self.captionTextField.resignFirstResponder()
-//        self.tagsTextField.resignFirstResponder()
-//    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        //or
+        //self.view.endEditing(true)
+        return true
+    }
+    
+    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+        textView.resignFirstResponder()
+        return true
+    }
+    
+    func addDoneButtonOnKeyboard()
+    {
+        var doneToolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
+        doneToolbar.barStyle = UIBarStyle.blackTranslucent
+
+        var flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        var done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self, action: #selector(doneButtonAction))
+
+        var items = NSMutableArray()
+        items.add(flexSpace)
+        items.add(done)
+
+        doneToolbar.items = items as! [UIBarButtonItem]
+        doneToolbar.sizeToFit()
+
+        self.titleTextField.inputAccessoryView = doneToolbar
+        self.captionTextField.inputAccessoryView = doneToolbar
+        self.tagsTextField.inputAccessoryView = doneToolbar
+    }
+
+    @objc func doneButtonAction()
+    {
+        self.titleTextField.resignFirstResponder()
+        self.captionTextField.resignFirstResponder()
+        self.tagsTextField.resignFirstResponder()
+    }
 }
 
 protocol CaptionViewProtocol {

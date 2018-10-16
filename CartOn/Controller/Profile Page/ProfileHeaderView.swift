@@ -24,6 +24,7 @@ class ProfileHeaderView: UICollectionReusableView {
     
     let labelPost = UILabel.init()
     let labelCountPost = UILabel.init()
+    var countPost = Int()
     
     let labelFollowers = UILabel.init()
     let labelCountFollowers = UILabel.init()
@@ -40,6 +41,7 @@ class ProfileHeaderView: UICollectionReusableView {
         
         //set profile picture
         profilePict.image = UIImage(named: "profPic")
+        profilePict.backgroundColor = .white
         profilePict.frame = CGRect(x: 25, y: 20, width: 90, height: 90)
         profilePict.contentMode = .scaleAspectFit
         profilePict.layer.cornerRadius =  self.profilePict.frame.size.width / 2
@@ -47,14 +49,14 @@ class ProfileHeaderView: UICollectionReusableView {
         addSubview(profilePict)
         
         //set name
-        name.text = "John Doe"
+        name.text = "Lily-chan"
         name.frame = CGRect(x: 0, y: 0, width: 50, height: 10)
         name.font = UIFont(name: "Avenir-Heavy", size: 20)
         addSubview(name)
         name.setAnchor(top: profilePict.topAnchor, left: profilePict.rightAnchor, bottom: nil, right: nil, paddingTop: 24, paddingLeft: 20, paddingBottom: 0, paddingRight: 0)
         
         //set location
-        origin.text = "Australia"
+        origin.text = "Indonesia"
         origin.frame = CGRect(x: 0, y: 0, width: 50, height: 10)
         origin.font = UIFont(name: "Avenir-Book", size: 18)
         origin.textColor = UIColor.gray
@@ -94,8 +96,7 @@ class ProfileHeaderView: UICollectionReusableView {
     
     //set post view
     func labelPostSetup(){
-        
-        labelCountPost.text = "8"
+        //labelCountPost.text = "8"
         labelCountPost.textAlignment = .center
         labelCountPost.font = UIFont(name: "Avenir-Heavy", size: 14)
         labelCountPost.textColor = .white
@@ -107,7 +108,7 @@ class ProfileHeaderView: UICollectionReusableView {
         
         
         
-        labelPost.text = "posts"
+        labelPost.text = "Pos"
         labelPost.textAlignment = .center
         labelPost.font = UIFont(name: "Avenir-Book", size: 12)
         labelPost.textColor = .white
@@ -131,7 +132,7 @@ class ProfileHeaderView: UICollectionReusableView {
         viewFollowers.addSubview(labelCountFollowers)
         labelCountFollowers.setAnchor(top: viewFollowers.topAnchor, left: viewFollowers.leftAnchor, bottom: nil, right: viewFollowers.rightAnchor, paddingTop: 10, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: viewFollowers.frame.size.width, height: 12)
         
-        labelFollowers.text = "followers"
+        labelFollowers.text = "Pengikut"
         labelFollowers.textAlignment = .center
         labelFollowers.font = UIFont(name: "Avenir-Book", size: 12)
         labelFollowers.textColor = .white
@@ -154,7 +155,7 @@ class ProfileHeaderView: UICollectionReusableView {
         viewFollowing.addSubview(labelCountFollowing)
         labelCountFollowing.setAnchor(top: viewFollowing.topAnchor, left: viewFollowing.leftAnchor, bottom: nil, right: viewFollowing.rightAnchor, paddingTop: 10, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: viewFollowing.frame.size.width, height: 12)
         
-        labelFollowing.text = "following"
+        labelFollowing.text = "Mengikuti"
         labelFollowing.textAlignment = .center
         labelFollowing.font = UIFont(name: "Avenir-Book", size: 12)
         labelFollowing.textColor = .white
@@ -162,6 +163,10 @@ class ProfileHeaderView: UICollectionReusableView {
         labelFollowing.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
         viewFollowing.addSubview(labelFollowing)
         labelFollowing.setAnchor(top: labelCountFollowing.bottomAnchor, left: viewFollowing.leftAnchor, bottom: nil, right: viewFollowing.rightAnchor, paddingTop: 5, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: viewFollowing.frame.size.width, height: 12.5)
+    }
+    
+    func takeCountData(count: Int){
+        countPost = count
     }
     
     required init?(coder aDecoder: NSCoder) {
