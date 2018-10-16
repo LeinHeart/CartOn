@@ -108,7 +108,7 @@ class ProfileHeaderView: UICollectionReusableView {
         
         
         
-        labelPost.text = "Pos"
+        labelPost.text = "Posts"
         labelPost.textAlignment = .center
         labelPost.font = UIFont(name: "Avenir-Book", size: 12)
         labelPost.textColor = .white
@@ -132,7 +132,7 @@ class ProfileHeaderView: UICollectionReusableView {
         viewFollowers.addSubview(labelCountFollowers)
         labelCountFollowers.setAnchor(top: viewFollowers.topAnchor, left: viewFollowers.leftAnchor, bottom: nil, right: viewFollowers.rightAnchor, paddingTop: 10, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: viewFollowers.frame.size.width, height: 12)
         
-        labelFollowers.text = "Pengikut"
+        labelFollowers.text = "Followers"
         labelFollowers.textAlignment = .center
         labelFollowers.font = UIFont(name: "Avenir-Book", size: 12)
         labelFollowers.textColor = .white
@@ -155,7 +155,7 @@ class ProfileHeaderView: UICollectionReusableView {
         viewFollowing.addSubview(labelCountFollowing)
         labelCountFollowing.setAnchor(top: viewFollowing.topAnchor, left: viewFollowing.leftAnchor, bottom: nil, right: viewFollowing.rightAnchor, paddingTop: 10, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: viewFollowing.frame.size.width, height: 12)
         
-        labelFollowing.text = "Mengikuti"
+        labelFollowing.text = "Following"
         labelFollowing.textAlignment = .center
         labelFollowing.font = UIFont(name: "Avenir-Book", size: 12)
         labelFollowing.textColor = .white

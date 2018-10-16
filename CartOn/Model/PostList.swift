@@ -132,11 +132,11 @@ class PostList{
         
         //MARK : Subscription List
         //1-5
-        subsList.append(PostClass(uploaderName: "Eric Victor", imageTitle: "Kucing Pisang", imageDescription: "Kucing ga suka pisang mukanya enyoi", tags: ["Kucing","Pisang","Meme"], likeCount: 100, image:"sub1"))
-        subsList.append(PostClass(uploaderName: "Eric Bictor", imageTitle: "Kucing Apel", imageDescription: "Kucing ga suka pisang mukanya enyoi", tags: ["Kucing","Pisang","Meme"], likeCount: 100, image:"sub2"))
-        subsList.append(PostClass(uploaderName: "Eric Biji", imageTitle: "Kucing Mangga", imageDescription: "Kucing ga suka pisang mukanya enyoi", tags: ["Kucing","Pisang","Meme"], likeCount: 100, image:"sub3"))
-        subsList.append(PostClass(uploaderName: "Eric", imageTitle: "Kucing Makan Sushi", imageDescription: "Kucing ga suka pisang mukanya enyoi", tags: ["Kucing","Pisang","Meme"], likeCount: 100, image:"sub4"))
-        subsList.append(PostClass(uploaderName: "Eric-Kun", imageTitle: "Kucing Naga", imageDescription: "Kucing ga suka pisang mukanya enyoi", tags: ["Kucing","Pisang","Meme"], likeCount: 100, image:"sub5"))
+        subsList.append(PostClass(uploaderName: "Julz", imageTitle: "Kucing Pisang", imageDescription: "Kucing ga suka pisang mukanya enyoi", tags: ["Kucing","Pisang","Meme"], likeCount: 100, image:"sub1"))
+        subsList.append(PostClass(uploaderName: "Nyunyud", imageTitle: "Kucing Apel", imageDescription: "Kucing ga suka pisang mukanya enyoi", tags: ["Kucing","Pisang","Meme"], likeCount: 100, image:"sub2"))
+        subsList.append(PostClass(uploaderName: "Firdenon", imageTitle: "Kucing Mangga", imageDescription: "Kucing ga suka pisang mukanya enyoi", tags: ["Kucing","Pisang","Meme"], likeCount: 100, image:"sub3"))
+        subsList.append(PostClass(uploaderName: "Vericox", imageTitle: "Kucing Makan Sushi", imageDescription: "Kucing ga suka pisang mukanya enyoi", tags: ["Kucing","Pisang","Meme"], likeCount: 100, image:"sub4"))
+        subsList.append(PostClass(uploaderName: "LeinHeart", imageTitle: "Kucing Naga", imageDescription: "Kucing ga suka pisang mukanya enyoi", tags: ["Kucing","Pisang","Meme"], likeCount: 100, image:"99"))
         
         //MARK : Top Upload List
         //1-5

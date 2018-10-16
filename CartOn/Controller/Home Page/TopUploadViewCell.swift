@@ -87,7 +87,7 @@ class TopUploadViewCell: UICollectionViewCell,UICollectionViewDelegate, UICollec
         collectionView.register(IconsCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.showsHorizontalScrollIndicator = false
         
-        topTitle.text = "Top Upload"
+        topTitle.text = "Top 5 Most Liked"
         topTitle.textColor = .white
         
         topView.addSubview(topTitle)
