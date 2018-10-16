@@ -11,7 +11,7 @@ import UIKit
 class SavedPageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     
-    var data = PostList().savedList
+    var data = PostList().topUploadList
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 16
