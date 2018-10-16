@@ -58,7 +58,7 @@ class ProfileViewController: UIViewController , UICollectionViewDelegate, UIColl
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: nil, action: #selector(editBtnAction))
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: #selector(editBtnAction))
     }
     
     //MARK CollectionView : cell

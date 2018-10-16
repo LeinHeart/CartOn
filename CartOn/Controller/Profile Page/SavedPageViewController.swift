@@ -68,6 +68,7 @@ class SavedPageViewController: UIViewController, UICollectionViewDelegate, UICol
     func detail(name: String, uploader: String, image: UIImage, likeCount: Int, description: String ,tag:[String]) {
         let dt = PostDetailViewController()
         dt.setData(name: name, uploader: uploader, image: image, likeCount: likeCount, description: description, tag: tag)
+        dt.isSaved = true
         self.navigationController?.pushViewController(dt, animated: true)
         //self.tabBarController?.tabBar.isHidden = true
     }

@@ -13,6 +13,7 @@ class PostDetailViewController: UIViewController{
     var image = UIImage.init()
     var uploader = String.init()
     var likeCount = Int.init()
+    var isSaved = Bool.init()
     
     //Mark Image Title
     var titleLabel :UILabel = {
@@ -116,6 +117,18 @@ class PostDetailViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if isSaved == false {
+            let saveItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(savedFunc))
+            navigationItem.rightBarButtonItem = saveItem
+        } else {
+            let savedItem = UIBarButtonItem(title: "Saved", style: .plain, target: self, action: #selector(redoSaved))
+            savedItem.tintColor = .gray
+            navigationItem.rightBarButtonItem = savedItem
+        }
+        
+       
+        
         let tapRegoc = UITapGestureRecognizer(target: self, action: #selector(tapDetected))
         let tapRegocImage = UITapGestureRecognizer(target: self, action: #selector(tapImageDetail))
         
@@ -228,7 +241,19 @@ class PostDetailViewController: UIViewController{
         let vc = PostDetailImagePreviewViewController()
         vc.receivedImage = imageView.image
         self.present(vc, animated: true, completion: nil)
-        
+    }
+    
+    @objc func savedFunc() {
+        let savedItem = UIBarButtonItem(title: "Saved", style: .plain, target: self, action: #selector(redoSaved))
+        savedItem.tintColor = .gray
+        navigationItem.rightBarButtonItem = savedItem
+        isSaved = true
+    }
+    
+    @objc func redoSaved() {
+        let saveItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(savedFunc))
+        navigationItem.rightBarButtonItem = saveItem
+        isSaved = false
     }
     
     
