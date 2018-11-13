@@ -73,7 +73,12 @@ class SubscriptionView: UIView,UICollectionViewDelegate,UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         vcDelegate?.detail(name: subsPost[indexPath.row].imageTitle, uploader: subsPost[indexPath.row].uploaderName, image: subsPost[indexPath.row].image, likeCount: subsPost[indexPath.row].likeCount, description: subsPost[indexPath.row].imageDescription!, tag: subsPost[indexPath.row].tags)
     }
+    
+    
+    
 }
+
+
 
 protocol SubscriptionDelegate {
     func detail(name: String, uploader: String, image: UIImage, likeCount: Int, description: String ,tag:[String])

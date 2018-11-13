@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import CloudKit
 class HomeViewController: UIViewController, SubscriptionDelegate, PopularDelegate{
     
     @IBOutlet weak var segmentedOutlet: UISegmentedControl!
@@ -22,11 +23,19 @@ class HomeViewController: UIViewController, SubscriptionDelegate, PopularDelegat
 //        popsView.collectionView.reloadData()
 //        print("Reload Masuk")
         
-        fetchData()
+//        fetchData()
+        fetchCloud()
         DispatchQueue.main.async {
             self.popsView.collectionView.reloadData()
         }
     }
+    
+    let filterView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.75)
+        view.isOpaque = false
+        return view
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,10 +52,15 @@ class HomeViewController: UIViewController, SubscriptionDelegate, PopularDelegat
         subsView.isHidden = true
         popsView.isHidden = false
         
+//        view.addSubview(filterView)
+//        filterView.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
+        
+        //fetchCloud()
         DispatchQueue.main.async {
             self.popsView.collectionView.reloadData()
         }
-        fetchData()
+//        fetchData()
+        
     }
     
     
@@ -73,32 +87,48 @@ class HomeViewController: UIViewController, SubscriptionDelegate, PopularDelegat
         self.navigationController?.pushViewController(dt, animated: true)
         self.tabBarController?.tabBar.isHidden = true
     }
+//
+//    func fetchData(){
+//        let fetchRequest :NSFetchRequest<PostImage> = PostImage.fetchRequest()
+//        popsView.uploadPost.removeAll()
+//        popsView.uploadPost = popsViewUpload
+//        do{
+//            let postImage = try PersistenceService.context.fetch(fetchRequest)
+//            for i in postImage{
+//                let image = UIImage(data: i.image!)
+//                let title = i.title
+//                let imgDesc = i.imgDesc
+//                let likeCount = Int(i.likeCount)
+//                let uploader = i.uploader
+//                let tag = i.tag
+//                let po = PostClass(uploaderName: uploader!, imageTitle: title!, imageDescription: imgDesc, tags: [tag!], likeCount: likeCount)
+//                po.addImageFromUiImage(image: image!)
+//                print("ini title = \(i.title)")
+//                popsView.uploadPost.append(po)
+//            }
+//            popsView.uploadPost.reverse()
+//            popsView.collectionView.reloadData()
+//        }catch{}
+//        print("data fetched")
+//    }
     
-    func fetchData(){
-        let fetchRequest :NSFetchRequest<PostImage> = PostImage.fetchRequest()
+    func fetchCloud(){
         popsView.uploadPost.removeAll()
-        popsView.uploadPost = popsViewUpload
-        do{
-            let postImage = try PersistenceService.context.fetch(fetchRequest)
-            for i in postImage{
-                let image = UIImage(data: i.image!)
-                let title = i.title
-                let imgDesc = i.imgDesc
-                let likeCount = Int(i.likeCount)
-                let uploader = i.uploader
-                let tag = i.tag
-                let po = PostClass(uploaderName: uploader!, imageTitle: title!, imageDescription: imgDesc, tags: [tag!], likeCount: likeCount)
-                po.addImageFromUiImage(image: image!)
-                print("ini title = \(i.title)")
-                popsView.uploadPost.append(po)
-            }
-            popsView.uploadPost.reverse()
-            popsView.collectionView.reloadData()
-        }catch{}
-        print("data fetched")
+        DispatchQueue.global().async {
+            guard let sementara = CloudKitHelper().fetchPostRecord(suc: { (res) in
+                for i in res {
+                    self.popsView.uploadPost.append(i)
+                }
+                
+                DispatchQueue.main.async {
+                    self.popsView.collectionView.reloadData()
+                }
+                
+            }) else {return}
+            
+        }
+        
     }
-    
-    
 }
 
 

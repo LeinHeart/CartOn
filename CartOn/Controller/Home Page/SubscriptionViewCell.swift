@@ -87,6 +87,10 @@ class SubscriptionViewCell: UICollectionViewCell{
         addSubview(likeIcon)
         addSubview(likeLabel)
         
+        setScaledCustomFont(label: titleLabel)
+        setScaledCustomFont(label: uploaderLabel)
+        setScaledCustomFont(label: likeLabel)
+        
         uploaderLabel.setAnchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 10, paddingBottom: 0, paddingRight: 0)
         imageView.setAnchor(top: uploaderLabel.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0,width: self.frame.size.width,height: self.frame.size.height / 2 * 1.35)
         titleLabel.setAnchor(top: imageView.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 0)
@@ -113,6 +117,22 @@ class SubscriptionViewCell: UICollectionViewCell{
             }
             print(likeCount)
         }
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        let isAccessibilityCategory = traitCollection.preferredContentSizeCategory.isAccessibilityCategory
+        if isAccessibilityCategory != previousTraitCollection?.preferredContentSizeCategory.isAccessibilityCategory {
+            updateFontSize()
+        }
+    }
+    func updateFontSize(){
+        if traitCollection.preferredContentSizeCategory == UIContentSizeCategory.accessibilityLarge || traitCollection.preferredContentSizeCategory == UIContentSizeCategory.accessibilityExtraLarge || traitCollection.preferredContentSizeCategory == UIContentSizeCategory.accessibilityExtraExtraLarge || traitCollection.preferredContentSizeCategory == UIContentSizeCategory.accessibilityExtraExtraExtraLarge {
+            titleLabel.font = UIFont(name: "Avenir-medium", size: 24.0)
+            uploaderLabel.font = UIFont(name: "Avenir-medium", size: 24.0)
+            likeLabel.font = UIFont(name: "Avenir-medium", size: 24.0)
+            
+        }
+        
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -8,9 +8,12 @@
 
 import UIKit
 import CoreData
+import AVFoundation
 
 class CaptionViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate {
 
+    var player = AVAudioPlayer()
+    let uploadSoundPath = Bundle.main.path(forResource: "uploadSound", ofType: ".mp3")
     
     var stack = UIStackView.init()
     let imageView = UIImageView.init()
@@ -26,10 +29,10 @@ class CaptionViewController: UIViewController, UITextViewDelegate, UITextFieldDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let fetchRequest: NSFetchRequest<PostImage> = PostImage.fetchRequest()
-        do {
-            let postImage = try PersistenceService.context.fetch(fetchRequest)
-        }catch {}
+//        let fetchRequest: NSFetchRequest<PostImage> = PostImage.fetchRequest()
+        
+        //trycatch below
+        //            let postImage = try PersistenceService.context.fetch(fetchRequest)
         
         
         titleTextField.delegate = self
@@ -123,7 +126,7 @@ class CaptionViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         captionLabel.backgroundColor = UIColor(red: 241/255, green: 241/255, blue: 242/255, alpha: 1.0)
         captionLabel.widthAnchor.constraint(equalToConstant: self.view.frame.width).isActive = true
         captionLabel.heightAnchor.constraint(equalToConstant: 35).isActive = true
-        captionLabel.text  = "  Caption"
+        captionLabel.text  = "  Description"
         captionLabel.textAlignment = .left
         
         //Caption Text Field
@@ -131,7 +134,7 @@ class CaptionViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         captionTextField.heightAnchor.constraint(equalToConstant: 159.0).isActive = true
         captionTextField.backgroundColor = UIColor.white
         captionTextField.font = UIFont(name: "Avenir-Book", size: 18)
-        captionTextField.text = " Input Caption"
+        captionTextField.text = " Input Description"
         captionTextField.textColor = .lightGray
         captionTextField.tag = 0
         
@@ -171,7 +174,7 @@ class CaptionViewController: UIViewController, UITextViewDelegate, UITextFieldDe
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.tag == 0 {
             if captionTextField.text.isEmpty {
-                captionTextField.text = " Input Caption"
+                captionTextField.text = " Input Description"
                 captionTextField.textColor = .lightGray
             }
         } else if textView.tag == 1 {
@@ -187,15 +190,25 @@ class CaptionViewController: UIViewController, UITextViewDelegate, UITextFieldDe
     }
     
     @objc func selesai() {
-        let postingImage = PostImage(context: PersistenceService.context)
-        postingImage.title = titleTextField.text
-        postingImage.uploader = "Lily-chan"
-        postingImage.imgDesc = captionTextField.text
-        postingImage.tag = tagsTextField.text
-        postingImage.likeCount = 0
+//        let postingImage = PostImage(context: PersistenceService.context)
+//        postingImage.title = titleTextField.text
+//        postingImage.uploader = "Lily-chan"
+//        postingImage.imgDesc = captionTextField.text
+//        postingImage.tag = tagsTextField.text
+//        postingImage.likeCount = 0
+//        let imagePresentation = imageView.image
+//        postingImage.image = UIImage.pngData(imagePresentation!)()
+//        PersistenceService.saveContext()
+        let post = PostClass(uploaderName: "Lily-chan", imageTitle: titleTextField.text!, imageDescription: captionTextField.text!, tags: [tagsTextField.text], likeCount: 0)
         let imagePresentation = imageView.image
-        postingImage.image = UIImage.pngData(imagePresentation!)()
-        PersistenceService.saveContext()
+        post.addImageFromUiImage(image: imagePresentation!)
+        CloudKitHelper().createNewPost(post: post)
+        do {
+            try player = AVAudioPlayer(contentsOf: URL(fileURLWithPath: uploadSoundPath!))
+        }catch {
+            print("File not found")
+        }
+        player.play()
         navigationController?.popViewController(animated: true)
     }
     

@@ -31,7 +31,7 @@ class ProfileViewController: UIViewController , UICollectionViewDelegate, UIColl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        profileFetchData()
+//        profileFetchData()
         collectionView.delegate = self
         collectionView.dataSource = self
         
@@ -53,7 +53,7 @@ class ProfileViewController: UIViewController , UICollectionViewDelegate, UIColl
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
-        profileFetchData()
+//        profileFetchData()
         
     }
     
@@ -124,29 +124,29 @@ class ProfileViewController: UIViewController , UICollectionViewDelegate, UIColl
         post.append(PostClass(uploaderName: name, imageTitle: title, imageDescription: description, tags: tags, likeCount: like, image: image))
     }
     
-    func profileFetchData(){
-        let fetchRequest :NSFetchRequest<PostImage> = PostImage.fetchRequest()
-        post.removeAll()
-        post = PostList().profileList
-        do{
-            let postImage = try PersistenceService.context.fetch(fetchRequest)
-            for i in postImage{
-                let image = UIImage(data: i.image!)
-                let title = i.title
-                let imgDesc = i.imgDesc
-                let likeCount = Int(i.likeCount)
-                let uploader = i.uploader
-                let tag = i.tag
-                let po = PostClass(uploaderName: uploader!, imageTitle: title!, imageDescription: imgDesc, tags: [tag!], likeCount: likeCount)
-                po.addImageFromUiImage(image: image!)
-                print("ini title = \(i.title)")
-                post.append(po)
-            }
-            post.reverse()
-            collectionView.reloadData()
-        }catch{}
-        print("data fetched")
-    }
+//    func profileFetchData(){
+//        let fetchRequest :NSFetchRequest<PostImage> = PostImage.fetchRequest()
+//        post.removeAll()
+//        post = PostList().profileList
+//        do{
+//            let postImage = try PersistenceService.context.fetch(fetchRequest)
+//            for i in postImage{
+//                let image = UIImage(data: i.image!)
+//                let title = i.title
+//                let imgDesc = i.imgDesc
+//                let likeCount = Int(i.likeCount)
+//                let uploader = i.uploader
+//                let tag = i.tag
+//                let po = PostClass(uploaderName: uploader!, imageTitle: title!, imageDescription: imgDesc, tags: [tag!], likeCount: likeCount)
+//                po.addImageFromUiImage(image: image!)
+//                print("ini title = \(i.title)")
+//                post.append(po)
+//            }
+//            post.reverse()
+//            collectionView.reloadData()
+//        }catch{}
+//        print("data fetched")
+//    }
     
 }
 

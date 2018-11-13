@@ -62,6 +62,8 @@ class UploadViewCell: UICollectionViewCell{
         backgroundColor = .white
         setCellShadow()
         
+        //titleLabel.fitTextToBounds()
+        
         likeIcon.isUserInteractionEnabled = true
         likeIcon.addGestureRecognizer(tapRegoc)
         

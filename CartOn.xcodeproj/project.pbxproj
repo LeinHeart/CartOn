@@ -24,12 +24,17 @@
 		5A601C59215A1CD500DFD17A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A601C58215A1CD500DFD17A /* AppDelegate.swift */; };
 		5A601C5E215A1CD500DFD17A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A601C5C215A1CD500DFD17A /* Main.storyboard */; };
 		5A601C63215A1CD700DFD17A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A601C61215A1CD700DFD17A /* LaunchScreen.storyboard */; };
+		5A690E8421830EF800D891E4 /* HomeTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A690E8321830EF800D891E4 /* HomeTabBarViewController.swift */; };
+		5A690E862183111000D891E4 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A690E852183111000D891E4 /* NetworkHelper.swift */; };
 		5A6BCA5621675B6600DB90DD /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A6BCA5221675B6600DB90DD /* Home.storyboard */; };
 		5A6BCA5721675B6600DB90DD /* UploadImage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A6BCA5321675B6600DB90DD /* UploadImage.storyboard */; };
 		5A6BCA5821675B6600DB90DD /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A6BCA5421675B6600DB90DD /* Profile.storyboard */; };
+		5AB6912F21807706008A28ED /* uploadSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5AB6912E21807706008A28ED /* uploadSound.mp3 */; };
 		5AC05D52216E1238009251FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AC05D51216E1238009251FC /* Assets.xcassets */; };
 		5AE1B4FA216208470069ED79 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE1B4F9216208470069ED79 /* SearchViewController.swift */; };
 		5AE1B4FC216217C80069ED79 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE1B4FB216217C80069ED79 /* HomeViewController.swift */; };
+		5AE9F0F42180581F00014A37 /* CloudKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE9F0F32180581F00014A37 /* CloudKitHelper.swift */; };
+		5AE9F0F721805E3500014A37 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AE9F0F621805E3500014A37 /* CloudKit.framework */; };
 		5AEB04CF216F39A800C0D2FB /* LoginViewControllerProg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEB04CE216F39A800C0D2FB /* LoginViewControllerProg.swift */; };
 		5AEB04F1216F49DE00C0D2FB /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AEB04F0216F49DE00C0D2FB /* Login.storyboard */; };
 		5AEB04F3216F4CBC00C0D2FB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEB04F2216F4CBC00C0D2FB /* LoginViewController.swift */; };
@@ -62,12 +67,18 @@
 		5A601C62215A1CD700DFD17A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A601C64215A1CD700DFD17A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A601C72215A252800DFD17A /* CartOn.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CartOn.entitlements; sourceTree = "<group>"; };
+		5A690E8321830EF800D891E4 /* HomeTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarViewController.swift; sourceTree = "<group>"; };
+		5A690E852183111000D891E4 /* NetworkHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		5A6BCA5221675B6600DB90DD /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		5A6BCA5321675B6600DB90DD /* UploadImage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UploadImage.storyboard; sourceTree = "<group>"; };
 		5A6BCA5421675B6600DB90DD /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		5AB6912E21807706008A28ED /* uploadSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = uploadSound.mp3; sourceTree = "<group>"; };
 		5AC05D51216E1238009251FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5AE1B4F9216208470069ED79 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		5AE1B4FB216217C80069ED79 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		5AE9F0F32180581F00014A37 /* CloudKitHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitHelper.swift; sourceTree = "<group>"; };
+		5AE9F0F521805E2F00014A37 /* Picolo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Picolo.entitlements; sourceTree = "<group>"; };
+		5AE9F0F621805E3500014A37 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		5AEB04CE216F39A800C0D2FB /* LoginViewControllerProg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerProg.swift; sourceTree = "<group>"; };
 		5AEB04F0216F49DE00C0D2FB /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		5AEB04F2216F4CBC00C0D2FB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +98,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C5E57DFC548CC2989DC4DB8 /* Pods_CartOn.framework in Frameworks */,
+				5AE9F0F721805E3500014A37 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,11 +158,14 @@
 		5A601C57215A1CD500DFD17A /* CartOn */ = {
 			isa = PBXGroup;
 			children = (
+				5AB6912E21807706008A28ED /* uploadSound.mp3 */,
+				5AE9F0F521805E2F00014A37 /* Picolo.entitlements */,
 				5A2FA5B3216628CF00F50ECA /* ExtentionUIView.swift */,
 				5A5A4D1D2170AD52005109BC /* PersistenceService.swift */,
 				5A601C78215A2A9B00DFD17A /* Controller */,
 				5A601C77215A2A9000DFD17A /* View */,
 				5A601C76215A2A7600DFD17A /* Model */,
+				5AE9F0F2218057E900014A37 /* Helper */,
 				5A601C72215A252800DFD17A /* CartOn.entitlements */,
 				5A601C58215A1CD500DFD17A /* AppDelegate.swift */,
 				5A5A4D1F2170B228005109BC /* CartOn.xcdatamodeld */,
@@ -164,6 +179,7 @@
 		5A601C73215A253000DFD17A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5AE9F0F621805E3500014A37 /* CloudKit.framework */,
 				CAE0B9EC7ABA9893E284B1D3 /* Pods_CartOn.framework */,
 			);
 			name = Frameworks;
@@ -200,8 +216,18 @@
 				5A5A4CF321708247005109BC /* PostDetailImagePreviewViewController.swift */,
 				5AEB04CE216F39A800C0D2FB /* LoginViewControllerProg.swift */,
 				5AEB04F2216F4CBC00C0D2FB /* LoginViewController.swift */,
+				5A690E8321830EF800D891E4 /* HomeTabBarViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		5AE9F0F2218057E900014A37 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				5A690E852183111000D891E4 /* NetworkHelper.swift */,
+				5AE9F0F32180581F00014A37 /* CloudKitHelper.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		E053CF47216637BC00D44A47 /* Profile Page */ = {
@@ -251,10 +277,10 @@
 						CreatedOnToolsVersion = 10.0;
 						SystemCapabilities = {
 							com.apple.Push = {
-								enabled = 0;
+								enabled = 1;
 							};
 							com.apple.iCloud = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -286,6 +312,7 @@
 				5A6BCA5821675B6600DB90DD /* Profile.storyboard in Resources */,
 				5A601C63215A1CD700DFD17A /* LaunchScreen.storyboard in Resources */,
 				5AEB04F1216F49DE00C0D2FB /* Login.storyboard in Resources */,
+				5AB6912F21807706008A28ED /* uploadSound.mp3 in Resources */,
 				5A601C5E215A1CD500DFD17A /* Main.storyboard in Resources */,
 				5A6BCA5721675B6600DB90DD /* UploadImage.storyboard in Resources */,
 				5AC05D52216E1238009251FC /* Assets.xcassets in Resources */,
@@ -324,12 +351,14 @@
 				5AEB04F3216F4CBC00C0D2FB /* LoginViewController.swift in Sources */,
 				5A09EB24216B530600268856 /* PostClass.swift in Sources */,
 				16F0A403216C995C00488052 /* UploadViewController.swift in Sources */,
+				5AE9F0F42180581F00014A37 /* CloudKitHelper.swift in Sources */,
 				5A5A4D1E2170AD52005109BC /* PersistenceService.swift in Sources */,
 				5A09EB26216B530F00268856 /* PostList.swift in Sources */,
 				E053CF4C216637BD00D44A47 /* CollectionViewCell.swift in Sources */,
 				5AE1B4FA216208470069ED79 /* SearchViewController.swift in Sources */,
 				5A09EB28216B79B200268856 /* PostDetailViewController.swift in Sources */,
 				5A2FA5B02166287400F50ECA /* TopUploadViewCell.swift in Sources */,
+				5A690E862183111000D891E4 /* NetworkHelper.swift in Sources */,
 				E0DF6D6B216B833E007CD383 /* EditProfileViewController.swift in Sources */,
 				5AEB04CF216F39A800C0D2FB /* LoginViewControllerProg.swift in Sources */,
 				5A5A4CF421708247005109BC /* PostDetailImagePreviewViewController.swift in Sources */,
@@ -343,6 +372,7 @@
 				5A601C59215A1CD500DFD17A /* AppDelegate.swift in Sources */,
 				5AE1B4FC216217C80069ED79 /* HomeViewController.swift in Sources */,
 				5A5A4D212170B228005109BC /* CartOn.xcdatamodeld in Sources */,
+				5A690E8421830EF800D891E4 /* HomeTabBarViewController.swift in Sources */,
 				5A2FA5B4216628CF00F50ECA /* ExtentionUIView.swift in Sources */,
 				E0E1206621742FB4000B10C2 /* SavedPageViewController.swift in Sources */,
 			);
@@ -491,14 +521,15 @@
 			baseConfigurationReference = 830DB9B1A08A895848CF40D6 /* Pods-CartOn.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CartOn/Picolo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6HRQPZU9P7;
+				DEVELOPMENT_TEAM = 8N944W57H3;
 				INFOPLIST_FILE = CartOn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = main.carton;
+				PRODUCT_BUNDLE_IDENTIFIER = com.picolo;
 				PRODUCT_NAME = Picolo;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -510,14 +541,15 @@
 			baseConfigurationReference = F7F06CF8879337D46BCE8E39 /* Pods-CartOn.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CartOn/Picolo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6HRQPZU9P7;
+				DEVELOPMENT_TEAM = 8N944W57H3;
 				INFOPLIST_FILE = CartOn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = main.carton;
+				PRODUCT_BUNDLE_IDENTIFIER = com.picolo;
 				PRODUCT_NAME = Picolo;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

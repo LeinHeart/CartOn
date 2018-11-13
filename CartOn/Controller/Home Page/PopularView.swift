@@ -21,13 +21,19 @@ class PopularView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UI
         return cv
     }()
     
+    
     let topUploadCellId = "topUploadCellId"
     let uploadCellId = "uploadCellId"
     
     var vcDelegate :PopularDelegate?
     
     var uploadPost = [PostClass]()
+    
+    
     //var uploadPost = PostList().uploadList
+    
+    
+    
     var topUploadPost = PostList().topUploadList
     
     
@@ -43,7 +49,7 @@ class PopularView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UI
         super.init(frame: frame)
         
         //fetchData()
-        uploadPost.reverse()
+        //uploadPost.reverse()
         topUploadPost.reverse()
         
         print("Ter init")
@@ -77,6 +83,7 @@ class PopularView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UI
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 1 {
+            print(uploadPost.count)
             return uploadPost.count
         }
         else {return 1}
@@ -107,10 +114,23 @@ class PopularView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UI
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        var cg = CGSize()
         if indexPath.section == 1 {
-            return CGSize(width: (self.frame.width / 2) - 20 , height: (self.frame.width / 2) * 1.25)
+            if(self.traitCollection.horizontalSizeClass == .compact){
+                return CGSize(width: (self.frame.width / 2) - 20 , height: (self.frame.width / 2) * 1.25)
+            }
+            else if (self.traitCollection.horizontalSizeClass == .regular){
+                return CGSize(width: (self.frame.width / 3) - 20 , height: (self.frame.width / 3) * 1.25)
+            }
+        } else {
+            if(self.traitCollection.horizontalSizeClass == .compact){
+                cg = CGSize(width: self.frame.width, height: (self.frame.width / 2 ) * 1.25 + 55)
+            }
+            else if (self.traitCollection.horizontalSizeClass == .regular){
+                cg = CGSize(width: self.frame.width, height: (self.frame.width / 3 ) * 1.25 + 55)
+            }
         }
-        return CGSize(width: self.frame.width, height: (self.frame.width / 2 ) * 1.25 + 55) //375 842
+        return cg //375 842
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

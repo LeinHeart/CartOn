@@ -81,12 +81,14 @@ class TopUploadViewCell: UICollectionViewCell,UICollectionViewDelegate, UICollec
         topView.frame = CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height)
         addSubview(topView)
         
+        
         collectionView.delegate = self
         collectionView.dataSource = self
         
         collectionView.register(IconsCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.showsHorizontalScrollIndicator = false
         
+        //setScaledCustomFont(label: topTitle)
         topTitle.text = "Top 5 Most Liked"
         topTitle.textColor = .white
         
@@ -121,7 +123,13 @@ class TopUploadViewCell: UICollectionViewCell,UICollectionViewDelegate, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (frame.width / 2) - 20 , height: (frame.width / 2) * 1.25)
+        var cg = CGSize()
+        if (self.traitCollection.horizontalSizeClass == .compact){
+            cg = CGSize(width: (frame.width / 2) - 20 , height: (frame.width / 2) * 1.25)
+        }else if (self.traitCollection.horizontalSizeClass == .regular){
+            cg = CGSize(width: (frame.width / 3) - 20 , height: (frame.width / 3) * 1.25)
+        }
+        return cg
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -157,6 +165,9 @@ class TopUploadViewCell: UICollectionViewCell,UICollectionViewDelegate, UICollec
         
         let titleLabel  : UILabel = {
             let tl = UILabel()
+            tl.adjustsFontForContentSizeCategory = true
+            tl.adjustsFontSizeToFitWidth = true
+            tl.minimumScaleFactor = 0.1
             tl.font = UIFont(name: "Avenir-medium", size: 11)
             tl.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
             return tl
@@ -186,6 +197,15 @@ class TopUploadViewCell: UICollectionViewCell,UICollectionViewDelegate, UICollec
             let tapRegoc = UITapGestureRecognizer(target: self, action: #selector(tapDetected))
             likeIcon.isUserInteractionEnabled = true
             likeIcon.addGestureRecognizer(tapRegoc)
+            
+//            setScaledCustomFont(label: uploaderLabel)
+//            setScaledCustomFont(label: titleLabel)
+//            setScaledCustomFont(label: likeLabel)
+            
+//            uploaderLabel.font = UIFont.systemFont(ofSize: 10, weight: UIFont.Weight(rawValue: 400))
+//            uploaderLabel.fitTextToBounds()
+//            titleLabel.font = UIFont.systemFont(ofSize: 10, weight: UIFont.Weight(rawValue: 400))
+//            titleLabel.fitTextToBounds()
             
             setCellShadow()
             backgroundColor = .white
